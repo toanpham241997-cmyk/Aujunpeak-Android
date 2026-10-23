@@ -1,0 +1,168 @@
+{
+  "id": "home_advanced_control",
+  "enabled": true,
+  "target": "boostStartContainer",
+  "mode": "prepend",
+  "components": [
+    {
+      "id": "card_home_advanced_control",
+      "type": "card",
+      "style": {
+        "marginBottomDp": 12,
+        "paddingDp": 14,
+        "background": {
+          "colors": ["#081224", "#101B36", "#0A1020"],
+          "radiusDp": 22,
+          "strokeColor": "#5961E1FF",
+          "strokeWidthDp": 1
+        }
+      },
+      "children": [
+        {
+          "id": "advanced_header_row",
+          "type": "row",
+          "gravity": "center_vertical",
+          "style": {"marginBottomDp": 11},
+          "children": [
+            {
+              "id": "advanced_icon_box",
+              "type": "card",
+              "style": {
+                "widthDp": 42,
+                "heightDp": 42,
+                "marginEndDp": 11,
+                "paddingDp": 5,
+                "background": {
+                  "colors": ["#17315A", "#31275C"],
+                  "radiusDp": 13,
+                  "strokeColor": "#6961E1FF",
+                  "strokeWidthDp": 1
+                }
+              },
+              "children": [
+                {
+                  "id": "advanced_icon",
+                  "type": "icon",
+                  "icon": "fa-bolt",
+                  "iconColor": "#61E1FF",
+                  "iconStrokeDp": 2.1,
+                  "sizeDp": 30
+                }
+              ]
+            },
+            {
+              "id": "advanced_header_text",
+              "type": "column",
+              "weight": 1,
+              "children": [
+                {
+                  "id": "advanced_title",
+                  "type": "text",
+                  "text": "ADVANCED CONTROL",
+                  "style": {"textSizeSp": 14, "textColor": "#FFFFFF", "bold": true}
+                },
+                {
+                  "id": "advanced_subtitle",
+                  "type": "text",
+                  "text": "Điều khiển hiệu năng nâng cao",
+                  "style": {"marginTopDp": 2, "textSizeSp": 10, "textColor": "#8298B8"}
+                }
+              ]
+            },
+            {
+              "id": "advanced_status",
+              "type": "text",
+              "text": "2 MODULES",
+              "style": {
+                "textSizeSp": 9,
+                "textColor": "#61E1FF",
+                "paddingDp": 5,
+                "background": {
+                  "colors": ["#15334A", "#15283F"],
+                  "radiusDp": 10,
+                  "strokeColor": "#4061E1FF",
+                  "strokeWidthDp": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "switch_auto_optimize",
+          "type": "switch",
+          "title": "AUTO OPTIMIZE",
+          "subtitle": "Tự động ghi nhớ cấu hình tối ưu",
+          "prefKey": "home_auto_optimize",
+          "defaultValue": false,
+          "style": {
+            "paddingDp": 11,
+            "marginBottomDp": 8,
+            "background": {
+              "colors": ["#0D192D", "#111D34"],
+              "radiusDp": 16,
+              "strokeColor": "#3C57D9FF",
+              "strokeWidthDp": 1
+            }
+          },
+          "onAction": {
+            "type": "VFX_MODAL",
+            "icon": "fa-bolt",
+            "title": "AUTO OPTIMIZE",
+            "message": "Đã kích hoạt chế độ tối ưu tự động.",
+            "status": "ĐÃ KÍCH HOẠT",
+            "accentColor": "#61E1FF",
+            "accentColor2": "#A189FF",
+            "autoDismissMs": 1600
+          },
+          "offAction": {
+            "type": "VFX_MODAL",
+            "icon": "fa-power-off",
+            "title": "AUTO OPTIMIZE",
+            "message": "Chế độ tối ưu tự động đã được tắt.",
+            "status": "ĐÃ TẮT",
+            "accentColor": "#FF6B7A",
+            "accentColor2": "#A189FF",
+            "autoDismissMs": 1350
+          }
+        },
+        {
+          "id": "switch_live_performance",
+          "type": "switch",
+          "title": "LIVE PERFORMANCE",
+          "subtitle": "Bật cấu hình hiệu năng thời gian thực",
+          "prefKey": "home_live_performance",
+          "defaultValue": false,
+          "style": {
+            "paddingDp": 11,
+            "background": {
+              "colors": ["#10162B", "#17152F"],
+              "radiusDp": 16,
+              "strokeColor": "#3EA189FF",
+              "strokeWidthDp": 1
+            }
+          },
+          "onAction": {
+            "type": "VFX_MODAL",
+            "icon": "fa-gauge-high",
+            "title": "LIVE PERFORMANCE",
+            "message": "Hiệu năng thời gian thực đã được bật.",
+            "status": "LIVE MODE ON",
+            "accentColor": "#73F7B0",
+            "accentColor2": "#61E1FF",
+            "autoDismissMs": 1600
+          },
+          "offAction": {
+            "type": "VFX_MODAL",
+            "icon": "fa-power-off",
+            "title": "LIVE PERFORMANCE",
+            "message": "Hiệu năng thời gian thực đã được tắt.",
+            "status": "LIVE MODE OFF",
+            "accentColor": "#FFB86C",
+            "accentColor2": "#A189FF",
+            "autoDismissMs": 1350
+          }
+        }
+      ]
+    }
+  ]
+}

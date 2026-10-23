@@ -1,0 +1,257 @@
+{
+  "schema": 2,
+  "version": 1,
+  "global": {
+    "statusBarColor": "#000000",
+    "navigationBarColor": "#000000",
+    "particleColors": [
+      "#66FF1744",
+      "#33FF1744",
+      "#22FF1744",
+      "#11FF1744"
+    ],
+    "particleDensity": 8,
+    "views": {}
+  },
+  "screens": {
+    "main": {
+      "views": {
+        "appHeader": {
+          "background": {
+            "colors": [
+              "#000000",
+              "#000000"
+            ],
+            "radiusDp": 10,
+            "strokeColor": "#FFFF1744",
+            "strokeWidthDp": 1
+          }
+        },
+        "customBottomNav": {
+          "background": {
+            "colors": [
+              "#000000",
+              "#000000"
+            ],
+            "radiusDp": 10,
+            "strokeColor": "#FFFF1744",
+            "strokeWidthDp": 1
+          }
+        }
+      },
+      "dynamicLayouts": []
+    },
+    "home": {
+      "views": {
+        "cardFreeFire": {
+          "heightDp": 122
+        },
+        "particlesFreeFire": {
+          "particleColors": [
+            "#66FF1744",
+            "#66FF1744",
+            "#66FF1744"
+          ],
+          "particleDensity": 9
+        },
+        "particlesRam": {
+          "particleColors": [
+            "#66FF1744",
+            "#66FF1744"
+          ],
+          "particleDensity": 8
+        },
+        "particlesCpu": {
+          "particleColors": [
+            "#66FF1744",
+            "#66FF1744"
+          ],
+          "particleDensity": 8
+        },
+        "btnBoostStart": {
+          "background": {
+            "colors": [
+              "#000000",
+              "#000000"
+            ],
+            "radiusDp": 12,
+            "strokeColor": "#FFFF1744",
+            "strokeWidthDp": 1
+          }
+        },
+        "tvQuickModulesCount": {
+          "text": "3 MODULES"
+        }
+      },
+      "dynamicLayouts": [
+        {
+          "id": "home_online_extensions",
+          "enabled": false,
+          "target": "dynamicHomeSwitchHost",
+          "mode": "append",
+          "components": [
+            {
+              "id": "auto_clean_online",
+              "type": "switch",
+              "title": "AUTO CLEAN",
+              "subtitle": "Tính năng được thêm trực tiếp từ VPS",
+              "prefKey": "auto_clean_online",
+              "defaultValue": false,
+              "style": {
+                "marginTopDp": 7,
+                "background": {
+                  "colors": [
+                    "#FF080808",
+                    "#FF080808"
+                  ],
+                  "radiusDp": 16,
+                  "strokeColor": "#55FF1744",
+                  "strokeWidthDp": 1
+                }
+              },
+              "onAction": {
+                "type": "TOAST",
+                "message": "AUTO CLEAN: ON"
+              },
+              "offAction": {
+                "type": "TOAST",
+                "message": "AUTO CLEAN: OFF"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "function": {
+      "views": {
+        "cardCrosshair": {
+          "background": {
+            "colors": [
+              "#FF080808",
+              "#FFFF1744"
+            ],
+            "radiusDp": 24,
+            "strokeColor": "#6AFF1744",
+            "strokeWidthDp": 1
+          }
+        },
+        "cardOptimizerSuper": {
+          "background": {
+            "colors": [
+              "#FF17130D",
+              "#FF111827"
+            ],
+            "radiusDp": 22,
+            "strokeColor": "#72FF1744",
+            "strokeWidthDp": 1
+          }
+        },
+        "particlesPerformance": {
+          "particleColors": [
+            "#66FF1744",
+            "#66FF1744"
+          ],
+          "particleDensity": 8
+        }
+      },
+      "dynamicLayouts": []
+    },
+    "settings": {
+      "views": {
+        "cardAbout": {
+          "alpha": 1.0
+        },
+        "cardFeedback": {
+          "alpha": 1.0
+        },
+        "cardPolicy": {
+          "alpha": 1.0
+        },
+        "particlesHero": {
+          "particleColors": [
+            "#66FF1744",
+            "#66FF1744",
+            "#66FF1744"
+          ],
+          "particleDensity": 8
+        }
+      },
+      "dynamicLayouts": []
+    },
+    "profile": {
+      "views": {
+        "cardLoginHistory": {
+          "heightDp": 220
+        },
+        "profileCardParticles": {
+          "particleColors": [
+            "#66FF1744",
+            "#66FF1744"
+          ],
+          "particleDensity": 8
+        }
+      },
+      "dynamicLayouts": []
+    },
+    "login": {
+      "views": {
+        "cardKeyInput": {
+          "alpha": 1.0
+        },
+        "loginCardParticles": {
+          "particleColors": [
+            "#66FF1744",
+            "#66FF1744",
+            "#66FF1744"
+          ],
+          "particleDensity": 9
+        }
+      },
+      "dynamicLayouts": []
+    },
+    "game": {
+      "views": {},
+      "dynamicLayouts": []
+    },
+    "splash": {
+      "views": {},
+      "dynamicLayouts": []
+    },
+    "gameBoost": {
+      "views": {},
+      "dynamicLayouts": []
+    },
+    "crosshair": {
+      "views": {},
+      "dynamicLayouts": []
+    },
+    "optimizer": {
+      "views": {},
+      "dynamicLayouts": []
+    },
+    "update": {
+      "views": {},
+      "dynamicLayouts": []
+    },
+    "forceUpdate": {
+      "views": {},
+      "dynamicLayouts": []
+    },
+    "social": {
+      "views": {},
+      "dynamicLayouts": []
+    },
+    "about": {
+      "views": {},
+      "dynamicLayouts": []
+    },
+    "feedback": {
+      "views": {},
+      "dynamicLayouts": []
+    },
+    "policy": {
+      "views": {},
+      "dynamicLayouts": []
+    }
+  }
+}

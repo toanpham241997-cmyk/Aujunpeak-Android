@@ -1,0 +1,35 @@
+{
+  "what_to_change": "Copy the views + dynamicLayouts blocks below into screens.home in ui.json",
+  "views": {
+    "tvQuickModulesCount": { "text": "4 MODULES" }
+  },
+  "dynamicLayouts": [
+    {
+      "id": "home_online_extensions",
+      "enabled": true,
+      "target": "dynamicHomeSwitchHost",
+      "mode": "append",
+      "components": [
+        {
+          "id": "auto_clean_online",
+          "type": "switch",
+          "title": "AUTO CLEAN",
+          "subtitle": "Tính năng được thêm trực tiếp từ VPS",
+          "prefKey": "auto_clean_online",
+          "defaultValue": false,
+          "style": {
+            "marginTopDp": 7,
+            "background": {
+              "colors": ["#10182E", "#0C1426"],
+              "radiusDp": 16,
+              "strokeColor": "#5561E1FF",
+              "strokeWidthDp": 1
+            }
+          },
+          "onAction": { "type": "TOAST", "message": "AUTO CLEAN: ON" },
+          "offAction": { "type": "TOAST", "message": "AUTO CLEAN: OFF" }
+        }
+      ]
+    }
+  ]
+}

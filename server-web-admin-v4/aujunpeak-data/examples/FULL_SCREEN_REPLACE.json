@@ -1,0 +1,62 @@
+{
+  "dynamicLayouts": [
+    {
+      "id": "remote_home_v2",
+      "enabled": true,
+      "target": "__root__",
+      "mode": "replace",
+      "width": "match",
+      "height": "match",
+      "style": {
+        "paddingDp": 16,
+        "background": { "colors": ["#050913", "#0C1426"], "orientation": "TOP_BOTTOM" }
+      },
+      "components": [
+        {
+          "id": "remote_title",
+          "type": "text",
+          "text": "AUJUNPEAK ONLINE UI",
+          "style": { "textColor": "#61E1FF", "textSizeSp": 20, "bold": true, "marginBottomDp": 12 }
+        },
+        {
+          "id": "remote_card",
+          "type": "card",
+          "style": {
+            "paddingDp": 14,
+            "background": {
+              "colors": ["#10182E", "#101D36"],
+              "radiusDp": 22,
+              "strokeColor": "#6A57D9FF",
+              "strokeWidthDp": 1
+            }
+          },
+          "children": [
+            { "id": "remote_desc", "type": "text", "text": "Toàn bộ cụm này được dựng từ ui.json trên VPS.", "style": { "textColor": "#DDEBFF", "textSizeSp": 12 } },
+            {
+              "id": "remote_switch",
+              "type": "switch",
+              "title": "ONLINE SWITCH",
+              "subtitle": "Tạo mới không cần XML",
+              "prefKey": "online_switch",
+              "style": { "marginTopDp": 10 },
+              "onAction": { "type": "TOAST", "message": "Đã bật" },
+              "offAction": { "type": "TOAST", "message": "Đã tắt" }
+            },
+            {
+              "id": "open_update",
+              "type": "button",
+              "text": "MỞ TAB UPDATE",
+              "style": {
+                "marginTopDp": 12,
+                "background": { "colors": ["#52D8FF", "#9B6DFF"], "radiusDp": 16 },
+                "textColor": "#07101B",
+                "bold": true
+              },
+              "onClick": { "type": "INTERNAL_ACTIVITY", "screen": "update" }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+[Unit]
+Description=Aujunpeak Dynamic UI Web Admin
+After=network.target
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+WorkingDirectory=/opt/aujunpeak-admin
+EnvironmentFile=/etc/aujunpeak-admin.env
+ExecStart=/opt/aujunpeak-admin/venv/bin/gunicorn --workers 2 --threads 4 --bind 127.0.0.1:8765 --timeout 60 app:app
+Restart=always
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

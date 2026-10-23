@@ -1,0 +1,8 @@
+{
+  "schema": 2,
+  "version": 1,
+  "minNativeVersionCode": 13,
+  "config": "ui.json",
+  "configSha256": "c04740454fed73bab09df4033d64547e833b0b77167a37a1bcd1008c33e3f23d",
+  "assets": []
+}

@@ -1,0 +1,35 @@
+{
+  "examples": [
+    { "type": "TOAST", "message": "Xin chào" },
+    { "type": "DIALOG", "title": "Aujunpeak", "message": "Nội dung từ server" },
+    { "type": "OPEN_URL", "url": "https://huanha.shop" },
+    { "type": "OPEN_APP", "package": "com.dts.freefireth" },
+    { "type": "INTERNAL_ACTIVITY", "screen": "crosshair" },
+    { "type": "CLICK_VIEW", "viewId": "btnBoostStart" },
+    { "type": "SET_TEXT", "viewId": "tvQuickModulesCount", "text": "5 MODULES" },
+    { "type": "SET_VISIBILITY", "viewId": "cardHighlightsSlider", "value": "gone" },
+    { "type": "SET_PREF", "prefs": "my_settings", "key": "mode", "value": "pro" },
+    { "type": "REFRESH_DATA" },
+    { "type": "APP_SETTINGS" },
+    { "type": "OVERLAY_SETTINGS" },
+    { "type": "START_FLOATING_BOOST" },
+    { "type": "STOP_FLOATING_BOOST" },
+    { "type": "START_CROSSHAIR", "crosshairType": "DOT", "size": 40, "offsetX": 0, "offsetY": 0, "rotationSpeed": 0, "pulse": 35 },
+    { "type": "STOP_CROSSHAIR" },
+    {
+      "type": "HTTP_REQUEST",
+      "method": "GET",
+      "url": "https://example.com/api/status",
+      "toastResponse": true,
+      "onSuccess": { "type": "TOAST", "message": "API OK" },
+      "onError": { "type": "TOAST", "message": "API ERROR" }
+    },
+    {
+      "type": "SEQUENCE",
+      "actions": [
+        { "type": "TOAST", "message": "Bắt đầu" },
+        { "type": "DELAY", "ms": 500, "action": { "type": "TOAST", "message": "Hoàn tất" } }
+      ]
+    }
+  ]
+}
