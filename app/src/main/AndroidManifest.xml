@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Core permissions -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+
+    <!-- FCM Push Notifications -->
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+
+    <!-- Overlay / floating window -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+
+    <!-- Process & performance -->
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES"
+        tools:ignore="QueryAllPackagesPermission"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE"
+        tools:ignore="ProtectedPermissions"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"/>
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION"/>
+
+    <!-- System info -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+
+    <!-- Notifications -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="android.permission.EXPAND_STATUS_BAR"/>
+
+    <!-- Storage (for settings backup) -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <!-- Media picker for chat image uploads (Android 13+) -->
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <!-- Optimizer Super: real junk-file scan in shared storage, only used if user grants it -->
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage"/>
+
+    <application
+        android:requestLegacyExternalStorage="true"
+        android:name=".AujunpeakApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AujunpeakApp"
+        android:usesCleartextTraffic="true">
+
+        <activity
+            android:name=".activities.SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AujunpeakApp.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".activities.MainActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize"/>
+
+        <activity
+            android:name=".activities.GameBoostActivity"
+            android:exported="false"/>
+
+        <activity
+            android:name=".activities.OptimizerSuperActivity"
+            android:exported="false"/>
+
+        <activity
+            android:name=".activities.CrosshairActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize"/>
+
+        <!-- ══ Force Update Activity — không cho back, không có thanh back ══ -->
+        <activity
+            android:name=".activities.ForceUpdateActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AujunpeakApp"
+            android:windowSoftInputMode="adjustResize"/>
+
+        <activity
+            android:name=".activities.UpdateActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize"
+            android:theme="@style/Theme.AujunpeakApp"/>
+
+        <activity
+            android:name=".activities.SocialLinksActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AujunpeakApp"/>
+
+        <!-- ── About / Feedback / Policy activities ── -->
+        <activity
+            android:name=".activities.AboutActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AujunpeakApp"/>
+
+        <activity
+            android:name=".activities.FeedbackActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize"
+            android:theme="@style/Theme.AujunpeakApp"/>
+
+        <activity
+            android:name=".activities.PolicyActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AujunpeakApp"/>
+
+        <!-- ── FCM Push Notification Service ── -->
+        <service
+            android:name=".activities.MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+
+        <service
+            android:name=".activities.FloatingCrosshairService"
+            android:exported="false"
+            android:foregroundServiceType="specialUse"/>
+
+        <service
+            android:name=".activities.FloatingBoostService"
+            android:exported="false"
+            android:foregroundServiceType="specialUse"/>
+
+        <!-- Boot receiver for auto-start -->
+        <receiver android:name=".activities.BootReceiver"
+            android:exported="true"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+</manifest>
