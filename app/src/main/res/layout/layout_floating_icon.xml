@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="54dp"
+    android:layout_height="54dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Glow ring outer -->
+    <View
+        android:id="@+id/vIconGlowRing"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
+        android:background="@drawable/bg_left_tab_normal"/>
+
+    <!-- Main circle bg -->
+
+    <!-- Lightning bolt icon -->
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="80dp"
+        android:layout_height="60dp"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/rocket" />
+
+    <TextView
+        android:layout_width="84dp"
+        android:layout_height="79dp"
+        android:gravity="center"
+        android:text=""
+        android:textSize="22sp" />
+
+</FrameLayout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ForceUpdate — vòng tròn nền cho icon chính -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Vòng ngoài glow -->
+    <item android:left="4dp" android:top="4dp" android:right="4dp" android:bottom="4dp">
+        <shape android:shape="oval">
+            <gradient
+                android:type="radial"
+                android:gradientRadius="40dp"
+                android:startColor="#44FF6D00"
+                android:endColor="#00FF6D00"/>
+        </shape>
+    </item>
+    <!-- Vòng tròn nền chính -->
+    <item android:left="12dp" android:top="12dp" android:right="12dp" android:bottom="12dp">
+        <shape android:shape="oval">
+            <gradient
+                android:angle="135"
+                android:startColor="#200A1E38"
+                android:endColor="#20051222"
+                android:type="linear"/>
+            <stroke android:width="2dp" android:color="#99FF6D00"/>
+        </shape>
+    </item>
+</layer-list>

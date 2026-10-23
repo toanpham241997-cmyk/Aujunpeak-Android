@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Large circular TikTok button background -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Outer glow ring -->
+    <item android:left="4dp" android:top="4dp" android:right="4dp" android:bottom="4dp">
+        <shape android:shape="oval">
+            <solid android:color="#00000000"/>
+            <stroke android:width="2dp" android:color="#5069C9D0"/>
+        </shape>
+    </item>
+    <!-- Main dark circle -->
+    <item android:left="8dp" android:top="8dp" android:right="8dp" android:bottom="8dp">
+        <shape android:shape="oval">
+            <gradient
+                android:angle="135"
+                android:startColor="#E8010101"
+                android:endColor="#E81D1D1D"
+                android:type="linear"/>
+        </shape>
+    </item>
+    <!-- TikTok cyan bottom-right accent -->
+    <item android:left="8dp" android:top="8dp" android:right="8dp" android:bottom="8dp">
+        <shape android:shape="oval">
+            <gradient
+                android:type="radial"
+                android:gradientRadius="80dp"
+                android:centerX="0.75"
+                android:centerY="0.75"
+                android:startColor="#2069C9D0"
+                android:endColor="#00000000"/>
+        </shape>
+    </item>
+    <!-- Inner stroke -->
+    <item android:left="8dp" android:top="8dp" android:right="8dp" android:bottom="8dp">
+        <shape android:shape="oval">
+            <solid android:color="#00000000"/>
+            <stroke android:width="1.5dp" android:color="#8869C9D0"/>
+        </shape>
+    </item>
+</layer-list>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="40dp"
+    android:height="40dp"
+    android:viewportWidth="40"
+    android:viewportHeight="40">
+
+    <!-- Antenna top ball -->
+    <path android:fillColor="#FF1744"
+        android:pathData="M18.8,4 a1.2,1.2 0 1,0 2.4,0 a1.2,1.2 0 1,0 -2.4,0"/>
+    <!-- Antenna stem -->
+    <path android:fillColor="#00000000"
+        android:strokeColor="#FF1744"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round"
+        android:pathData="M20,5.2v4"/>
+    <!-- Antenna cross bar -->
+    <path android:fillColor="#00000000"
+        android:strokeColor="#FF1744"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"
+        android:pathData="M17,7.5h6"/>
+
+    <!-- Robot head (rounded rect) -->
+    <path android:fillColor="#00000000"
+        android:strokeColor="#FF1744"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M8,11 h24 a2,2 0 0,1 2,2 v12 a2,2 0 0,1 -2,2 h-24 a2,2 0 0,1 -2,-2 v-12 a2,2 0 0,1 2,-2 z"/>
+
+    <!-- Left eye -->
+    <path android:fillColor="#FF1744"
+        android:pathData="M12.8,17 a2.2,2.2 0 1,0 4.4,0 a2.2,2.2 0 1,0 -4.4,0"/>
+    <!-- Left pupil -->
+    <path android:fillColor="#FFFFFF"
+        android:pathData="M14.2,17 a0.8,0.8 0 1,0 1.6,0 a0.8,0.8 0 1,0 -1.6,0"/>
+
+    <!-- Right eye -->
+    <path android:fillColor="#FF1744"
+        android:pathData="M22.8,17 a2.2,2.2 0 1,0 4.4,0 a2.2,2.2 0 1,0 -4.4,0"/>
+    <!-- Right pupil -->
+    <path android:fillColor="#FFFFFF"
+        android:pathData="M24.2,17 a0.8,0.8 0 1,0 1.6,0 a0.8,0.8 0 1,0 -1.6,0"/>
+
+    <!-- Scanning line (mouth/scanner) -->
+    <path android:fillColor="#00000000"
+        android:strokeColor="#FF1744"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round"
+        android:pathData="M13,22.5h14"/>
+    <path android:fillColor="#00000000"
+        android:strokeColor="#FF5252"
+        android:strokeWidth="1.2"
+        android:strokeLineCap="round"
+        android:pathData="M15,24.5h10"/>
+
+    <!-- Body -->
+    <path android:fillColor="#00000000"
+        android:strokeColor="#FF1744"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M14,27h12v6 a1,1 0 0,1 -1,1 h-10 a1,1 0 0,1 -1,-1 z"/>
+
+    <!-- Body dots -->
+    <path android:fillColor="#FF1744"
+        android:pathData="M18.8,29.8 a1.2,1.2 0 1,0 2.4,0 a1.2,1.2 0 1,0 -2.4,0"/>
+
+    <!-- Arms -->
+    <path android:fillColor="#00000000"
+        android:strokeColor="#FF1744"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round"
+        android:pathData="M8,28h6M26,28h6"/>
+
+</vector>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Nút đóng X nổi phía trên khung chat — dạng kính mờ, viền sáng bắt mắt -->
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="#40FFFFFF">
+    <item>
+        <layer-list>
+            <item>
+                <shape android:shape="oval">
+                    <gradient
+                        android:type="linear"
+                        android:angle="135"
+                        android:startColor="#8A5CF6"
+                        android:endColor="#22D3C7"/>
+                </shape>
+            </item>
+            <item
+                android:top="2dp" android:left="2dp"
+                android:right="2dp" android:bottom="2dp">
+                <shape android:shape="oval">
+                    <solid android:color="#1A1826"/>
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+</ripple>

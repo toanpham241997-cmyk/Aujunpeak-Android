@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Shadow/glow layer: no negative offsets -->
+    <item android:top="2dp" android:left="2dp" android:right="2dp" android:bottom="0dp">
+        <shape>
+            <solid android:color="#66FF1744"/>
+            <corners
+                android:topLeftRadius="6dp"
+                android:topRightRadius="18dp"
+                android:bottomRightRadius="6dp"
+                android:bottomLeftRadius="18dp"/>
+        </shape>
+    </item>
+    <!-- Main dark gradient: near-black → dark brown → deep crimson -->
+    <item>
+        <shape>
+            <gradient
+                android:angle="0"
+                android:startColor="#0D0000"
+                android:centerColor="#3D0808"
+                android:endColor="#8B0000"
+                android:type="linear"/>
+            <corners
+                android:topLeftRadius="4dp"
+                android:topRightRadius="20dp"
+                android:bottomRightRadius="4dp"
+                android:bottomLeftRadius="20dp"/>
+        </shape>
+    </item>
+    <!-- Top shine highlight -->
+    <item android:bottom="28dp">
+        <shape>
+            <gradient
+                android:angle="270"
+                android:startColor="#44FFFFFF"
+                android:endColor="#00000000"
+                android:type="linear"/>
+            <corners
+                android:topLeftRadius="4dp"
+                android:topRightRadius="20dp"
+                android:bottomRightRadius="0dp"
+                android:bottomLeftRadius="0dp"/>
+        </shape>
+    </item>
+    <!-- Red accent border: stroke width integer -->
+    <item>
+        <shape>
+            <solid android:color="#00000000"/>
+            <stroke android:width="1dp" android:color="#99CC0000"/>
+            <corners
+                android:topLeftRadius="4dp"
+                android:topRightRadius="20dp"
+                android:bottomRightRadius="4dp"
+                android:bottomLeftRadius="20dp"/>
+        </shape>
+    </item>
+</layer-list>

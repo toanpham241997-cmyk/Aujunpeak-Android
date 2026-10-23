@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Unselected / dim state rating star — thin outline only -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="40dp"
+    android:height="40dp"
+    android:viewportWidth="40"
+    android:viewportHeight="40">
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#66FFFFFF"
+        android:strokeWidth="1.4"
+        android:strokeLineJoin="round"
+        android:pathData="M20,7 L23.3,16.1 L33,16.9 L25.5,22.9 L27.9,32.4 L20,27 L12.1,32.4 L14.5,22.9 L7,16.9 L16.7,16.1 Z"/>
+</vector>

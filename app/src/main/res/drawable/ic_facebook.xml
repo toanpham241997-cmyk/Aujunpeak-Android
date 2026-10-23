@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="40dp"
+    android:height="40dp"
+    android:viewportWidth="40"
+    android:viewportHeight="40">
+
+    <!-- Vòng tròn nền xanh Facebook -->
+    <path
+        android:fillColor="#1877F2"
+        android:pathData="M20,0 C8.954,0 0,8.954 0,20 C0,31.046 8.954,40 20,40 C31.046,40 40,31.046 40,20 C40,8.954 31.046,0 20,0 Z"/>
+
+    <!-- Chữ f trắng (Facebook brand) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M22.2,20.8 L22.2,31 L17.8,31 L17.8,20.8 L14.5,20.8 L14.5,17 L17.8,17 L17.8,14.8 C17.8,11.1 19.9,9 23.2,9 L26.5,9 L26.5,12.8 L24.2,12.8 C23.0,12.8 22.2,13.5 22.2,14.8 L22.2,17 L26.5,17 L25.9,20.8 L22.2,20.8 Z"/>
+</vector>

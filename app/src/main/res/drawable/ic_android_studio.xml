@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Android robot icon (official Android mascot style) -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Left antenna -->
+    <path
+        android:fillColor="@null"
+        android:strokeColor="#3DDC84"
+        android:strokeWidth="1.6"
+        android:strokeLineCap="round"
+        android:pathData="M8.5,7 L6.5,4.5"/>
+
+    <!-- Right antenna -->
+    <path
+        android:fillColor="@null"
+        android:strokeColor="#3DDC84"
+        android:strokeWidth="1.6"
+        android:strokeLineCap="round"
+        android:pathData="M15.5,7 L17.5,4.5"/>
+
+    <!-- Antenna tips (small circles) -->
+    <path android:fillColor="#3DDC84"
+        android:pathData="M6,4 a0.7,0.7,0,1,0,1.4,0 a0.7,0.7,0,0,0,-1.4,0z"/>
+    <path android:fillColor="#3DDC84"
+        android:pathData="M16.6,4 a0.7,0.7,0,1,0,1.4,0 a0.7,0.7,0,0,0,-1.4,0z"/>
+
+    <!-- Head/body — rounded top, flat bottom -->
+    <path
+        android:fillColor="#3DDC84"
+        android:pathData="M5.5,13 L5.5,18 A1,1,0,0,0,6.5,19 L8,19 L8,21.5
+            A1.5,1.5,0,0,0,11,21.5 L11,19 L13,19 L13,21.5
+            A1.5,1.5,0,0,0,16,21.5 L16,19 L17.5,19 A1,1,0,0,0,18.5,18
+            L18.5,13 Z"/>
+
+    <!-- Robot head arc (top rounded part) -->
+    <path
+        android:fillColor="#3DDC84"
+        android:pathData="M5.5,13 A6.5,5,0,0,1,18.5,13 Z"/>
+
+    <!-- Left arm -->
+    <path
+        android:fillColor="#3DDC84"
+        android:pathData="M3.5,13 A1.5,2.5,0,0,0,3.5,18 L5.5,18 L5.5,13 Z"/>
+
+    <!-- Right arm -->
+    <path
+        android:fillColor="#3DDC84"
+        android:pathData="M20.5,13 A1.5,2.5,0,0,1,20.5,18 L18.5,18 L18.5,13 Z"/>
+
+    <!-- Left eye -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M9,14.5 a1,1,0,1,0,2,0 a1,1,0,0,0,-2,0z"/>
+
+    <!-- Right eye -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M13,14.5 a1,1,0,1,0,2,0 a1,1,0,0,0,-2,0z"/>
+</vector>

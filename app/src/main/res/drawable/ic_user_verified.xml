@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+
+    <!-- Head (circle at 24,12 r=10) using arc path -->
+    <path
+        android:fillColor="#FF1744"
+        android:pathData="M14,12 a10,10 0 1,0 20,0 a10,10 0 1,0 -20,0"/>
+
+    <!-- Shoulders / body arc -->
+    <path
+        android:fillColor="#FF1744"
+        android:pathData="M8,44c0,-8.837 7.163,-16 16,-16s16,7.163 16,16"/>
+
+    <!-- Verified badge background (circle cx=37 cy=37 r=8) -->
+    <path
+        android:fillColor="#69FF47"
+        android:pathData="M29,37 a8,8 0 1,0 16,0 a8,8 0 1,0 -16,0"/>
+
+    <!-- Check mark inside badge -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M33,37l3,3 5,-5"/>
+
+</vector>

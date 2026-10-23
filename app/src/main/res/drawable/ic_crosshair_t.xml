@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp" android:height="48dp"
+    android:viewportWidth="48" android:viewportHeight="48">
+    <!-- Top arm (longer) -->
+    <path android:fillColor="#FFFFFF" android:pathData="M22,4h4v18h-4z"/>
+    <!-- Left arm -->
+    <path android:fillColor="#FFFFFF" android:pathData="M4,22h18v4H4z"/>
+    <!-- Right arm -->
+    <path android:fillColor="#FFFFFF" android:pathData="M26,22h18v4H26z"/>
+    <!-- Center dot -->
+    <path android:fillColor="#FF1744"
+        android:pathData="M22,22h4v4h-4z"/>
+    <!-- Bottom small notch -->
+    <path android:fillColor="#FFFFFF" android:pathData="M22,30h4v4h-4z"/>
+</vector>

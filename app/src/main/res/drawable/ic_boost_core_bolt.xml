@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="40dp"
+    android:height="40dp"
+    android:viewportWidth="32"
+    android:viewportHeight="32">
+    <!-- Outer soft glow star -->
+    <path
+        android:fillColor="#40FF1744"
+        android:pathData="M16,1 L19.5,12.2 L31,13 L21.8,20.1 L25,31 L16,24.3 L7,31 L10.2,20.1 L1,13 L12.5,12.2 Z"/>
+    <!-- Core lightning bolt -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M18,3 L9,18 L15.2,18 L13,29 L23,14 L16.6,14 Z"/>
+    <!-- Bolt inner highlight -->
+    <path
+        android:fillColor="#FFCDD2"
+        android:pathData="M17.3,6.5 L11.6,16.4 L15.6,16.4 L14.1,23.5 L20.3,15 L16.2,15 Z"/>
+</vector>

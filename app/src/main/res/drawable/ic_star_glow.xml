@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Polished rating star: soft outer glow + gold body + inner highlight facet -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="40dp"
+    android:height="40dp"
+    android:viewportWidth="40"
+    android:viewportHeight="40">
+
+    <!-- Outer soft glow -->
+    <path
+        android:fillColor="#40FFD700"
+        android:pathData="M20,4 L24.2,15.4 L36,16.4 L26.8,24 L29.8,36 L20,29 L10.2,36 L13.2,24 L4,16.4 L15.8,15.4 Z"/>
+
+    <!-- Core star -->
+    <path
+        android:fillColor="#FFD700"
+        android:pathData="M20,7 L23.3,16.1 L33,16.9 L25.5,22.9 L27.9,32.4 L20,27 L12.1,32.4 L14.5,22.9 L7,16.9 L16.7,16.1 Z"/>
+
+    <!-- Highlight facet -->
+    <path
+        android:fillColor="#FFF6CC"
+        android:pathData="M20,10 L22,16.6 L20,15.4 L18.5,16.6 Z"/>
+</vector>

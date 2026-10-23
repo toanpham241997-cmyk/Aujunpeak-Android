@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+  <!-- Speech bubble -->
+  <path
+      android:fillColor="#FFFFFF"
+      android:pathData="M20,2H4C2.9,2 2,2.9 2,4v18l4,-4h14c1.1,0 2,-0.9 2,-2V4C22,2.9 21.1,2 20,2z"/>
+  <!-- Star inside bubble -->
+  <path
+      android:fillColor="#FF9800"
+      android:pathData="M12,6.5l1.2,2.4l2.7,0.4l-1.95,1.9l0.46,2.67L12,12.54l-2.41,1.27l0.46,-2.67L8.1,9.24l2.7,-0.4z"/>
+</vector>

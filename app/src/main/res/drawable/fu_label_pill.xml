@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- fu_label_pill.xml — small orange pill label for "CẬP NHẬT BẮT BUỘC"
+     NOTE: layer-list <item> does NOT support percentage dimensions (e.g. "50%").
+     All offsets must be fixed dp values. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Base: dark orange tint fill + border -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#1AFF6D00"/>
+            <corners android:radius="20dp"/>
+            <stroke
+                android:width="1dp"
+                android:color="#55FF6D00"/>
+        </shape>
+    </item>
+
+    <!-- Top-half sheen: inset 14dp from bottom (pill ~28dp tall → covers top half).
+         Using fixed dp instead of "50%" which is invalid in layer-list items. -->
+    <item
+        android:left="8dp"
+        android:top="2dp"
+        android:right="8dp"
+        android:bottom="14dp">
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="90"
+                android:startColor="#20FFFFFF"
+                android:endColor="#00FFFFFF"
+                android:type="linear"/>
+            <corners android:radius="20dp"/>
+        </shape>
+    </item>
+
+</layer-list>

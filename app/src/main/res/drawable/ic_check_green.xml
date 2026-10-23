@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Green checkmark circle icon for boost success steps -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="20dp"
+    android:height="20dp"
+    android:viewportWidth="20"
+    android:viewportHeight="20">
+
+    <!-- Dark green filled circle -->
+    <path
+        android:fillColor="#122A12"
+        android:pathData="M10,1.5 C5.37,1.5,1.5,5.37,1.5,10 C1.5,14.63,5.37,18.5,10,18.5
+            C14.63,18.5,18.5,14.63,18.5,10 C18.5,5.37,14.63,1.5,10,1.5z"/>
+
+    <!-- Green border ring -->
+    <path
+        android:fillColor="@null"
+        android:strokeColor="#69FF47"
+        android:strokeWidth="1.4"
+        android:pathData="M10,1.5 C5.37,1.5,1.5,5.37,1.5,10 C1.5,14.63,5.37,18.5,10,18.5
+            C14.63,18.5,18.5,14.63,18.5,10 C18.5,5.37,14.63,1.5,10,1.5z"/>
+
+    <!-- Bright green checkmark -->
+    <path
+        android:fillColor="@null"
+        android:strokeColor="#69FF47"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M5.5,10.5 L8.5,13.5 L14.5,7"/>
+</vector>

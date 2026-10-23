@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="transparent">#00000000</color>
+
+    <!-- Aujunpeak Neo UI -->
+    <color name="neo_bg">#050505</color>
+    <color name="neo_bg_2">#080808</color>
+    <color name="neo_surface">#0B0B0B</color>
+    <color name="neo_surface_2">#101010</color>
+    <color name="neo_surface_3">#151515</color>
+    <color name="neo_border">#6E1822</color>
+    <color name="neo_border_soft">#331116</color>
+    <color name="neo_text">#F5F8FF</color>
+    <color name="neo_text_2">#A8A8A8</color>
+    <color name="neo_text_3">#6F6F6F</color>
+    <color name="neo_text_muted">#6F6F6F</color>
+    <color name="neo_cyan">#FF1744</color>
+    <color name="neo_blue">#FF3046</color>
+    <color name="neo_violet">#FF1744</color>
+    <color name="neo_pink">#FF1744</color>
+    <color name="neo_red">#FF1744</color>
+    <color name="neo_red_alpha">#22FF1744</color>
+    <color name="neo_green">#FF5A5A</color>
+    <color name="neo_gold">#FFFF1744</color>
+
+    <!-- Compatibility with existing code/resources -->
+    <color name="red_primary">#FF1744</color>
+    <color name="red_dark">#A50F20</color>
+    <color name="red_bright">#FF1744</color>
+    <color name="red_glow">#FF6675</color>
+    <color name="dark_bg">#050505</color>
+    <color name="dark_surface">#0B0B0B</color>
+    <color name="dark_card">#101010</color>
+    <color name="dark_card2">#151515</color>
+    <color name="white_80">#CCFFFFFF</color>
+    <color name="gray_text">#A8A8A8</color>
+    <color name="red_transparent">#33FF4D67</color>
+    <color name="red_transparent2">#22FF4D67</color>
+    <color name="chart_red">#FF3B4E</color>
+    <color name="chart_red2">#FF1744</color>
+    <color name="green_success">#66D89A</color>
+    <color name="green_dark">#20965B</color>
+</resources>

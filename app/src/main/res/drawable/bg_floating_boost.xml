@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Premium dark glass floating boost panel background -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Gradient glow border (green → cyan) -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="135"
+                android:startColor="#8869FF47"
+                android:centerColor="#4400CFFF"
+                android:endColor="#8869FF47"
+                android:type="linear"/>
+            <corners android:radius="22dp"/>
+        </shape>
+    </item>
+    <!-- Inner dark glass body -->
+    <item android:top="1.5dp" android:left="1.5dp" android:right="1.5dp" android:bottom="1.5dp">
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="135"
+                android:startColor="#F5030B03"
+                android:centerColor="#F5071407"
+                android:endColor="#F5030E08"
+                android:type="linear"/>
+            <corners android:radius="21dp"/>
+        </shape>
+    </item>
+</layer-list>

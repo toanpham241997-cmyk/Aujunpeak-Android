@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.AujunpeakApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/neo_red</item>
+        <item name="colorPrimaryVariant">@color/neo_red</item>
+        <item name="colorSecondary">@color/neo_red</item>
+        <item name="colorControlHighlight">@color/neo_red_alpha</item>
+        <item name="android:colorAccent">@color/neo_red</item>
+        <item name="colorOnPrimary">@color/neo_bg</item>
+        <item name="android:windowBackground">@color/neo_bg</item>
+        <item name="android:statusBarColor">@color/neo_bg</item>
+        <item name="android:navigationBarColor">@color/neo_bg</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:textColorPrimary">@color/neo_text</item>
+        <item name="android:textColorSecondary">@color/neo_text_2</item>
+        <item name="android:fontFamily">sans</item>
+        <item name="materialSwitchStyle">@style/RedMaterialSwitchStyle</item>
+    </style>
+
+    <style name="RedMaterialSwitchStyle" parent="Widget.Material3.CompoundButton.MaterialSwitch">
+        <item name="thumbTint">@color/switch_thumb_color</item>
+        <item name="trackTint">@color/switch_track_color</item>
+    </style>
+
+    <style name="Theme.AujunpeakApp.Splash" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/neo_red</item>
+        <item name="android:colorAccent">@color/neo_red</item>
+        <item name="android:windowBackground">@color/neo_bg</item>
+        <item name="android:statusBarColor">@color/neo_bg</item>
+        <item name="android:navigationBarColor">@color/neo_bg</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+</resources>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <!-- Crown body -->
+    <path
+        android:fillColor="#FFD700"
+        android:pathData="M6,34 L42,34 L38,18 L30,28 L24,14 L18,28 L10,18 Z"/>
+    <!-- Crown gems -->
+    <path
+        android:fillColor="#FF4444"
+        android:pathData="M24,14 m-3,0 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0"/>
+    <path
+        android:fillColor="#44AAFF"
+        android:pathData="M10,18 m-3,0 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0"/>
+    <path
+        android:fillColor="#44AAFF"
+        android:pathData="M38,18 m-3,0 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0"/>
+    <!-- Crown base -->
+    <path
+        android:fillColor="#FFA000"
+        android:pathData="M6,34 L42,34 L42,38 L6,38 Z"/>
+    <!-- Shine -->
+    <path
+        android:fillColor="#FFFFAA"
+        android:fillAlpha="0.5"
+        android:pathData="M12,20 L16,24 L20,20 Z"/>
+</vector>

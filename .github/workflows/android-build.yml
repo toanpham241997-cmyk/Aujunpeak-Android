@@ -1,0 +1,147 @@
+name: Aujunpeak Android - Build APK
+
+on:
+  push:
+  workflow_dispatch:
+    inputs:
+      build_type:
+        description: "Chon Debug (khong can keystore) hoac Release (dung keystore goc)"
+        required: true
+        default: debug
+        type: choice
+        options:
+          - debug
+          - release
+
+permissions:
+  contents: read
+
+jobs:
+  build-apk:
+    name: "Build ${{ github.event.inputs.build_type || 'debug' }} APK"
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Lay ma nguon tu GitHub
+        uses: actions/checkout@v7
+
+      - name: Cai dat Java 17 va cache Gradle
+        uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: gradle
+
+      - name: Cai dat Android SDK
+        uses: android-actions/setup-android@v4
+
+      - name: Cai dat Android SDK 34
+        shell: bash
+        run: |
+          set -euo pipefail
+          sdkmanager --install 'platforms;android-34' 'build-tools;34.0.0' 'platform-tools'
+
+      - name: Cho phep chay Gradle Wrapper
+        run: chmod +x ./gradlew
+
+      # The existing release build validates the APK signing certificate at runtime.
+      # Use ONLY the original signing key with the pinned SHA-256 certificate.
+      - name: Cau hinh ky Release bang GitHub Secrets
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.build_type == 'release' }}
+        shell: bash
+        env:
+          ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+        run: |
+          set -euo pipefail
+          for key in ANDROID_KEYSTORE_BASE64 ANDROID_KEYSTORE_PASSWORD ANDROID_KEY_ALIAS ANDROID_KEY_PASSWORD; do
+            if [[ -z "${!key:-}" ]]; then
+              echo "::error::Thieu GitHub Actions Secret: ${key}. Xem README_GITHUB_BUILD.md"
+              exit 1
+            fi
+          done
+          printf '%s' "$ANDROID_KEYSTORE_BASE64" | base64 --decode > "$RUNNER_TEMP/aujunpeak-release.jks"
+          test -s "$RUNNER_TEMP/aujunpeak-release.jks"
+          python3 - <<'PY_SIGN'
+          import hashlib
+          import os
+          import re
+          import subprocess
+          from pathlib import Path
+
+          def prop_escape(value):
+              backslash = chr(92)
+              return (value.replace(backslash, backslash * 2)
+                      .replace(chr(13), backslash + 'r')
+                      .replace(chr(10), backslash + 'n')
+                      .replace('=', backslash + '=')
+                      .replace(':', backslash + ':'))
+
+          root = Path.cwd()
+          keystore = Path(os.environ['RUNNER_TEMP']) / 'aujunpeak-release.jks'
+          lines = {
+              'storeFile': str(keystore),
+              'storePassword': os.environ['ANDROID_KEYSTORE_PASSWORD'],
+              'keyAlias': os.environ['ANDROID_KEY_ALIAS'],
+              'keyPassword': os.environ['ANDROID_KEY_PASSWORD'],
+          }
+          (root / 'keystore.properties').write_text(
+              ''.join(f'{k}={prop_escape(v)}\n' for k, v in lines.items()), encoding='utf-8')
+
+          # Keep the app's existing anti-tampering mechanism. Fail clearly if the
+          # GitHub signing key differs from the one pinned in build.gradle.kts.
+          build_file = (root / 'app' / 'build.gradle.kts').read_text(encoding='utf-8')
+          match = re.search(r'RELEASE_CERT_SHA256[\s\S]{0,150}?([A-Fa-f0-9]{64})', build_file)
+          if not match:
+              raise SystemExit('Cannot locate pinned RELEASE_CERT_SHA256 in app/build.gradle.kts')
+          expected = match.group(1).upper()
+          cert = subprocess.check_output([
+              'keytool', '-exportcert', '-keystore', str(keystore),
+              '-alias', os.environ['ANDROID_KEY_ALIAS'],
+              '-storepass:env', 'ANDROID_KEYSTORE_PASSWORD',
+          ])
+          actual = hashlib.sha256(cert).hexdigest().upper()
+          if actual != expected:
+              raise SystemExit('RELEASE KEY DOES NOT MATCH the original app signing certificate. '
+                               'Use the original keystore to keep release working correctly.')
+          print('Original release certificate verified: SHA-256 matches.')
+          PY_SIGN
+
+      - name: Build APK Debug
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.build_type == 'debug' }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          ./gradlew --no-daemon --stacktrace :app:assembleDebug
+          test -s app/build/outputs/apk/debug/app-debug.apk
+
+      - name: Build APK Release da ky
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.build_type == 'release' }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          ./gradlew --no-daemon --stacktrace :app:assembleRelease
+          test -s app/build/outputs/apk/release/app-release.apk
+
+      - name: Tai APK Debug tu Actions Artifacts
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.build_type == 'debug' }}
+        uses: actions/upload-artifact@v7
+        with:
+          name: Aujunpeak-DEBUG-APK
+          path: app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
+          retention-days: 14
+          compression-level: 0
+
+      - name: Tai APK Release tu Actions Artifacts
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.build_type == 'release' }}
+        uses: actions/upload-artifact@v7
+        with:
+          name: Aujunpeak-RELEASE-APK
+          path: app/build/outputs/apk/release/app-release.apk
+          if-no-files-found: error
+          retention-days: 14
+          compression-level: 0

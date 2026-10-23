@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ForceUpdate — card cảnh báo: nền tối, viền trái cam -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#CC100B0B"/>
+            <corners android:radius="14dp"/>
+            <stroke android:width="1dp" android:color="#33FF6D00"/>
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="135"
+                android:startColor="#1AFF6D00"
+                android:endColor="#00000000"
+                android:type="linear"/>
+            <corners android:radius="14dp"/>
+        </shape>
+    </item>
+</layer-list>

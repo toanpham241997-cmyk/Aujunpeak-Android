@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Compact success checkmark badge with a light sunburst, used in the feedback-sent modal -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="64dp"
+    android:viewportWidth="64"
+    android:viewportHeight="64">
+
+    <group android:pivotX="32" android:pivotY="32" android:rotation="0">
+        <path android:fillColor="#5969FF47" android:pathData="M30.5,2 L33.5,2 L34.5,12.5 L29.5,12.5 Z"/>
+    </group>
+    <group android:pivotX="32" android:pivotY="32" android:rotation="60">
+        <path android:fillColor="#4069FF47" android:pathData="M30.5,2 L33.5,2 L34.5,12.5 L29.5,12.5 Z"/>
+    </group>
+    <group android:pivotX="32" android:pivotY="32" android:rotation="120">
+        <path android:fillColor="#5969FF47" android:pathData="M30.5,2 L33.5,2 L34.5,12.5 L29.5,12.5 Z"/>
+    </group>
+    <group android:pivotX="32" android:pivotY="32" android:rotation="180">
+        <path android:fillColor="#4069FF47" android:pathData="M30.5,2 L33.5,2 L34.5,12.5 L29.5,12.5 Z"/>
+    </group>
+    <group android:pivotX="32" android:pivotY="32" android:rotation="240">
+        <path android:fillColor="#5969FF47" android:pathData="M30.5,2 L33.5,2 L34.5,12.5 L29.5,12.5 Z"/>
+    </group>
+    <group android:pivotX="32" android:pivotY="32" android:rotation="300">
+        <path android:fillColor="#4069FF47" android:pathData="M30.5,2 L33.5,2 L34.5,12.5 L29.5,12.5 Z"/>
+    </group>
+
+    <!-- Glow ring -->
+    <path
+        android:fillColor="#3369FF47"
+        android:pathData="M32,9 C43.6,9 53,18.4 53,30 C53,41.6 43.6,51 32,51 C20.4,51 11,41.6 11,30 C11,18.4 20.4,9 32,9 Z"/>
+
+    <!-- Badge base -->
+    <path
+        android:fillColor="#0F2A12"
+        android:pathData="M32,13 C41.39,13 49,20.61 49,30 C49,39.39 41.39,47 32,47 C22.61,47 15,39.39 15,30 C15,20.61 22.61,13 32,13 Z"/>
+
+    <!-- Badge ring -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#69FF47"
+        android:strokeWidth="2.4"
+        android:pathData="M32,13 C41.39,13 49,20.61 49,30 C49,39.39 41.39,47 32,47 C22.61,47 15,39.39 15,30 C15,20.61 22.61,13 32,13 Z"/>
+
+    <!-- Checkmark -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="3.6"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M23.5,30.5 L28.8,35.8 L40.5,22.5"/>
+</vector>

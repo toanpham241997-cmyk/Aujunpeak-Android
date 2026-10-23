@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Frosted glass base — translucent so the app background photo shows through -->
+    <item>
+        <shape>
+            <solid android:color="#CC1C1414"/>
+            <corners android:radius="20dp"/>
+            <stroke android:width="1.5dp" android:color="#44FF1744"/>
+        </shape>
+    </item>
+    <!-- Accent energy wash -->
+    <item android:bottom="0dp" android:left="0dp" android:right="0dp" android:top="0dp">
+        <shape>
+            <gradient
+                android:angle="135"
+                android:startColor="#1AFF1744"
+                android:endColor="#00000000"
+                android:type="linear"/>
+            <corners android:radius="20dp"/>
+        </shape>
+    </item>
+    <!-- Glass highlight sheen, top-left -->
+    <item android:bottom="0dp" android:left="0dp" android:right="0dp" android:top="0dp">
+        <shape>
+            <gradient
+                android:type="radial"
+                android:gradientRadius="170dp"
+                android:centerX="0.18"
+                android:centerY="0.08"
+                android:startColor="#3AFFFFFF"
+                android:endColor="#00000000"/>
+            <corners android:radius="20dp"/>
+        </shape>
+    </item>
+</layer-list>

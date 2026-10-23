@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="dynamic_ui_component_id" type="id" />
+    <item name="dynamic_ui_generated" type="id" />
+    <item name="dynamic_ui_original_visibility" type="id" />
+    <item name="dynamic_ui_render_fingerprint" type="id" />
+</resources>

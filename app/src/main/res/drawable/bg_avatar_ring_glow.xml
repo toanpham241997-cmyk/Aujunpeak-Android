@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Multi-layer glowing oval/circular avatar border -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Outer gradient glow ring: cyan → purple → red sweep -->
+    <item>
+        <shape android:shape="oval">
+            <gradient
+                android:type="sweep"
+                android:startColor="#00CFFF"
+                android:centerColor="#FF1744"
+                android:endColor="#00CFFF"/>
+        </shape>
+    </item>
+    <!-- Inner dark oval (3dp inset to create ring thickness) -->
+    <item android:top="3dp" android:left="3dp" android:right="3dp" android:bottom="3dp">
+        <shape android:shape="oval">
+            <solid android:color="#10101E"/>
+        </shape>
+    </item>
+</layer-list>

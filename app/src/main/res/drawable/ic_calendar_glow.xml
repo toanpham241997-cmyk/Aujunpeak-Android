@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Calendar body -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FF9800"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M19,4H5C3.895,4 3,4.895 3,6v14c0,1.105 0.895,2 2,2h14c1.105,0 2,-0.895 2,-2V6C21,4.895 20.105,4 19,4z"/>
+
+    <!-- Top separator bar -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FF9800"
+        android:strokeWidth="1.8"
+        android:pathData="M3,9h18"/>
+
+    <!-- Date hooks (left and right) -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FF9800"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:pathData="M16,2v4M8,2v4"/>
+
+    <!-- Day dots row 1 — each circle as arc path: M cx-r,cy a r,r 0 1,0 2r,0 a r,r 0 1,0 -2r,0 -->
+    <path android:fillColor="#FF9800"
+        android:pathData="M6.8,13 a1.2,1.2 0 1,0 2.4,0 a1.2,1.2 0 1,0 -2.4,0"/>
+    <path android:fillColor="#FF9800"
+        android:pathData="M10.8,13 a1.2,1.2 0 1,0 2.4,0 a1.2,1.2 0 1,0 -2.4,0"/>
+    <path android:fillColor="#FF9800"
+        android:pathData="M14.8,13 a1.2,1.2 0 1,0 2.4,0 a1.2,1.2 0 1,0 -2.4,0"/>
+
+    <!-- Day dots row 2 -->
+    <path android:fillColor="#FF9800"
+        android:pathData="M6.8,17 a1.2,1.2 0 1,0 2.4,0 a1.2,1.2 0 1,0 -2.4,0"/>
+    <path android:fillColor="#FF9800"
+        android:pathData="M10.8,17 a1.2,1.2 0 1,0 2.4,0 a1.2,1.2 0 1,0 -2.4,0"/>
+
+</vector>

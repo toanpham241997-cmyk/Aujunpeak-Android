@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Facebook-themed button: dark glass + blue border -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="0"
+                android:startColor="#330C1A2E"
+                android:endColor="#330C1A2E"
+                android:type="linear"/>
+            <corners android:radius="22dp"/>
+            <stroke android:width="1.5dp" android:color="#88FF1744"/>
+        </shape>
+    </item>
+</layer-list>

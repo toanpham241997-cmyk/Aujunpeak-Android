@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Outer green glow -->
+    <item>
+        <shape android:shape="oval">
+            <gradient
+                android:type="sweep"
+                android:startColor="#69FF47"
+                android:centerColor="#00C853"
+                android:endColor="#69FF47"/>
+        </shape>
+    </item>
+    <!-- Mid ring -->
+    <item android:top="2dp" android:left="2dp" android:right="2dp" android:bottom="2dp">
+        <shape android:shape="oval">
+            <solid android:color="#00A040"/>
+        </shape>
+    </item>
+    <!-- Inner dark -->
+    <item android:top="5dp" android:left="5dp" android:right="5dp" android:bottom="5dp">
+        <shape android:shape="oval">
+            <solid android:color="#0A100A"/>
+        </shape>
+    </item>
+</layer-list>
