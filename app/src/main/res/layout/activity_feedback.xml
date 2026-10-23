@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_feedback_activity">
+
+    <com.aujunpeak.app.views.ParticleView
+        android:id="@+id/feedbackParticles"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.15" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/feedbackContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="18dp"
+            android:paddingTop="18dp"
+            android:paddingEnd="18dp"
+            android:paddingBottom="28dp">
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="54dp" android:gravity="center_vertical" android:orientation="horizontal">
+                <FrameLayout android:id="@+id/btnFeedbackBack" android:layout_width="44dp" android:layout_height="44dp" android:background="@drawable/bg_neo_icon_plate" android:clickable="true" android:focusable="true"><ImageView android:layout_width="20dp" android:layout_height="20dp" android:layout_gravity="center" android:src="@drawable/ic_arrow_back"/></FrameLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="12dp" android:orientation="vertical"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Feedback Center" android:textColor="@android:color/white" android:textSize="18sp" android:textStyle="bold"/><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Send bugs, ideas and contact details" android:textColor="@color/neo_text_3" android:textSize="10sp"/></LinearLayout>
+            </LinearLayout>
+
+            <FrameLayout android:layout_width="match_parent" android:layout_height="180dp" android:layout_marginTop="16dp" android:background="@drawable/bg_feedback_settings_card">
+                <com.aujunpeak.app.views.ParticleView android:id="@+id/heroParticles" android:layout_width="match_parent" android:layout_height="match_parent" android:alpha="0.18"/>
+                <View android:id="@+id/heroIconGlow" android:layout_width="140dp" android:layout_height="140dp" android:layout_gravity="top|end" android:layout_marginTop="-44dp" android:layout_marginEnd="-30dp" android:background="@drawable/bg_neo_glow_cyan"/>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:padding="18dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal"><FrameLayout android:layout_width="58dp" android:layout_height="58dp" android:background="@drawable/bg_neo_icon_plate"><ImageView android:layout_width="26dp" android:layout_height="26dp" android:layout_gravity="center" android:src="@drawable/ic_chat_bubble"/></FrameLayout><LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="12dp" android:orientation="vertical"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Report &amp; Suggest" android:textColor="@android:color/white" android:textSize="20sp" android:textStyle="bold"/><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="Choose a topic and send your message to Aujunpeak." android:textColor="@color/neo_text_2" android:textSize="10sp"/></LinearLayout></LinearLayout>
+                    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:orientation="horizontal"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/bg_neo_chip_active" android:paddingStart="10dp" android:paddingTop="5dp" android:paddingEnd="10dp" android:paddingBottom="5dp" android:text="FAST SUPPORT" android:textColor="@color/neo_cyan" android:textSize="8sp" android:textStyle="bold"/><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp" android:background="@drawable/bg_neo_chip" android:paddingStart="10dp" android:paddingTop="5dp" android:paddingEnd="10dp" android:paddingBottom="5dp" android:text="AUTO FORM" android:textColor="@color/neo_text_2" android:textSize="8sp" android:textStyle="bold"/></LinearLayout>
+                </LinearLayout>
+            </FrameLayout>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:orientation="horizontal">
+                <LinearLayout android:id="@+id/chipBug" android:layout_width="0dp" android:layout_height="76dp" android:layout_weight="1" android:layout_marginEnd="6dp" android:background="@drawable/bg_neo_card_cyan" android:gravity="center" android:orientation="vertical" android:clickable="true"><ImageView android:id="@+id/chipBugIcon" android:layout_width="22dp" android:layout_height="22dp" android:src="@drawable/ic_chat_bubble"/><TextView android:id="@+id/chipBugText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="Bug" android:textColor="@android:color/white" android:textStyle="bold"/><View android:id="@+id/chipBugCheck" android:layout_width="10dp" android:layout_height="10dp" android:layout_marginTop="6dp" android:background="@drawable/bg_active_dot_green"/></LinearLayout>
+                <LinearLayout android:id="@+id/chipFeedback" android:layout_width="0dp" android:layout_height="76dp" android:layout_weight="1" android:layout_marginStart="3dp" android:layout_marginEnd="3dp" android:background="@drawable/bg_neo_card_violet" android:gravity="center" android:orientation="vertical" android:clickable="true"><ImageView android:id="@+id/chipFeedbackIcon" android:layout_width="22dp" android:layout_height="22dp" android:src="@drawable/ic_info_circle"/><TextView android:id="@+id/chipFeedbackText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="Idea" android:textColor="@android:color/white" android:textStyle="bold"/><View android:id="@+id/chipFeedbackCheck" android:layout_width="10dp" android:layout_height="10dp" android:layout_marginTop="6dp" android:background="@drawable/bg_active_dot_green"/></LinearLayout>
+                <LinearLayout android:id="@+id/chipContact" android:layout_width="0dp" android:layout_height="76dp" android:layout_weight="1" android:layout_marginStart="6dp" android:background="@drawable/bg_neo_card_gold" android:gravity="center" android:orientation="vertical" android:clickable="true"><ImageView android:id="@+id/chipContactIcon" android:layout_width="22dp" android:layout_height="22dp" android:src="@drawable/ic_user_verified"/><TextView android:id="@+id/chipContactText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="Contact" android:textColor="@android:color/white" android:textStyle="bold"/><View android:id="@+id/chipContactCheck" android:layout_width="10dp" android:layout_height="10dp" android:layout_marginTop="6dp" android:background="@drawable/bg_active_dot_green"/></LinearLayout>
+            </LinearLayout>
+
+            <EditText android:id="@+id/etFeedbackTitle" android:layout_width="match_parent" android:layout_height="56dp" android:layout_marginTop="14dp" android:background="@drawable/bg_chat_input" android:hint="Tiêu đề" android:paddingStart="16dp" android:paddingEnd="16dp" android:textColor="@android:color/white" android:textColorHint="@color/neo_text_3"/>
+            <EditText android:id="@+id/etFeedbackMessage" android:layout_width="match_parent" android:layout_height="150dp" android:layout_marginTop="12dp" android:background="@drawable/bg_chat_input" android:gravity="top" android:hint="Nội dung góp ý / báo lỗi" android:padding="16dp" android:textColor="@android:color/white" android:textColorHint="@color/neo_text_3"/>
+            <EditText android:id="@+id/etFeedbackContact" android:layout_width="match_parent" android:layout_height="56dp" android:layout_marginTop="12dp" android:background="@drawable/bg_chat_input" android:hint="Thông tin liên hệ" android:paddingStart="16dp" android:paddingEnd="16dp" android:textColor="@android:color/white" android:textColorHint="@color/neo_text_3"/>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:background="@drawable/bg_neo_chip" android:gravity="center_vertical" android:orientation="vertical" android:padding="16dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Rate your experience" android:textColor="@android:color/white" android:textStyle="bold"/><LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:orientation="horizontal"><View android:id="@+id/starsGlow" android:layout_width="1dp" android:layout_height="1dp"/>
+                <ImageView android:id="@+id/star1" android:layout_width="28dp" android:layout_height="28dp" android:src="@drawable/ic_star_glow_outline"/>
+                <ImageView android:id="@+id/star2" android:layout_width="28dp" android:layout_height="28dp" android:layout_marginStart="8dp" android:src="@drawable/ic_star_glow_outline"/>
+                <ImageView android:id="@+id/star3" android:layout_width="28dp" android:layout_height="28dp" android:layout_marginStart="8dp" android:src="@drawable/ic_star_glow_outline"/>
+                <ImageView android:id="@+id/star4" android:layout_width="28dp" android:layout_height="28dp" android:layout_marginStart="8dp" android:src="@drawable/ic_star_glow_outline"/>
+                <ImageView android:id="@+id/star5" android:layout_width="28dp" android:layout_height="28dp" android:layout_marginStart="8dp" android:src="@drawable/ic_star_glow_outline"/></LinearLayout><TextView android:id="@+id/tvStarsHint" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="Tap stars to rate" android:textColor="@color/neo_text_3" android:textSize="10sp"/></LinearLayout>
+
+            <FrameLayout android:id="@+id/btnSubmitFeedback" android:layout_width="match_parent" android:layout_height="56dp" android:layout_marginTop="16dp" android:background="@drawable/bg_neo_button_primary" android:clickable="true" android:focusable="true"><LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:gravity="center_vertical" android:orientation="horizontal"><ImageView android:id="@+id/btnSendIcon" android:layout_width="18dp" android:layout_height="18dp" android:src="@drawable/ic_send_arrow"/><TextView android:id="@+id/btnSendText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp" android:text="SEND FEEDBACK" android:textColor="@android:color/white" android:textStyle="bold"/></LinearLayout><ProgressBar android:id="@+id/progressSubmit" style="?android:attr/progressBarStyleSmall" android:layout_width="24dp" android:layout_height="24dp" android:layout_gravity="center|end" android:layout_marginEnd="16dp" android:visibility="gone"/></FrameLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <FrameLayout
+        android:id="@+id/layoutSuccess"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#AA03060B"
+        android:visibility="gone">
+        <FrameLayout
+            android:id="@+id/successModalCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="26dp"
+            android:background="@drawable/bg_feedback_settings_card"
+            android:padding="20dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center_horizontal"><View android:id="@+id/successIconGlow" android:layout_width="110dp" android:layout_height="110dp" android:background="@drawable/bg_neo_glow_cyan"/><ImageView android:id="@+id/successTickIcon" android:layout_width="58dp" android:layout_height="58dp" android:layout_marginTop="-84dp" android:src="@drawable/ic_check_green"/><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="24dp" android:text="Đã gửi thành công" android:textColor="@android:color/white" android:textSize="18sp" android:textStyle="bold"/><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:gravity="center" android:text="Cảm ơn bạn đã gửi phản hồi cho Aujunpeak." android:textColor="@color/neo_text_2" android:textSize="11sp"/><FrameLayout android:id="@+id/btnSuccessClose" android:layout_width="match_parent" android:layout_height="52dp" android:layout_marginTop="18dp" android:background="@drawable/bg_neo_button_primary"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:text="ĐÓNG" android:textColor="@android:color/white" android:textStyle="bold"/></FrameLayout></LinearLayout>
+        </FrameLayout>
+    </FrameLayout>
+</FrameLayout>

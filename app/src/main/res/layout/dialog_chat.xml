@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Full-screen chat dialog -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#CC000000">
+
+    <!-- Card slide from bottom — bo tròn viền gradient bắt mắt ở mép trên -->
+    <LinearLayout
+        android:id="@+id/chatDialogCard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="58dp"
+        android:orientation="vertical"
+        android:background="@drawable/bg_chat_dialog"
+        android:elevation="24dp">
+
+        <!-- ── HEADER ───────────────────────────────────────────────────── -->
+        <LinearLayout
+            android:id="@+id/chatHeader"
+            android:layout_width="match_parent"
+            android:layout_height="76dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@drawable/bg_chat_header"
+            android:paddingStart="18dp"
+            android:paddingEnd="18dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp">
+
+            <!-- Avatar với status dot -->
+            <FrameLayout
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="12dp">
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/ivChatAdminAvatar"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center"
+                    android:padding="2dp"
+                    android:contentDescription="@null"
+                    app:lottie_rawRes="@raw/robot_avatar"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true"
+                    app:lottie_renderMode="hardware"/>
+                <!-- Online dot -->
+                <View
+                    android:id="@+id/chatAdminOnlineDot"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_gravity="bottom|end"
+                    android:background="@drawable/bg_chat_online_dot"
+                    android:visibility="gone"/>
+            </FrameLayout>
+
+            <!-- Name + status -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvChatAdminName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chat_title"
+                    android:textColor="#FFFFFF"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif-medium"/>
+
+                <TextView
+                    android:id="@+id/tvChatStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chat_status_pending"
+                    android:textColor="#AAAAAA"
+                    android:textSize="11sp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Divider -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#1AFFFFFF"/>
+
+        <!-- ── LOGIN REQUIRED BANNER (shown if not google logged in) ────── -->
+        <LinearLayout
+            android:id="@+id/chatLoginRequired"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="#1A5B9BD8"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@drawable/ic_chat_google_login"
+                android:layout_marginEnd="8dp"
+                android:contentDescription="@null"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/chat_login_required"
+                android:textColor="#5B9BD8"
+                android:textSize="12sp"/>
+
+            <TextView
+                android:id="@+id/btnChatLoginNow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/chat_login_btn"
+                android:textColor="#FF5B9BD8"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingStart="8dp"/>
+        </LinearLayout>
+
+        <!-- ── MESSAGES LIST (với nền GIF động + lớp phủ mờ để dễ đọc) ──── -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/ivChatBg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bg_chat_photo"
+                android:alpha="0.32"
+                android:contentDescription="@null"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_chat_messages_scrim"/>
+
+            <ScrollView
+                android:id="@+id/chatScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true"
+                android:overScrollMode="ifContentScrolls"
+                android:clipToPadding="false"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp">
+
+                <LinearLayout
+                    android:id="@+id/chatMessagesContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"/>
+            </ScrollView>
+        </FrameLayout>
+
+        <!-- Typing indicator -->
+        <LinearLayout
+            android:id="@+id/chatTypingIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingStart="20dp"
+            android:paddingBottom="4dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/chat_replying"
+                android:textColor="#888888"
+                android:textSize="11sp"/>
+
+            <TextView
+                android:id="@+id/tvTypingDots"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="..."
+                android:textColor="#FF5252"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <!-- ── INPUT AREA ─────────────────────────────────────────────────── -->
+        <LinearLayout
+            android:id="@+id/chatInputArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_chat_input_area">
+
+            <!-- Divider top -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#1AFFFFFF"/>
+
+            <!-- Input row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp">
+
+                <!-- Emoji button -->
+                <FrameLayout
+                    android:id="@+id/btnChatEmoji"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/bg_chat_icon_btn"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:elevation="3dp"
+                    android:layout_marginEnd="6dp">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_chat_emoji"
+                        android:contentDescription="@null"/>
+                </FrameLayout>
+
+                <!-- Image button -->
+                <FrameLayout
+                    android:id="@+id/btnChatImage"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/bg_chat_icon_btn"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:elevation="3dp"
+                    android:layout_marginEnd="8dp">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_chat_image"
+                        android:contentDescription="@null"/>
+                </FrameLayout>
+
+                <!-- Text input -->
+                <EditText
+                    android:id="@+id/etChatInput"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_chat_input"
+                    android:hint="@string/chat_hint"
+                    android:textColorHint="#555555"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    android:maxLines="4"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="14dp"
+                    android:paddingTop="9dp"
+                    android:paddingBottom="9dp"
+                    android:inputType="textMultiLine|textCapSentences"
+                    android:imeOptions="actionSend"/>
+
+                <!-- Send button -->
+                <FrameLayout
+                    android:id="@+id/btnChatSend"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:background="@drawable/bg_chat_send_btn"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:elevation="4dp"
+                    android:layout_marginStart="8dp">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_chat_send"
+                        android:tint="#FFFFFF"
+                        android:contentDescription="@null"/>
+                </FrameLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- ── Nút đóng X — nổi bên trên khung, cách viền hiệu ứng một đoạn ── -->
+    <FrameLayout
+        android:id="@+id/btnChatClose"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/bg_boost_start_icon_badge"
+        android:elevation="28dp"
+        android:clickable="true"
+        android:focusable="true">
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_chat_close"
+            android:tint="#FFFFFF"
+            android:contentDescription="@null"/>
+    </FrameLayout>
+
+</FrameLayout>

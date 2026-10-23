@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <ImageView
+        android:id="@+id/appBackgroundImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:alpha="0.02"
+        android:contentDescription="@null" />
+
+    <View
+        android:layout_width="218.4dp"
+        android:layout_height="218.4dp"
+        android:layout_gravity="top|end"
+        android:layout_marginTop="-80dp"
+        android:layout_marginEnd="-90dp"
+        android:background="@drawable/bg_neo_glow_violet"
+        android:alpha="0.00" />
+
+    <View
+        android:layout_width="202.8dp"
+        android:layout_height="202.8dp"
+        android:layout_gravity="bottom|start"
+        android:layout_marginBottom="-90dp"
+        android:layout_marginStart="-100dp"
+        android:background="@drawable/bg_neo_glow_cyan"
+        android:alpha="0.00" />
+
+
+
+    <com.aujunpeak.app.views.ParticleView
+        android:id="@+id/globalParticles"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.018" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/navHostFragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="46dp"
+        android:layout_marginBottom="52dp"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/nav_graph" />
+
+    <LinearLayout
+        android:id="@+id/appHeader"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_gravity="top"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="10dp"
+        android:paddingEnd="8dp"
+        android:background="@drawable/bg_neo_header"
+        android:elevation="6.24dp">
+
+        <FrameLayout
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:background="@drawable/bg_neo_button_secondary">
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_module_neo"
+                android:contentDescription="@null" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="7dp">
+            <TextView
+                android:id="@+id/tvHeaderTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Aujunpeak"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textColor="@color/neo_text"
+                android:textStyle="bold"
+                android:textSize="13sp"
+                android:letterSpacing="0.04" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="Smart control interface"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textColor="@color/neo_text_3"
+                android:textSize="7sp"
+                android:letterSpacing="0.05" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/headerChatWrapper"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_marginEnd="4dp"
+            android:background="@drawable/bg_neo_button_secondary"
+            android:clickable="true"
+            android:focusable="true">
+            <ImageView
+                android:id="@+id/ivHeaderChat"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_chat_bubble"
+                android:tint="@color/neo_text_2"
+                android:contentDescription="Chat" />
+            <TextView
+                android:id="@+id/headerChatBadge"
+                android:layout_width="14.04dp"
+                android:layout_height="14.04dp"
+                android:layout_gravity="top|end"
+                android:layout_marginTop="-2dp"
+                android:layout_marginEnd="-2dp"
+                android:gravity="center"
+                android:background="@drawable/bg_notif_red_badge"
+                android:text="0"
+                android:textSize="7.92sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:visibility="gone" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/headerBellWrapper"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:background="@drawable/bg_neo_button_secondary"
+            android:clickable="true"
+            android:focusable="true">
+            <ImageView
+                android:id="@+id/ivHeaderBell"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_notification_bell"
+                android:tint="@color/neo_text_2"
+                android:contentDescription="Notifications" />
+            <View
+                android:id="@+id/headerBellBadge"
+                android:layout_width="7.02dp"
+                android:layout_height="7.02dp"
+                android:layout_gravity="top|end"
+                android:layout_marginTop="3.9dp"
+                android:layout_marginEnd="3.9dp"
+                android:background="@drawable/bg_notif_red_badge"
+                android:visibility="gone" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/customBottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_gravity="bottom"
+        android:background="@drawable/bg_neo_bottom_nav"
+        android:elevation="0dp"
+        android:paddingStart="0dp"
+        android:paddingEnd="0dp"
+        android:paddingTop="1dp"
+        android:paddingBottom="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="5">
+
+            <FrameLayout android:id="@+id/navItemHome" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:clickable="true" android:focusable="true">
+                <View android:id="@+id/navGlowHome" android:layout_width="30dp" android:layout_height="28dp" android:layout_gravity="center" android:background="@drawable/bg_neo_nav_glow" android:visibility="invisible"/>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:orientation="vertical">
+                    <ImageView android:id="@+id/navIconHome" android:layout_width="19.5dp" android:layout_height="18dp" android:src="@drawable/ic_nav_home_neo"/>
+                    <TextView android:id="@+id/navLabelHome" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="1dp" android:text="Home" android:textColor="@color/neo_text_3" android:textSize="6.8sp" android:textStyle="bold"/>
+                </LinearLayout>
+            </FrameLayout>
+
+            <FrameLayout android:id="@+id/navItemGame" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:clickable="true" android:focusable="true">
+                <View android:id="@+id/navGlowGame" android:layout_width="30dp" android:layout_height="28dp" android:layout_gravity="center" android:background="@drawable/bg_neo_nav_glow" android:visibility="invisible"/>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:orientation="vertical">
+                    <ImageView android:id="@+id/navIconGame" android:layout_width="20.28dp" android:layout_height="20.28dp" android:src="@drawable/ic_nav_game_neo"/>
+                    <TextView android:id="@+id/navLabelGame" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="1dp" android:text="Game" android:textColor="@color/neo_text_3" android:textSize="6.8sp" android:textStyle="bold"/>
+                </LinearLayout>
+            </FrameLayout>
+
+            <FrameLayout android:id="@+id/navItemFunction" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:clickable="true" android:focusable="true">
+                <View android:id="@+id/navGlowFunction" android:layout_width="30dp" android:layout_height="28dp" android:layout_gravity="center" android:background="@drawable/bg_neo_nav_glow" android:visibility="invisible"/>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:orientation="vertical">
+                    <ImageView android:id="@+id/navIconFunction" android:layout_width="19.5dp" android:layout_height="18dp" android:src="@drawable/ic_nav_function_neo"/>
+                    <TextView android:id="@+id/navLabelFunction" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="1dp" android:text="Function" android:textColor="@color/neo_text_3" android:textSize="6.8sp" android:textStyle="bold"/>
+                </LinearLayout>
+            </FrameLayout>
+
+            <FrameLayout android:id="@+id/navItemSettings" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:clickable="true" android:focusable="true">
+                <View android:id="@+id/navGlowSettings" android:layout_width="30dp" android:layout_height="28dp" android:layout_gravity="center" android:background="@drawable/bg_neo_nav_glow" android:visibility="invisible"/>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:orientation="vertical">
+                    <ImageView android:id="@+id/navIconSettings" android:layout_width="19.5dp" android:layout_height="18dp" android:src="@drawable/ic_nav_settings_neo"/>
+                    <TextView android:id="@+id/navLabelSettings" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="1dp" android:text="Settings" android:textColor="@color/neo_text_3" android:textSize="6.8sp" android:textStyle="bold"/>
+                </LinearLayout>
+            </FrameLayout>
+
+            <FrameLayout android:id="@+id/navItemInfo" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:clickable="true" android:focusable="true">
+                <View android:id="@+id/navGlowInfo" android:layout_width="30dp" android:layout_height="28dp" android:layout_gravity="center" android:background="@drawable/bg_neo_nav_glow" android:visibility="invisible"/>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:orientation="vertical">
+                    <ImageView android:id="@+id/navIconInfo" android:layout_width="19.5dp" android:layout_height="18dp" android:src="@drawable/ic_nav_profile_neo"/>
+                    <TextView android:id="@+id/navLabelInfo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="1dp" android:text="Profile" android:textColor="@color/neo_text_3" android:textSize="6.8sp" android:textStyle="bold"/>
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/notifToastContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_marginTop="67.08dp"
+        android:paddingStart="10.92dp"
+        android:paddingEnd="10.92dp" />
+
+    <com.aujunpeak.app.views.RainView
+        android:id="@+id/rainOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.04"
+        android:clickable="false"
+        android:focusable="false" />
+</FrameLayout>

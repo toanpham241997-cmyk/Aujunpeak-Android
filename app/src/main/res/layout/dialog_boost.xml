@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#CC000000">
+
+    <!-- Particle background for modal -->
+    <com.aujunpeak.app.views.BoostParticleView
+        android:id="@+id/boostParticleView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <!-- Center card -->
+    <LinearLayout
+        android:id="@+id/boostCard"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@drawable/bg_card"
+        android:padding="32dp"
+        android:elevation="24dp">
+
+        <!-- Spinning ring loader -->
+        <com.aujunpeak.app.views.RingLoaderView
+            android:id="@+id/boostRingLoader"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_gravity="center"/>
+
+        <Space android:layout_width="match_parent" android:layout_height="20dp"/>
+
+        <!-- Status text -->
+        <com.aujunpeak.app.views.GlowTextView
+            android:id="@+id/tvBoostStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/home_boosting"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:letterSpacing="0.2"
+            android:fontFamily="sans-serif-black"/>
+
+        <Space android:layout_width="match_parent" android:layout_height="8dp"/>
+
+        <TextView
+            android:id="@+id/tvBoostSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/boost_dialog_subtitle"
+            android:textSize="12sp"
+            android:textColor="@color/gray_text"
+            android:gravity="center"/>
+
+        <Space android:layout_width="match_parent" android:layout_height="20dp"/>
+
+        <!-- Steps progress -->
+        <LinearLayout
+            android:id="@+id/llBoostSteps"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvStep1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/boost_step1"
+                android:textSize="12sp"
+                android:textColor="#66FFFFFF"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"/>
+
+            <TextView
+                android:id="@+id/tvStep2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/boost_step2"
+                android:textSize="12sp"
+                android:textColor="#66FFFFFF"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"/>
+
+            <TextView
+                android:id="@+id/tvStep3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/boost_step3"
+                android:textSize="12sp"
+                android:textColor="#66FFFFFF"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"/>
+
+        </LinearLayout>
+
+        <Space android:layout_width="match_parent" android:layout_height="24dp"/>
+
+        <!-- Success indicator (hidden initially) -->
+        <LinearLayout
+            android:id="@+id/llSuccess"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <com.aujunpeak.app.views.GlowTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/boost_complete"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#69FF47"
+                android:letterSpacing="0.1"
+                android:fontFamily="sans-serif-black"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/boost_done_msg"
+                android:textSize="12sp"
+                android:textColor="@color/gray_text"
+                android:layout_marginTop="6dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

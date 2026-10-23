@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_neo_screen">
+
+    <ImageView
+        android:id="@+id/crosshairBgGif"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:alpha="0.12"
+        android:contentDescription="@null" />
+
+    <View
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_gravity="top|start"
+        android:layout_marginStart="-120dp"
+        android:layout_marginTop="-120dp"
+        android:background="@drawable/bg_neo_glow_cyan"
+        android:alpha="0.55" />
+
+    <View
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="-90dp"
+        android:layout_marginBottom="-90dp"
+        android:background="@drawable/bg_neo_glow_violet"
+        android:alpha="0.38" />
+
+    <com.aujunpeak.app.views.BoostParticleView
+        android:id="@+id/chParticles"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.38" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="18dp"
+            android:paddingTop="18dp"
+            android:paddingEnd="18dp"
+            android:paddingBottom="28dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginBottom="14dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/btnBack"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:background="@drawable/bg_neo_icon_plate"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="19dp"
+                        android:layout_height="19dp"
+                        android:src="@drawable/ic_arrow_back"
+                        android:tint="@color/neo_cyan" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/crosshair_title"
+                        android:textColor="@color/white"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="OVERLAY DESIGN LAB"
+                        android:textColor="@color/neo_text_muted"
+                        android:textSize="9sp"
+                        android:letterSpacing="0.12" />
+                </LinearLayout>
+
+                <FrameLayout
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:background="@drawable/bg_neo_icon_plate">
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_crosshair"
+                        android:tint="@color/neo_violet" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                android:background="@drawable/bg_neo_hero"
+                android:orientation="vertical"
+                android:padding="17dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_neo_chip_active"
+                    android:paddingStart="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="5dp"
+                    android:text="CROSSHAIR STYLES"
+                    android:textColor="@color/neo_cyan"
+                    android:textSize="9sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:text="@string/crosshair_basic"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:id="@+id/containerChBasic"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="vertical" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginVertical="12dp"
+                    android:background="@drawable/bg_neo_divider" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/crosshair_advanced"
+                    android:textColor="@color/neo_violet"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:id="@+id/containerChAdvanced"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="vertical" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnApplyCrosshair"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginBottom="14dp"
+                android:background="@drawable/bg_neo_button_primary"
+                android:clickable="true"
+                android:elevation="7dp"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/ic_crosshair"
+                    android:tint="@color/white" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="9dp"
+                    android:text="@string/crosshair_apply"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cardSettings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                android:background="@drawable/bg_neo_card_violet"
+                android:orientation="vertical"
+                android:padding="17dp"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+                    <FrameLayout
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:background="@drawable/bg_neo_icon_plate">
+                        <ImageView
+                            android:layout_width="19dp"
+                            android:layout_height="19dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_settings_gear"
+                            android:tint="@color/neo_violet" />
+                    </FrameLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="10dp"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/crosshair_adjust"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="Fine tune position, rotate and animate your crosshair"
+                            android:textColor="@color/neo_text_muted"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/crosshair_lr"
+                    android:textColor="@color/neo_text_muted"
+                    android:textSize="10sp" />
+                <TextView
+                    android:id="@+id/tvSliderX"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:text="0"
+                    android:textColor="@color/neo_cyan"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+                <SeekBar
+                    android:id="@+id/sliderX"
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:max="200"
+                    android:progress="100"
+                    android:progressDrawable="@drawable/bg_seekbar_cyan"
+                    android:splitTrack="false"
+                    android:thumb="@drawable/thumb_seekbar_neo" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/crosshair_ud"
+                    android:textColor="@color/neo_text_muted"
+                    android:textSize="10sp" />
+                <TextView
+                    android:id="@+id/tvSliderY"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:text="0"
+                    android:textColor="@color/neo_violet"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+                <SeekBar
+                    android:id="@+id/sliderY"
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:max="200"
+                    android:progress="100"
+                    android:progressDrawable="@drawable/bg_seekbar_violet"
+                    android:splitTrack="false"
+                    android:thumb="@drawable/thumb_seekbar_neo" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/crosshair_size"
+                    android:textColor="@color/neo_text_muted"
+                    android:textSize="10sp" />
+                <TextView
+                    android:id="@+id/tvSliderSize"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:text="70px"
+                    android:textColor="@color/neo_gold"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+                <SeekBar
+                    android:id="@+id/sliderSize"
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:max="150"
+                    android:progress="50"
+                    android:progressDrawable="@drawable/bg_seekbar_gold"
+                    android:splitTrack="false"
+                    android:thumb="@drawable/thumb_seekbar_neo" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Rotation effect"
+                    android:textColor="@color/neo_text_muted"
+                    android:textSize="10sp" />
+                <TextView
+                    android:id="@+id/tvSliderRotation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:text="OFF"
+                    android:textColor="#FFB74D"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+                <SeekBar
+                    android:id="@+id/sliderRotation"
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:max="100"
+                    android:progress="0"
+                    android:progressDrawable="@drawable/bg_seekbar_orange"
+                    android:splitTrack="false"
+                    android:thumb="@drawable/thumb_seekbar_neo" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Pulse effect"
+                    android:textColor="@color/neo_text_muted"
+                    android:textSize="10sp" />
+                <TextView
+                    android:id="@+id/tvSliderPulse"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:text="35%"
+                    android:textColor="#69FF47"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+                <SeekBar
+                    android:id="@+id/sliderPulse"
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:max="100"
+                    android:progress="35"
+                    android:progressDrawable="@drawable/bg_seekbar_green"
+                    android:splitTrack="false"
+                    android:thumb="@drawable/thumb_seekbar_neo" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnToggleCrosshair"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/bg_crosshair_toggle_off"
+                android:clickable="true"
+                android:elevation="8dp"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+                <TextView
+                    android:id="@+id/tvToggleLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/crosshair_enable"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvToggleHint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/crosshair_permission"
+                android:textColor="@color/neo_text_muted"
+                android:textSize="10sp"
+                android:visibility="gone" />
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>
