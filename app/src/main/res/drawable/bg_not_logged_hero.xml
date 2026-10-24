@@ -4,15 +4,15 @@
         <shape>
             <solid android:color="#B3141414"/>
             <corners android:radius="24dp"/>
-            <stroke android:width="2dp" android:color="#55FF1744"/>
+            <stroke android:width="2dp" android:color="#55FF5C72"/>
         </shape>
     </item>
     <item>
         <shape>
             <gradient
                 android:angle="270"
-                android:startColor="#22FF1744"
-                android:centerColor="#0AFF1744"
+                android:startColor="#22FF5C72"
+                android:centerColor="#0AFF5C72"
                 android:endColor="#00000000"
                 android:type="linear"/>
             <corners android:radius="24dp"/>

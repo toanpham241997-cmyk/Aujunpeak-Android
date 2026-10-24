@@ -3,7 +3,7 @@
     <!-- Shadow/glow layer: no negative offsets -->
     <item android:top="2dp" android:left="2dp" android:right="2dp" android:bottom="0dp">
         <shape>
-            <solid android:color="#66FF1744"/>
+            <solid android:color="#66FF5C72"/>
             <corners
                 android:topLeftRadius="6dp"
                 android:topRightRadius="18dp"

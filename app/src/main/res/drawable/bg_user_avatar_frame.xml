@@ -3,8 +3,8 @@
     <!-- Outer glow ring -->
     <item>
         <shape android:shape="oval">
-            <solid android:color="#33FF1744"/>
-            <stroke android:width="2dp" android:color="#88FF1744"/>
+            <solid android:color="#33FF5C72"/>
+            <stroke android:width="2dp" android:color="#88FF5C72"/>
         </shape>
     </item>
     <!-- Inner translucent glass background -->
@@ -14,7 +14,7 @@
                 android:startColor="#CC2A0A0A"
                 android:endColor="#CC1A1A1A"
                 android:angle="135"/>
-            <stroke android:width="1.5dp" android:color="#44FF1744"/>
+            <stroke android:width="1.5dp" android:color="#44FF5C72"/>
         </shape>
     </item>
 </layer-list>

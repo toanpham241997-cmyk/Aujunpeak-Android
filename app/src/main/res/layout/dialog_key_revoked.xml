@@ -1,127 +1,43 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center">
+<?xml version='1.0' encoding='UTF-8'?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center">
 
     <!-- Nền mờ đỏ -->
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#CC000000"/>
+    <View android:layout_width="match_parent" android:layout_height="match_parent" android:background="#D9090D14"/>
 
     <!-- Card chính -->
-    <LinearLayout
-        android:id="@+id/revokedCard"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:orientation="vertical"
-        android:gravity="center_horizontal"
-        android:background="@drawable/bg_revoked_card"
-        android:padding="28dp"
-        android:elevation="16dp">
+    <LinearLayout android:id="@+id/revokedCard" android:layout_width="300dp" android:layout_height="wrap_content" android:layout_gravity="center" android:orientation="vertical" android:gravity="center_horizontal" android:background="@drawable/bg_revoked_card" android:padding="28dp" android:elevation="16dp">
 
         <!-- Glow vòng ngoài -->
-        <FrameLayout
-            android:layout_width="140dp"
-            android:layout_height="140dp"
-            android:layout_marginBottom="20dp">
+        <FrameLayout android:layout_width="140dp" android:layout_height="140dp" android:layout_marginBottom="20dp">
 
-            <View
-                android:id="@+id/revokedGlowOuter"
-                android:layout_width="140dp"
-                android:layout_height="140dp"
-                android:background="@drawable/glow_circle_red_outer"
-                android:alpha="0.6"/>
+            <View android:id="@+id/revokedGlowOuter" android:layout_width="140dp" android:layout_height="140dp" android:background="@drawable/glow_circle_red_outer" android:alpha="0.6"/>
 
-            <View
-                android:id="@+id/revokedGlowInner"
-                android:layout_width="110dp"
-                android:layout_height="110dp"
-                android:layout_gravity="center"
-                android:background="@drawable/glow_circle_red_inner"/>
+            <View android:id="@+id/revokedGlowInner" android:layout_width="110dp" android:layout_height="110dp" android:layout_gravity="center" android:background="@drawable/glow_circle_red_inner"/>
 
             <!-- Icon frame -->
-            <FrameLayout
-                android:id="@+id/iconLockFrame"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_gravity="center"
-                android:background="@drawable/bg_lock_icon_circle">
+            <FrameLayout android:id="@+id/iconLockFrame" android:layout_width="80dp" android:layout_height="80dp" android:layout_gravity="center" android:background="@drawable/bg_lock_icon_circle">
 
-                <ImageView
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/ic_lock_closed"
-                    android:tint="#FFFFFF"/>
+                <ImageView android:layout_width="44dp" android:layout_height="44dp" android:layout_gravity="center" android:src="@drawable/ic_lock_closed" android:tint="#FFFFFF"/>
 
             </FrameLayout>
         </FrameLayout>
 
         <!-- Tiêu đề -->
-        <TextView
-            android:id="@+id/tvRevokedTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/key_revoked_title"
-            android:textColor="#FF1744"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            android:letterSpacing="0.12"
-            android:fontFamily="sans-serif-black"
-            android:layout_marginBottom="10dp"/>
+        <TextView android:id="@+id/tvRevokedTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/key_revoked_title" android:textColor="#FF1744" android:textSize="22sp" android:textStyle="bold" android:letterSpacing="0.035" android:fontFamily="sans-serif-black" android:layout_marginBottom="10dp" android:includeFontPadding="false"/>
 
         <!-- Dòng phân cách -->
-        <View
-            android:layout_width="60dp"
-            android:layout_height="2dp"
-            android:background="#FF1744"
-            android:layout_marginBottom="14dp"
-            android:alpha="0.7"/>
+        <View android:layout_width="60dp" android:layout_height="2dp" android:background="#FF1744" android:layout_marginBottom="14dp" android:alpha="0.7"/>
 
         <!-- Thông điệp chính -->
-        <TextView
-            android:id="@+id/tvRevokedMsg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/key_revoked_msg"
-            android:textColor="#FFCDD2"
-            android:textSize="15sp"
-            android:gravity="center"
-            android:layout_marginBottom="8dp"/>
+        <TextView android:id="@+id/tvRevokedMsg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/key_revoked_msg" android:textColor="#FFCDD2" android:textSize="15sp" android:gravity="center" android:layout_marginBottom="8dp" android:includeFontPadding="false"/>
 
         <!-- Sub text -->
-        <TextView
-            android:id="@+id/tvRevokedSub"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/key_revoked_sub"
-            android:textColor="#9E9E9E"
-            android:textSize="12sp"
-            android:gravity="center"
-            android:layout_marginBottom="26dp"/>
+        <TextView android:id="@+id/tvRevokedSub" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/key_revoked_sub" android:textColor="#9E9E9E" android:textSize="12sp" android:gravity="center" android:layout_marginBottom="26dp" android:includeFontPadding="false"/>
 
         <!-- Nút OK -->
-        <FrameLayout
-            android:id="@+id/btnRevokedOk"
-            android:layout_width="220dp"
-            android:layout_height="50dp"
-            android:background="@drawable/btn_revoked_ok"
-            android:clickable="true"
-            android:focusable="true">
+        <FrameLayout android:id="@+id/btnRevokedOk" android:layout_width="220dp" android:layout_height="50dp" android:background="@drawable/btn_revoked_ok" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackground">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="@string/label_understood"
-                android:textColor="#FFFFFF"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                android:letterSpacing="0.10"
-                android:fontFamily="sans-serif-black"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:text="@string/label_understood" android:textColor="#FFFFFF" android:textSize="15sp" android:textStyle="bold" android:letterSpacing="0.035" android:fontFamily="sans-serif-black" android:includeFontPadding="false"/>
 
         </FrameLayout>
 

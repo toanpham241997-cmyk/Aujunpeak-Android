@@ -1,45 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#000000</color>
-    <color name="white">#FFFFFF</color>
-    <color name="transparent">#00000000</color>
-
-    <!-- Aujunpeak Neo UI -->
-    <color name="neo_bg">#050505</color>
-    <color name="neo_bg_2">#080808</color>
-    <color name="neo_surface">#0B0B0B</color>
-    <color name="neo_surface_2">#101010</color>
-    <color name="neo_surface_3">#151515</color>
-    <color name="neo_border">#6E1822</color>
-    <color name="neo_border_soft">#331116</color>
-    <color name="neo_text">#F5F8FF</color>
-    <color name="neo_text_2">#A8A8A8</color>
-    <color name="neo_text_3">#6F6F6F</color>
-    <color name="neo_text_muted">#6F6F6F</color>
-    <color name="neo_cyan">#FF1744</color>
-    <color name="neo_blue">#FF3046</color>
-    <color name="neo_violet">#FF1744</color>
-    <color name="neo_pink">#FF1744</color>
-    <color name="neo_red">#FF1744</color>
-    <color name="neo_red_alpha">#22FF1744</color>
-    <color name="neo_green">#FF5A5A</color>
-    <color name="neo_gold">#FFFF1744</color>
-
-    <!-- Compatibility with existing code/resources -->
-    <color name="red_primary">#FF1744</color>
-    <color name="red_dark">#A50F20</color>
-    <color name="red_bright">#FF1744</color>
-    <color name="red_glow">#FF6675</color>
-    <color name="dark_bg">#050505</color>
-    <color name="dark_surface">#0B0B0B</color>
-    <color name="dark_card">#101010</color>
-    <color name="dark_card2">#151515</color>
-    <color name="white_80">#CCFFFFFF</color>
-    <color name="gray_text">#A8A8A8</color>
-    <color name="red_transparent">#33FF4D67</color>
-    <color name="red_transparent2">#22FF4D67</color>
-    <color name="chart_red">#FF3B4E</color>
-    <color name="chart_red2">#FF1744</color>
-    <color name="green_success">#66D89A</color>
-    <color name="green_dark">#20965B</color>
+  <color name="black">#000000</color><color name="white">#FFFFFF</color><color name="transparent">#00000000</color>
+  <color name="neo_bg">#090C12</color><color name="neo_bg_2">#0D1119</color>
+  <color name="neo_surface">#121823</color><color name="neo_surface_2">#18202D</color><color name="neo_surface_3">#202A39</color>
+  <color name="neo_border">#344151</color><color name="neo_border_soft">#263140</color>
+  <color name="neo_text">#F6F8FC</color><color name="neo_text_2">#BCC5D3</color>
+  <color name="neo_text_3">#92A0B3</color><color name="neo_text_muted">#92A0B3</color>
+  <color name="neo_cyan">#FF6478</color><color name="neo_blue">#82B9FF</color>
+  <color name="neo_violet">#BCA6FF</color><color name="neo_pink">#FF799A</color>
+  <color name="neo_red">#FF5C72</color><color name="neo_red_alpha">#24FF5C72</color>
+  <color name="neo_green">#63D8AA</color><color name="neo_gold">#F7CB81</color>
+  <color name="red_primary">#FF5C72</color><color name="red_dark">#AC344B</color>
+  <color name="red_bright">#FF6A7F</color><color name="red_glow">#FF8998</color>
+  <color name="dark_bg">#090C12</color><color name="dark_surface">#121823</color>
+  <color name="dark_card">#18202D</color><color name="dark_card2">#202A39</color>
+  <color name="white_80">#CCFFFFFF</color><color name="gray_text">#BAC4D2</color>
+  <color name="red_transparent">#33FF5C72</color><color name="red_transparent2">#20FF5C72</color>
+  <color name="chart_red">#FF8496</color><color name="chart_red2">#FF5C72</color>
+  <color name="green_success">#63D8AA</color><color name="green_dark">#238E69</color>
 </resources>

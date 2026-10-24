@@ -1,485 +1,147 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fillViewport="false"
-    android:scrollbars="none"
-    android:clipToPadding="false"
-    android:overScrollMode="never">
+<?xml version='1.0' encoding='UTF-8'?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="false" android:scrollbars="none" android:clipToPadding="false" android:overScrollMode="never">
 
-    <LinearLayout
-        android:id="@+id/settingsContainer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingStart="14dp"
-        android:paddingTop="8dp"
-        android:paddingEnd="14dp"
-        android:paddingBottom="24dp">
+    <LinearLayout android:id="@+id/settingsContainer" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:paddingStart="16dp" android:paddingTop="14dp" android:paddingEnd="16dp" android:paddingBottom="24dp">
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="128dp"
-            android:background="@drawable/bg_neo_hero">
+        <FrameLayout android:layout_width="match_parent" android:layout_height="128dp" android:background="@drawable/bg_neo_hero">
 
-            <com.aujunpeak.app.views.ParticleView
-                android:id="@+id/particlesHero"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:alpha="0.18" />
+            <com.aujunpeak.app.views.ParticleView android:id="@+id/particlesHero" android:layout_width="match_parent" android:layout_height="match_parent" android:alpha="0.025"/>
 
-            <View
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_gravity="top|end"
-                android:layout_marginTop="-52dp"
-                android:layout_marginEnd="-36dp"
-                android:background="@drawable/bg_neo_glow_cyan"
-                android:alpha="0.38" />
+            <View android:layout_width="150dp" android:layout_height="150dp" android:layout_gravity="top|end" android:layout_marginTop="-52dp" android:layout_marginEnd="-36dp" android:background="@drawable/bg_neo_glow_cyan" android:alpha="0.38"/>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:padding="16dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="horizontal" android:padding="16dp">
 
-                <FrameLayout
-                    android:layout_width="56dp"
-                    android:layout_height="56dp"
-                    android:background="@drawable/bg_neo_icon_plate">
-                    <ImageView
-                        android:layout_width="28dp"
-                        android:layout_height="28dp"
-                        android:layout_gravity="center"
-                        android:src="@drawable/ic_nav_settings_neo" />
+                <FrameLayout android:layout_width="56dp" android:layout_height="56dp" android:background="@drawable/bg_neo_icon_plate">
+                    <ImageView android:layout_width="28dp" android:layout_height="28dp" android:layout_gravity="center" android:src="@drawable/ic_nav_settings_neo"/>
                 </FrameLayout>
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginStart="14dp"
-                    android:orientation="vertical">
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="14dp" android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/settings_title"
-                        android:textColor="@color/neo_text"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/settings_title" android:textColor="@color/neo_text" android:textSize="20sp" android:textStyle="bold" android:includeFontPadding="false"/>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:text="Support, policy and account tools"
-                        android:textColor="@color/neo_text_2"
-                        android:textSize="10sp" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:text="Support, policy and account tools" android:textColor="@color/neo_text_2" android:textSize="11.5sp" android:includeFontPadding="false"/>
                 </LinearLayout>
 
-                <TextView
-                    android:id="@+id/tvCurrentLang"
-                    android:layout_width="52dp"
-                    android:layout_height="34dp"
-                    android:background="@drawable/bg_neo_chip_active"
-                    android:gravity="center"
-                    android:text="VI"
-                    android:textColor="@color/neo_cyan"
-                    android:textSize="11sp"
-                    android:textStyle="bold" />
+                <TextView android:id="@+id/tvCurrentLang" android:layout_width="52dp" android:layout_height="34dp" android:background="@drawable/bg_neo_chip_active" android:gravity="center" android:text="VI" android:textColor="@color/neo_cyan" android:textSize="12sp" android:textStyle="bold" android:includeFontPadding="false"/>
             </LinearLayout>
         </FrameLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
-            android:text="SYSTEM OVERVIEW"
-            android:textColor="@color/neo_text_2"
-            android:textSize="10sp"
-            android:textStyle="bold"
-            android:letterSpacing="0.12" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:text="SYSTEM OVERVIEW" android:textColor="@color/neo_text_2" android:textSize="11.5sp" android:textStyle="bold" android:letterSpacing="0.035" android:includeFontPadding="false"/>
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="132dp"
-            android:layout_marginTop="10dp"
-            app:cardBackgroundColor="@android:color/transparent"
-            app:cardCornerRadius="22dp"
-            app:cardElevation="0dp">
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/bg_settings_perf_storage">
-                <com.aujunpeak.app.views.ParticleView
-                    android:id="@+id/particlesStorage"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:alpha="0.16" />
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:padding="14dp">
-                    <FrameLayout
-                        android:layout_width="90dp"
-                        android:layout_height="90dp">
-                        <com.aujunpeak.app.views.CircularGaugeView
-                            android:id="@+id/storageGauge"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:gravity="center"
-                            android:orientation="vertical">
-                            <TextView
-                                android:id="@+id/tvStoragePercent"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="--%"
-                                android:textColor="@color/neo_text"
-                                android:textSize="18sp"
-                                android:textStyle="bold" />
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="ROM"
-                                android:textColor="@color/neo_text_3"
-                                android:textSize="8sp"
-                                android:textStyle="bold" />
+        <androidx.cardview.widget.CardView android:layout_width="match_parent" android:layout_height="132dp" android:layout_marginTop="10dp" app:cardBackgroundColor="@android:color/transparent" app:cardCornerRadius="22dp" app:cardElevation="0dp">
+            <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent" android:background="@drawable/bg_settings_perf_storage">
+                <com.aujunpeak.app.views.ParticleView android:id="@+id/particlesStorage" android:layout_width="match_parent" android:layout_height="match_parent" android:alpha="0.025"/>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="horizontal" android:padding="14dp">
+                    <FrameLayout android:layout_width="90dp" android:layout_height="90dp">
+                        <com.aujunpeak.app.views.CircularGaugeView android:id="@+id/storageGauge" android:layout_width="match_parent" android:layout_height="match_parent"/>
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:orientation="vertical">
+                            <TextView android:id="@+id/tvStoragePercent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="--%" android:textColor="@color/neo_text" android:textSize="18sp" android:textStyle="bold" android:includeFontPadding="false"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ROM" android:textColor="@color/neo_text_3" android:textSize="10.5sp" android:textStyle="bold" android:includeFontPadding="false"/>
                         </LinearLayout>
                     </FrameLayout>
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_marginStart="14dp"
-                        android:orientation="vertical">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Storage"
-                            android:textColor="#FFB74D"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="5dp"
-                            android:text="Device space usage overview"
-                            android:textColor="@color/neo_text_3"
-                            android:textSize="10sp" />
-                        <TextView
-                            android:id="@+id/tvStorageInfo"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:text="--"
-                            android:textColor="@color/neo_text"
-                            android:textSize="12sp"
-                            android:textStyle="bold" />
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="14dp" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Storage" android:textColor="#FFB74D" android:textSize="16sp" android:textStyle="bold" android:includeFontPadding="false"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:text="Device space usage overview" android:textColor="@color/neo_text_3" android:textSize="11.5sp" android:includeFontPadding="false"/>
+                        <TextView android:id="@+id/tvStorageInfo" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="--" android:textColor="@color/neo_text" android:textSize="13sp" android:textStyle="bold" android:includeFontPadding="false"/>
                     </LinearLayout>
                 </LinearLayout>
             </FrameLayout>
         </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="132dp"
-            android:layout_marginTop="10dp"
-            app:cardBackgroundColor="@android:color/transparent"
-            app:cardCornerRadius="22dp"
-            app:cardElevation="0dp">
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/bg_settings_perf_cpu">
-                <com.aujunpeak.app.views.ParticleView
-                    android:id="@+id/particlesSettingsCpu"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:alpha="0.16" />
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:padding="14dp">
-                    <FrameLayout
-                        android:layout_width="90dp"
-                        android:layout_height="90dp">
-                        <com.aujunpeak.app.views.CircularGaugeView
-                            android:id="@+id/settingsCpuGauge"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:gravity="center"
-                            android:orientation="vertical">
-                            <TextView
-                                android:id="@+id/tvSettingsCpuPercent"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="--%"
-                                android:textColor="@color/neo_text"
-                                android:textSize="18sp"
-                                android:textStyle="bold" />
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="CPU"
-                                android:textColor="@color/neo_text_3"
-                                android:textSize="8sp"
-                                android:textStyle="bold" />
+        <androidx.cardview.widget.CardView android:layout_width="match_parent" android:layout_height="132dp" android:layout_marginTop="10dp" app:cardBackgroundColor="@android:color/transparent" app:cardCornerRadius="22dp" app:cardElevation="0dp">
+            <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent" android:background="@drawable/bg_settings_perf_cpu">
+                <com.aujunpeak.app.views.ParticleView android:id="@+id/particlesSettingsCpu" android:layout_width="match_parent" android:layout_height="match_parent" android:alpha="0.025"/>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="horizontal" android:padding="14dp">
+                    <FrameLayout android:layout_width="90dp" android:layout_height="90dp">
+                        <com.aujunpeak.app.views.CircularGaugeView android:id="@+id/settingsCpuGauge" android:layout_width="match_parent" android:layout_height="match_parent"/>
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:orientation="vertical">
+                            <TextView android:id="@+id/tvSettingsCpuPercent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="--%" android:textColor="@color/neo_text" android:textSize="18sp" android:textStyle="bold" android:includeFontPadding="false"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="CPU" android:textColor="@color/neo_text_3" android:textSize="10.5sp" android:textStyle="bold" android:includeFontPadding="false"/>
                         </LinearLayout>
                     </FrameLayout>
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_marginStart="14dp"
-                        android:orientation="vertical">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="CPU"
-                            android:textColor="#C08CFF"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="5dp"
-                            android:text="Processor activity overview"
-                            android:textColor="@color/neo_text_3"
-                            android:textSize="10sp" />
-                        <TextView
-                            android:id="@+id/tvSettingsCpuInfo"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:text="--"
-                            android:textColor="@color/neo_text"
-                            android:textSize="12sp"
-                            android:textStyle="bold" />
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="14dp" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="CPU" android:textColor="#C08CFF" android:textSize="16sp" android:textStyle="bold" android:includeFontPadding="false"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:text="Processor activity overview" android:textColor="@color/neo_text_3" android:textSize="11.5sp" android:includeFontPadding="false"/>
+                        <TextView android:id="@+id/tvSettingsCpuInfo" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="--" android:textColor="@color/neo_text" android:textSize="13sp" android:textStyle="bold" android:includeFontPadding="false"/>
                     </LinearLayout>
                 </LinearLayout>
             </FrameLayout>
         </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="132dp"
-            android:layout_marginTop="10dp"
-            app:cardBackgroundColor="@android:color/transparent"
-            app:cardCornerRadius="22dp"
-            app:cardElevation="0dp">
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/bg_settings_perf_ram">
-                <com.aujunpeak.app.views.ParticleView
-                    android:id="@+id/particlesSettingsRam"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:alpha="0.16" />
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:padding="14dp">
-                    <FrameLayout
-                        android:layout_width="90dp"
-                        android:layout_height="90dp">
-                        <com.aujunpeak.app.views.CircularGaugeView
-                            android:id="@+id/settingsRamGauge"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:gravity="center"
-                            android:orientation="vertical">
-                            <TextView
-                                android:id="@+id/tvSettingsRamPercent"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="--%"
-                                android:textColor="@color/neo_text"
-                                android:textSize="18sp"
-                                android:textStyle="bold" />
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="RAM"
-                                android:textColor="@color/neo_text_3"
-                                android:textSize="8sp"
-                                android:textStyle="bold" />
+        <androidx.cardview.widget.CardView android:layout_width="match_parent" android:layout_height="132dp" android:layout_marginTop="10dp" app:cardBackgroundColor="@android:color/transparent" app:cardCornerRadius="22dp" app:cardElevation="0dp">
+            <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent" android:background="@drawable/bg_settings_perf_ram">
+                <com.aujunpeak.app.views.ParticleView android:id="@+id/particlesSettingsRam" android:layout_width="match_parent" android:layout_height="match_parent" android:alpha="0.025"/>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="horizontal" android:padding="14dp">
+                    <FrameLayout android:layout_width="90dp" android:layout_height="90dp">
+                        <com.aujunpeak.app.views.CircularGaugeView android:id="@+id/settingsRamGauge" android:layout_width="match_parent" android:layout_height="match_parent"/>
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:orientation="vertical">
+                            <TextView android:id="@+id/tvSettingsRamPercent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="--%" android:textColor="@color/neo_text" android:textSize="18sp" android:textStyle="bold" android:includeFontPadding="false"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="RAM" android:textColor="@color/neo_text_3" android:textSize="10.5sp" android:textStyle="bold" android:includeFontPadding="false"/>
                         </LinearLayout>
                     </FrameLayout>
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_marginStart="14dp"
-                        android:orientation="vertical">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="RAM"
-                            android:textColor="#59E4FF"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="5dp"
-                            android:text="Memory usage overview"
-                            android:textColor="@color/neo_text_3"
-                            android:textSize="10sp" />
-                        <TextView
-                            android:id="@+id/tvSettingsRamInfo"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:text="--"
-                            android:textColor="@color/neo_text"
-                            android:textSize="12sp"
-                            android:textStyle="bold" />
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="14dp" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="RAM" android:textColor="#59E4FF" android:textSize="16sp" android:textStyle="bold" android:includeFontPadding="false"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:text="Memory usage overview" android:textColor="@color/neo_text_3" android:textSize="11.5sp" android:includeFontPadding="false"/>
+                        <TextView android:id="@+id/tvSettingsRamInfo" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="--" android:textColor="@color/neo_text" android:textSize="13sp" android:textStyle="bold" android:includeFontPadding="false"/>
                     </LinearLayout>
                 </LinearLayout>
             </FrameLayout>
         </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
-            app:cardBackgroundColor="@android:color/transparent"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="0dp">
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_neo_card">
-                <com.aujunpeak.app.views.ParticleView
-                    android:id="@+id/particlesLanguage"
-                    android:layout_width="1dp"
-                    android:layout_height="1dp"
-                    android:alpha="0" />
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="LANGUAGE"
-                        android:textColor="@color/neo_text_2"
-                        android:textSize="10sp"
-                        android:textStyle="bold" />
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:gravity="center"
-                        android:orientation="horizontal"
-                        android:weightSum="5">
-                        <TextView android:id="@+id/chipVI" android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1" android:layout_marginEnd="4dp" android:background="@drawable/bg_neo_chip_active" android:gravity="center" android:text="VI" android:textColor="@color/neo_cyan" android:textStyle="bold" />
-                        <TextView android:id="@+id/chipEN" android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1" android:layout_marginStart="4dp" android:layout_marginEnd="4dp" android:background="@drawable/bg_neo_chip" android:gravity="center" android:text="EN" android:textColor="@color/neo_text" android:textStyle="bold" />
-                        <TextView android:id="@+id/chipZH" android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1" android:layout_marginStart="4dp" android:layout_marginEnd="4dp" android:background="@drawable/bg_neo_chip" android:gravity="center" android:text="ZH" android:textColor="@color/neo_text" android:textStyle="bold" />
-                        <TextView android:id="@+id/chipJA" android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1" android:layout_marginStart="4dp" android:layout_marginEnd="4dp" android:background="@drawable/bg_neo_chip" android:gravity="center" android:text="JA" android:textColor="@color/neo_text" android:textStyle="bold" />
-                        <TextView android:id="@+id/chipKO" android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1" android:layout_marginStart="4dp" android:background="@drawable/bg_neo_chip" android:gravity="center" android:text="KO" android:textColor="@color/neo_text" android:textStyle="bold" />
+        <androidx.cardview.widget.CardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp" app:cardBackgroundColor="@android:color/transparent" app:cardCornerRadius="22dp" app:cardElevation="0dp">
+            <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/bg_neo_card">
+                <com.aujunpeak.app.views.ParticleView android:id="@+id/particlesLanguage" android:layout_width="1dp" android:layout_height="1dp" android:alpha="0"/>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="LANGUAGE" android:textColor="@color/neo_text_2" android:textSize="11.5sp" android:textStyle="bold" android:includeFontPadding="false"/>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:gravity="center" android:orientation="horizontal" android:weightSum="5">
+                        <TextView android:id="@+id/chipVI" android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1" android:layout_marginEnd="4dp" android:background="@drawable/bg_neo_chip_active" android:gravity="center" android:text="VI" android:textColor="@color/neo_cyan" android:textStyle="bold" android:includeFontPadding="false"/>
+                        <TextView android:id="@+id/chipEN" android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1" android:layout_marginStart="4dp" android:layout_marginEnd="4dp" android:background="@drawable/bg_neo_chip" android:gravity="center" android:text="EN" android:textColor="@color/neo_text" android:textStyle="bold" android:includeFontPadding="false"/>
+                        <TextView android:id="@+id/chipZH" android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1" android:layout_marginStart="4dp" android:layout_marginEnd="4dp" android:background="@drawable/bg_neo_chip" android:gravity="center" android:text="ZH" android:textColor="@color/neo_text" android:textStyle="bold" android:includeFontPadding="false"/>
+                        <TextView android:id="@+id/chipJA" android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1" android:layout_marginStart="4dp" android:layout_marginEnd="4dp" android:background="@drawable/bg_neo_chip" android:gravity="center" android:text="JA" android:textColor="@color/neo_text" android:textStyle="bold" android:includeFontPadding="false"/>
+                        <TextView android:id="@+id/chipKO" android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1" android:layout_marginStart="4dp" android:background="@drawable/bg_neo_chip" android:gravity="center" android:text="KO" android:textColor="@color/neo_text" android:textStyle="bold" android:includeFontPadding="false"/>
                     </LinearLayout>
                 </LinearLayout>
             </FrameLayout>
         </androidx.cardview.widget.CardView>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="SUPPORT &amp; INFORMATION"
-            android:textColor="@color/neo_text"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            android:letterSpacing="0.12" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="SUPPORT &amp; INFORMATION" android:textColor="@color/neo_text" android:textSize="13sp" android:textStyle="bold" android:letterSpacing="0.035" android:includeFontPadding="false"/>
 
-        <FrameLayout
-            android:id="@+id/cardAuthor"
-            android:layout_width="match_parent"
-            android:layout_height="126dp"
-            android:layout_marginTop="12dp"
-            android:background="@drawable/bg_settings_option_social">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:padding="16dp">
-                <FrameLayout android:layout_width="60dp" android:layout_height="60dp" android:background="@drawable/bg_neo_icon_plate"><TextView android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:text="A" android:textColor="@color/neo_cyan" android:textSize="23sp" android:textStyle="bold" /></FrameLayout>
-                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="12dp" android:orientation="vertical"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/author_name" android:textColor="@color/neo_text" android:textSize="17sp" android:textStyle="bold" /><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="@string/author_subtitle" android:textColor="@color/neo_text_3" android:textSize="10sp" /></LinearLayout>
+        <FrameLayout android:id="@+id/cardAuthor" android:layout_width="match_parent" android:layout_height="126dp" android:layout_marginTop="12dp" android:background="@drawable/bg_settings_option_social">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="horizontal" android:padding="16dp">
+                <FrameLayout android:layout_width="60dp" android:layout_height="60dp" android:background="@drawable/bg_neo_icon_plate"><TextView android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:text="A" android:textColor="@color/neo_cyan" android:textSize="23sp" android:textStyle="bold" android:includeFontPadding="false"/></FrameLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="12dp" android:orientation="vertical"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/author_name" android:textColor="@color/neo_text" android:textSize="17sp" android:textStyle="bold" android:includeFontPadding="false"/><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="@string/author_subtitle" android:textColor="@color/neo_text_3" android:textSize="11.5sp" android:includeFontPadding="false"/></LinearLayout>
                 <FrameLayout android:layout_width="40dp" android:layout_height="40dp" android:background="@drawable/bg_neo_chip">
-                            <ImageView android:layout_width="18dp" android:layout_height="18dp" android:layout_gravity="center" android:src="@drawable/ic_chevron_right" android:tint="@color/neo_cyan" />
+                            <ImageView android:layout_width="18dp" android:layout_height="18dp" android:layout_gravity="center" android:src="@drawable/ic_chevron_right" android:tint="@color/neo_cyan"/>
                         </FrameLayout>
             </LinearLayout>
         </FrameLayout>
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardAbout"
-            android:layout_width="match_parent"
-            android:layout_height="126dp"
-            android:layout_marginTop="12dp"
-            app:cardBackgroundColor="@android:color/transparent"
-            app:cardCornerRadius="24dp"
-            app:cardElevation="0dp">
+        <androidx.cardview.widget.CardView android:id="@+id/cardAbout" android:layout_width="match_parent" android:layout_height="126dp" android:layout_marginTop="12dp" app:cardBackgroundColor="@android:color/transparent" app:cardCornerRadius="24dp" app:cardElevation="0dp" android:foreground="?attr/selectableItemBackground">
             <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent" android:background="@drawable/bg_settings_option_about">
-                <com.aujunpeak.app.views.ParticleView android:id="@+id/particlesAbout" android:layout_width="match_parent" android:layout_height="match_parent" android:alpha="0.15" />
-                <View android:id="@+id/aboutGlow" android:layout_width="120dp" android:layout_height="120dp" android:layout_gravity="top|start" android:layout_marginStart="-34dp" android:layout_marginTop="-28dp" android:background="@drawable/bg_neo_glow_violet" />
-                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="horizontal" android:padding="16dp"><FrameLayout android:layout_width="54dp" android:layout_height="54dp" android:background="@drawable/bg_neo_icon_plate"><ImageView android:layout_width="25dp" android:layout_height="25dp" android:layout_gravity="center" android:src="@drawable/ic_info_circle" /></FrameLayout><LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="12dp" android:orientation="vertical"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="About Aujunpeak" android:textColor="@color/neo_text" android:textSize="17sp" android:textStyle="bold" /><TextView android:id="@+id/tvAboutCardVersion" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="v1.0 · Build 1" android:textColor="@color/neo_violet" android:textSize="10sp" android:textStyle="bold" /><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="Version info, intro and update highlights." android:textColor="@color/neo_text_3" android:textSize="10sp" /></LinearLayout><FrameLayout android:layout_width="40dp" android:layout_height="40dp" android:background="@drawable/bg_neo_chip">
-                            <ImageView android:layout_width="18dp" android:layout_height="18dp" android:layout_gravity="center" android:src="@drawable/ic_chevron_right" android:tint="@color/neo_violet" />
+                <com.aujunpeak.app.views.ParticleView android:id="@+id/particlesAbout" android:layout_width="match_parent" android:layout_height="match_parent" android:alpha="0.025"/>
+                <View android:id="@+id/aboutGlow" android:layout_width="120dp" android:layout_height="120dp" android:layout_gravity="top|start" android:layout_marginStart="-34dp" android:layout_marginTop="-28dp" android:background="@drawable/bg_neo_glow_violet"/>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="horizontal" android:padding="16dp"><FrameLayout android:layout_width="54dp" android:layout_height="54dp" android:background="@drawable/bg_neo_icon_plate"><ImageView android:layout_width="25dp" android:layout_height="25dp" android:layout_gravity="center" android:src="@drawable/ic_info_circle"/></FrameLayout><LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="12dp" android:orientation="vertical"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="About Aujunpeak" android:textColor="@color/neo_text" android:textSize="17sp" android:textStyle="bold" android:includeFontPadding="false"/><TextView android:id="@+id/tvAboutCardVersion" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="v1.0 · Build 1" android:textColor="@color/neo_violet" android:textSize="11.5sp" android:textStyle="bold" android:includeFontPadding="false"/><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="Version info, intro and update highlights." android:textColor="@color/neo_text_3" android:textSize="11.5sp" android:includeFontPadding="false"/></LinearLayout><FrameLayout android:layout_width="40dp" android:layout_height="40dp" android:background="@drawable/bg_neo_chip">
+                            <ImageView android:layout_width="18dp" android:layout_height="18dp" android:layout_gravity="center" android:src="@drawable/ic_chevron_right" android:tint="@color/neo_violet"/>
                         </FrameLayout></LinearLayout>
             </FrameLayout>
         </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardFeedback"
-            android:layout_width="match_parent"
-            android:layout_height="126dp"
-            android:layout_marginTop="12dp"
-            app:cardBackgroundColor="@android:color/transparent"
-            app:cardCornerRadius="24dp"
-            app:cardElevation="0dp">
+        <androidx.cardview.widget.CardView android:id="@+id/cardFeedback" android:layout_width="match_parent" android:layout_height="126dp" android:layout_marginTop="12dp" app:cardBackgroundColor="@android:color/transparent" app:cardCornerRadius="24dp" app:cardElevation="0dp" android:foreground="?attr/selectableItemBackground">
             <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent" android:background="@drawable/bg_settings_option_feedback">
-                <com.aujunpeak.app.views.ParticleView android:id="@+id/particlesFeedback" android:layout_width="match_parent" android:layout_height="match_parent" android:alpha="0.15" />
-                <View android:id="@+id/feedbackGlow" android:layout_width="110dp" android:layout_height="110dp" android:layout_gravity="bottom|start" android:layout_marginStart="-28dp" android:layout_marginBottom="-28dp" android:background="@drawable/bg_neo_glow_cyan" />
-                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="horizontal" android:padding="16dp"><FrameLayout android:layout_width="54dp" android:layout_height="54dp" android:background="@drawable/bg_neo_icon_plate"><ImageView android:layout_width="24dp" android:layout_height="24dp" android:layout_gravity="center" android:src="@drawable/ic_chat_bubble" /></FrameLayout><LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="12dp" android:orientation="vertical"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Báo lỗi &amp; Góp ý" android:textColor="@color/neo_text" android:textSize="17sp" android:textStyle="bold" /><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="Gửi phản hồi nhanh cho đội ngũ Aujunpeak." android:textColor="@color/neo_text_3" android:textSize="10sp" /></LinearLayout><FrameLayout android:layout_width="40dp" android:layout_height="40dp" android:background="@drawable/bg_neo_chip">
-                            <ImageView android:layout_width="18dp" android:layout_height="18dp" android:layout_gravity="center" android:src="@drawable/ic_chevron_right" android:tint="@color/neo_cyan" />
+                <com.aujunpeak.app.views.ParticleView android:id="@+id/particlesFeedback" android:layout_width="match_parent" android:layout_height="match_parent" android:alpha="0.025"/>
+                <View android:id="@+id/feedbackGlow" android:layout_width="110dp" android:layout_height="110dp" android:layout_gravity="bottom|start" android:layout_marginStart="-28dp" android:layout_marginBottom="-28dp" android:background="@drawable/bg_neo_glow_cyan"/>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="horizontal" android:padding="16dp"><FrameLayout android:layout_width="54dp" android:layout_height="54dp" android:background="@drawable/bg_neo_icon_plate"><ImageView android:layout_width="24dp" android:layout_height="24dp" android:layout_gravity="center" android:src="@drawable/ic_chat_bubble"/></FrameLayout><LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="12dp" android:orientation="vertical"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Báo lỗi &amp; Góp ý" android:textColor="@color/neo_text" android:textSize="17sp" android:textStyle="bold" android:includeFontPadding="false"/><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="Gửi phản hồi nhanh cho đội ngũ Aujunpeak." android:textColor="@color/neo_text_3" android:textSize="11.5sp" android:includeFontPadding="false"/></LinearLayout><FrameLayout android:layout_width="40dp" android:layout_height="40dp" android:background="@drawable/bg_neo_chip">
+                            <ImageView android:layout_width="18dp" android:layout_height="18dp" android:layout_gravity="center" android:src="@drawable/ic_chevron_right" android:tint="@color/neo_cyan"/>
                         </FrameLayout></LinearLayout>
             </FrameLayout>
         </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardPolicy"
-            android:layout_width="match_parent"
-            android:layout_height="126dp"
-            android:layout_marginTop="12dp"
-            app:cardBackgroundColor="@android:color/transparent"
-            app:cardCornerRadius="24dp"
-            app:cardElevation="0dp">
+        <androidx.cardview.widget.CardView android:id="@+id/cardPolicy" android:layout_width="match_parent" android:layout_height="126dp" android:layout_marginTop="12dp" app:cardBackgroundColor="@android:color/transparent" app:cardCornerRadius="24dp" app:cardElevation="0dp" android:foreground="?attr/selectableItemBackground">
             <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent" android:background="@drawable/bg_settings_option_policy">
-                <com.aujunpeak.app.views.ParticleView android:id="@+id/particlesPolicy" android:layout_width="match_parent" android:layout_height="match_parent" android:alpha="0.15" />
-                <View android:id="@+id/policyGlowCard" android:layout_width="112dp" android:layout_height="112dp" android:layout_gravity="center_vertical|start" android:layout_marginStart="-28dp" android:background="@drawable/bg_neo_glow_gold" />
-                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="horizontal" android:padding="16dp"><FrameLayout android:layout_width="54dp" android:layout_height="54dp" android:background="@drawable/bg_neo_icon_plate"><ImageView android:layout_width="24dp" android:layout_height="24dp" android:layout_gravity="center" android:src="@drawable/ic_policy_shield" /></FrameLayout><LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="12dp" android:orientation="vertical"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Chính sách &amp; Điều khoản" android:textColor="@color/neo_text" android:textSize="17sp" android:textStyle="bold" /><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="Quyền riêng tư, điều khoản và giấy phép." android:textColor="@color/neo_text_3" android:textSize="10sp" /></LinearLayout><FrameLayout android:layout_width="40dp" android:layout_height="40dp" android:background="@drawable/bg_neo_chip">
-                            <ImageView android:layout_width="18dp" android:layout_height="18dp" android:layout_gravity="center" android:src="@drawable/ic_chevron_right" android:tint="@color/neo_gold" />
+                <com.aujunpeak.app.views.ParticleView android:id="@+id/particlesPolicy" android:layout_width="match_parent" android:layout_height="match_parent" android:alpha="0.025"/>
+                <View android:id="@+id/policyGlowCard" android:layout_width="112dp" android:layout_height="112dp" android:layout_gravity="center_vertical|start" android:layout_marginStart="-28dp" android:background="@drawable/bg_neo_glow_gold"/>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="horizontal" android:padding="16dp"><FrameLayout android:layout_width="54dp" android:layout_height="54dp" android:background="@drawable/bg_neo_icon_plate"><ImageView android:layout_width="24dp" android:layout_height="24dp" android:layout_gravity="center" android:src="@drawable/ic_policy_shield"/></FrameLayout><LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="12dp" android:orientation="vertical"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Chính sách &amp; Điều khoản" android:textColor="@color/neo_text" android:textSize="17sp" android:textStyle="bold" android:includeFontPadding="false"/><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="Quyền riêng tư, điều khoản và giấy phép." android:textColor="@color/neo_text_3" android:textSize="11.5sp" android:includeFontPadding="false"/></LinearLayout><FrameLayout android:layout_width="40dp" android:layout_height="40dp" android:background="@drawable/bg_neo_chip">
+                            <ImageView android:layout_width="18dp" android:layout_height="18dp" android:layout_gravity="center" android:src="@drawable/ic_chevron_right" android:tint="@color/neo_gold"/>
                         </FrameLayout></LinearLayout>
             </FrameLayout>
         </androidx.cardview.widget.CardView>

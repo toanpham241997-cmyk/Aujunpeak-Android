@@ -6,7 +6,7 @@
                 android:angle="135"
                 android:startColor="#FF6D00"
                 android:centerColor="#E53935"
-                android:endColor="#FF1744"
+                android:endColor="#FF5C72"
                 android:type="sweep"/>
             <stroke android:width="2dp" android:color="#FFAA00"/>
         </shape>

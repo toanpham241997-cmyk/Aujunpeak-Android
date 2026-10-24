@@ -129,11 +129,17 @@ class MainActivity : AppCompatActivity() {
             .findFragmentById(R.id.navHostFragment) as NavHostFragment
         navController = navHostFragment.navController
 
-        startTypewriterEffect()
-        loadAnimatedBackground()
+        // One-time subtle header reveal: no perpetual typewriter flicker or GIF decode.
+        findViewById<TextView>(R.id.tvHeaderTitle)?.apply {
+            text = TITLE_TEXT
+            alpha = 0f
+            translationY = dpToPx(5).toFloat()
+            animate().alpha(1f).translationY(0f).setDuration(260).start()
+        }
 
         rainOverlay = findViewById(R.id.rainOverlay)
-        rainOverlay.start()
+        // Keep the legacy effect available, but disable permanent rain for better FPS.
+        rainOverlay.visibility = View.GONE
 
         toastContainer = findViewById(R.id.notifToastContainer)
         ivHeaderBell   = findViewById(R.id.ivHeaderBell)
@@ -167,42 +173,17 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    /** Hard-enforce the compact black/red chrome at runtime so no theme/resource overlay can reintroduce navy/blue. */
+    /** Modern app chrome. Respect shared drawable resources for consistent visual design. */
     private fun applyRedBlackChrome() {
-        val red = Color.parseColor("#FF1744")
-        val black = Color.BLACK
-
-        window.statusBarColor = black
-        window.navigationBarColor = black
-
-        findViewById<View>(R.id.appHeader)?.let { header ->
-            header.background = android.graphics.drawable.GradientDrawable().apply {
-                shape = android.graphics.drawable.GradientDrawable.RECTANGLE
-                setColor(black)
-                setStroke(dpToPx(1), red)
-                cornerRadii = floatArrayOf(0f, 0f, 0f, 0f, dpToPx(11).toFloat(), dpToPx(11).toFloat(), dpToPx(11).toFloat(), dpToPx(11).toFloat())
-            }
+        window.statusBarColor = Color.parseColor("#090C12")
+        window.navigationBarColor = Color.parseColor("#090C12")
+        findViewById<View>(R.id.appHeader)?.setBackgroundResource(R.drawable.bg_neo_header)
+        findViewById<View>(R.id.customBottomNav)?.apply {
+            setBackgroundResource(R.drawable.bg_neo_bottom_nav)
+            elevation = dpToPx(8).toFloat()
         }
-
-        findViewById<View>(R.id.customBottomNav)?.let { nav ->
-            nav.setPadding(0, 0, 0, 0)
-            nav.background = android.graphics.drawable.GradientDrawable().apply {
-                shape = android.graphics.drawable.GradientDrawable.RECTANGLE
-                setColor(black)
-                setStroke(dpToPx(1), red)
-                cornerRadii = floatArrayOf(dpToPx(13).toFloat(), dpToPx(13).toFloat(), dpToPx(13).toFloat(), dpToPx(13).toFloat(), 0f, 0f, 0f, 0f)
-            }
-            nav.elevation = dpToPx(6).toFloat()
-        }
-
-        // Header action buttons are always black/red, independent of the saved theme color.
         listOf(R.id.headerChatWrapper, R.id.headerBellWrapper).forEach { id ->
-            findViewById<View>(id)?.background = android.graphics.drawable.GradientDrawable().apply {
-                shape = android.graphics.drawable.GradientDrawable.RECTANGLE
-                setColor(black)
-                setStroke(dpToPx(1), red)
-                cornerRadius = dpToPx(9).toFloat()
-            }
+            findViewById<View>(id)?.setBackgroundResource(R.drawable.bg_neo_button_secondary)
         }
     }
 
@@ -282,7 +263,7 @@ class MainActivity : AppCompatActivity() {
             val wasHidden = headerChatBadge.visibility != View.VISIBLE
             headerChatBadge.text = if (unreadCount > 9) "9+" else unreadCount.toString()
             headerChatBadge.visibility = View.VISIBLE
-            ivHeaderChat.setColorFilter(android.graphics.Color.parseColor("#FF1744"))
+            ivHeaderChat.setColorFilter(android.graphics.Color.parseColor("#FF5C72"))
             startChatIconPulse()
             if (wasHidden) {
                 headerChatBadge.scaleX = 0f
@@ -705,6 +686,7 @@ class MainActivity : AppCompatActivity() {
 
         navEntries.forEach { entry ->
             entry.frame.setOnClickListener {
+                entry.frame.performHapticFeedback(android.view.HapticFeedbackConstants.KEYBOARD_TAP)
                 val isLoggedIn = KeyManager.isLoggedIn(this)
                 val isVip      = KeyManager.isVip(this)
 
@@ -751,6 +733,10 @@ class MainActivity : AppCompatActivity() {
             .setLaunchSingleTop(true)
             .setRestoreState(true)
             .setPopUpTo(R.id.nav_graph, inclusive = false, saveState = true)
+            .setEnterAnim(R.anim.fade_up)
+            .setExitAnim(R.anim.ui_screen_exit)
+            .setPopEnterAnim(R.anim.fade_in)
+            .setPopExitAnim(R.anim.ui_screen_exit)
             .build()
 
         try { navController.navigate(destId, null, navOptions) }
@@ -763,17 +749,17 @@ class MainActivity : AppCompatActivity() {
         navEntries.forEach { entry ->
             val selected    = entry.destId == destId
             val targetColor = if (selected)
-                Color.parseColor("#FF1744")
+                Color.parseColor("#FF7487")
             else
-                Color.parseColor("#666666")
+                Color.parseColor("#98A5B5")
             entry.icon.setColorFilter(targetColor)
             entry.label.setTextColor(targetColor)
             entry.glow.visibility = if (selected) View.VISIBLE else View.INVISIBLE
 
             if (selected) {
-                entry.frame.animate().scaleX(1.12f).scaleY(1.12f).setDuration(180)
-                    .setInterpolator(OvershootInterpolator(2f)).withEndAction {
-                        entry.frame.animate().scaleX(1f).scaleY(1f).setDuration(150).start()
+                entry.icon.animate().scaleX(1.08f).scaleY(1.08f).setDuration(140)
+                    .withEndAction {
+                        entry.icon.animate().scaleX(1f).scaleY(1f).setDuration(150).start()
                     }.start()
             }
         }
@@ -782,9 +768,9 @@ class MainActivity : AppCompatActivity() {
     private fun showVipRequiredSnackbar() {
         val rootView = findViewById<View>(android.R.id.content)
         Snackbar.make(rootView, "👑  Tính năng chỉ dành cho key VIP", Snackbar.LENGTH_LONG)
-            .setBackgroundTint(Color.BLACK)
+            .setBackgroundTint(Color.parseColor("#1B2533"))
             .setTextColor(Color.parseColor("#FFD700"))
-            .setActionTextColor(Color.parseColor("#FF1744"))
+            .setActionTextColor(Color.parseColor("#FF7487"))
             .setAction("Hồ sơ") { navigateToTab(R.id.navigation_info) }
             .show()
     }
@@ -792,7 +778,7 @@ class MainActivity : AppCompatActivity() {
     private fun showSnackbar(msg: String) {
         val rootView = findViewById<View>(android.R.id.content)
         Snackbar.make(rootView, msg, Snackbar.LENGTH_SHORT)
-            .setBackgroundTint(Color.BLACK)
+            .setBackgroundTint(Color.parseColor("#1B2533"))
             .setTextColor(Color.WHITE)
             .show()
     }
@@ -855,7 +841,7 @@ class MainActivity : AppCompatActivity() {
         refreshNavLockState()
         val rootView = findViewById<View>(android.R.id.content)
         Snackbar.make(rootView, "Đã đăng xuất", Snackbar.LENGTH_SHORT)
-            .setBackgroundTint(Color.BLACK)
+            .setBackgroundTint(Color.parseColor("#1B2533"))
             .setTextColor(Color.WHITE)
             .show()
     }

@@ -1,138 +1,41 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/bg_expiry_warning_card"
-    android:padding="24dp">
+<?xml version='1.0' encoding='UTF-8'?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/bg_expiry_warning_card" android:padding="24dp">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center_horizontal">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center_horizontal">
 
         <!-- Warning icon with glow -->
-        <FrameLayout
-            android:layout_width="72dp"
-            android:layout_height="72dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="16dp">
+        <FrameLayout android:layout_width="72dp" android:layout_height="72dp" android:layout_gravity="center_horizontal" android:layout_marginBottom="16dp">
 
-            <View
-                android:layout_width="72dp"
-                android:layout_height="72dp"
-                android:background="@drawable/bg_badge_orange"
-                android:alpha="0.25"/>
+            <View android:layout_width="72dp" android:layout_height="72dp" android:background="@drawable/bg_badge_orange" android:alpha="0.25"/>
 
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
-                android:src="@drawable/ic_warning_expiry"/>
+            <ImageView android:layout_width="40dp" android:layout_height="40dp" android:layout_gravity="center" android:src="@drawable/ic_warning_expiry"/>
         </FrameLayout>
 
         <!-- Title -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/expiry_warn_title"
-            android:textColor="#FF9800"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:fontFamily="sans-serif-black"
-            android:letterSpacing="0.05"
-            android:layout_marginBottom="8dp"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/expiry_warn_title" android:textColor="#FF9800" android:textSize="18sp" android:textStyle="bold" android:fontFamily="sans-serif-black" android:letterSpacing="0.05" android:layout_marginBottom="8dp" android:includeFontPadding="false"/>
 
         <!-- Countdown chip -->
-        <TextView
-            android:id="@+id/tvExpiryDialogCountdown"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/expiry_warn_days"
-            android:textColor="#FFFFFF"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            android:background="@drawable/bg_badge_orange"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:paddingTop="6dp"
-            android:paddingBottom="6dp"
-            android:layout_marginBottom="14dp"/>
+        <TextView android:id="@+id/tvExpiryDialogCountdown" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/expiry_warn_days" android:textColor="#FFFFFF" android:textSize="15sp" android:textStyle="bold" android:background="@drawable/bg_badge_orange" android:paddingStart="16dp" android:paddingEnd="16dp" android:paddingTop="6dp" android:paddingBottom="6dp" android:layout_marginBottom="14dp" android:includeFontPadding="false"/>
 
         <!-- Description -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Key kích hoạt của bạn sắp hết hạn.\nGia hạn ngay để tiếp tục sử dụng toàn bộ tính năng cao cấp."
-            android:textColor="#CCFFFFFF"
-            android:textSize="13sp"
-            android:gravity="center"
-            android:lineSpacingMultiplier="1.4"
-            android:layout_marginBottom="20dp"/>
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Key kích hoạt của bạn sắp hết hạn.\nGia hạn ngay để tiếp tục sử dụng toàn bộ tính năng cao cấp." android:textColor="#CCFFFFFF" android:textSize="13sp" android:gravity="center" android:lineSpacingMultiplier="1.4" android:layout_marginBottom="20dp" android:includeFontPadding="false"/>
 
         <!-- Divider -->
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@drawable/divider_red_glow"
-            android:alpha="0.3"
-            android:layout_marginBottom="16dp"/>
+        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@drawable/divider_red_glow" android:alpha="0.3" android:layout_marginBottom="16dp"/>
 
         <!-- Buttons row -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:weightSum="2">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center" android:weightSum="2">
 
             <!-- Bỏ qua -->
-            <FrameLayout
-                android:id="@+id/btnExpiryDismiss"
-                android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_weight="0.85"
-                android:background="@drawable/bg_card"
-                android:clickable="true"
-                android:focusable="true"
-                android:layout_marginEnd="8dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="@string/expiry_warn_dismiss"
-                    android:textColor="#88FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold"/>
+            <FrameLayout android:id="@+id/btnExpiryDismiss" android:layout_width="0dp" android:layout_height="50dp" android:layout_weight="0.85" android:background="@drawable/bg_card" android:clickable="true" android:focusable="true" android:layout_marginEnd="8dp" android:foreground="?attr/selectableItemBackground">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:text="@string/expiry_warn_dismiss" android:textColor="#88FFFFFF" android:textSize="13sp" android:textStyle="bold" android:includeFontPadding="false"/>
             </FrameLayout>
 
             <!-- Gia hạn Zalo -->
-            <FrameLayout
-                android:id="@+id/btnExpiryRenewZalo"
-                android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_weight="1.15"
-                android:background="@drawable/bg_renew_zalo_btn"
-                android:clickable="true"
-                android:focusable="true">
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical">
-                    <ImageView
-                        android:layout_width="18dp"
-                        android:layout_height="18dp"
-                        android:src="@drawable/ic_zalo"
-                        android:layout_marginEnd="8dp"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Gia hạn Zalo"
-                        android:textColor="#FFFFFF"
-                        android:textSize="13sp"
-                        android:textStyle="bold"/>
+            <FrameLayout android:id="@+id/btnExpiryRenewZalo" android:layout_width="0dp" android:layout_height="50dp" android:layout_weight="1.15" android:background="@drawable/bg_renew_zalo_btn" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackground">
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:orientation="horizontal" android:gravity="center_vertical">
+                    <ImageView android:layout_width="18dp" android:layout_height="18dp" android:src="@drawable/ic_zalo" android:layout_marginEnd="8dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Gia hạn Zalo" android:textColor="#FFFFFF" android:textSize="13sp" android:textStyle="bold" android:includeFontPadding="false"/>
                 </LinearLayout>
             </FrameLayout>
 

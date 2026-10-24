@@ -1,338 +1,111 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/bg_neo_screen">
+<?xml version='1.0' encoding='UTF-8'?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@drawable/bg_neo_screen">
 
-    <ImageView
-        android:id="@+id/gameBoostBgGif"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:alpha="0.16"
-        android:contentDescription="@null" />
+    <ImageView android:id="@+id/gameBoostBgGif" android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="centerCrop" android:alpha="0.16" android:contentDescription="@null"/>
 
-    <View
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:layout_gravity="top|end"
-        android:layout_marginTop="-110dp"
-        android:layout_marginEnd="-120dp"
-        android:background="@drawable/bg_neo_glow_cyan"
-        android:alpha="0.65" />
+    <View android:layout_width="300dp" android:layout_height="300dp" android:layout_gravity="top|end" android:layout_marginTop="-110dp" android:layout_marginEnd="-120dp" android:background="@drawable/bg_neo_glow_cyan" android:alpha="0.65"/>
 
-    <View
-        android:layout_width="260dp"
-        android:layout_height="260dp"
-        android:layout_gravity="bottom|start"
-        android:layout_marginStart="-100dp"
-        android:layout_marginBottom="-100dp"
-        android:background="@drawable/bg_neo_glow_violet"
-        android:alpha="0.45" />
+    <View android:layout_width="260dp" android:layout_height="260dp" android:layout_gravity="bottom|start" android:layout_marginStart="-100dp" android:layout_marginBottom="-100dp" android:background="@drawable/bg_neo_glow_violet" android:alpha="0.45"/>
 
-    <com.aujunpeak.app.views.BoostParticleView
-        android:id="@+id/boostParticles"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:alpha="0.42" />
+    <com.aujunpeak.app.views.BoostParticleView android:id="@+id/boostParticles" android:layout_width="match_parent" android:layout_height="match_parent" android:alpha="0.42"/>
 
-    <com.aujunpeak.app.views.BoostCleanupView
-        android:id="@+id/boostCleanupView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone" />
+    <com.aujunpeak.app.views.BoostCleanupView android:id="@+id/boostCleanupView" android:layout_width="match_parent" android:layout_height="match_parent" android:visibility="gone"/>
 
-    <View
-        android:id="@+id/glowView"
-        android:layout_width="280dp"
-        android:layout_height="280dp"
-        android:layout_gravity="center"
-        android:background="@drawable/bg_neo_glow_cyan"
-        android:alpha="0" />
+    <View android:id="@+id/glowView" android:layout_width="280dp" android:layout_height="280dp" android:layout_gravity="center" android:background="@drawable/bg_neo_glow_cyan" android:alpha="0"/>
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true"
-        android:scrollbars="none">
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true" android:scrollbars="none">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingStart="18dp"
-            android:paddingTop="18dp"
-            android:paddingEnd="18dp"
-            android:paddingBottom="28dp">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:paddingStart="18dp" android:paddingTop="18dp" android:paddingEnd="18dp" android:paddingBottom="28dp">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="54dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:layout_marginBottom="14dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="54dp" android:gravity="center_vertical" android:orientation="horizontal" android:layout_marginBottom="14dp">
 
-                <LinearLayout
-                    android:id="@+id/btnBack"
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
-                    android:background="@drawable/bg_neo_icon_plate"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-                    <ImageView
-                        android:layout_width="19dp"
-                        android:layout_height="19dp"
-                        android:src="@drawable/ic_arrow_back"
-                        android:tint="@color/neo_cyan" />
+                <LinearLayout android:id="@+id/btnBack" android:layout_width="44dp" android:layout_height="44dp" android:background="@drawable/bg_neo_icon_plate" android:clickable="true" android:focusable="true" android:gravity="center" android:orientation="horizontal" android:foreground="?attr/selectableItemBackground">
+                    <ImageView android:layout_width="19dp" android:layout_height="19dp" android:src="@drawable/ic_arrow_back" android:tint="@color/neo_cyan"/>
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/game_boost_title"
-                        android:textColor="@color/white"
-                        android:textSize="17sp"
-                        android:textStyle="bold" />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
-                        android:text="SMART PERFORMANCE SESSION"
-                        android:textColor="@color/neo_text_muted"
-                        android:textSize="9sp"
-                        android:letterSpacing="0.12" />
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/game_boost_title" android:textColor="@color/white" android:textSize="17sp" android:textStyle="bold" android:includeFontPadding="false"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="SMART PERFORMANCE SESSION" android:textColor="@color/neo_text_muted" android:textSize="11sp" android:letterSpacing="0.035" android:includeFontPadding="false"/>
                 </LinearLayout>
 
-                <FrameLayout
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
-                    android:background="@drawable/bg_neo_icon_plate">
-                    <ImageView
-                        android:layout_width="22dp"
-                        android:layout_height="22dp"
-                        android:layout_gravity="center"
-                        android:src="@drawable/ic_nav_game_neo"
-                        android:tint="@color/neo_violet" />
+                <FrameLayout android:layout_width="44dp" android:layout_height="44dp" android:background="@drawable/bg_neo_icon_plate">
+                    <ImageView android:layout_width="22dp" android:layout_height="22dp" android:layout_gravity="center" android:src="@drawable/ic_nav_game_neo" android:tint="@color/neo_violet"/>
                 </FrameLayout>
             </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/cardAppInfo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_neo_hero"
-                android:elevation="4dp"
-                android:orientation="vertical"
-                android:padding="18dp"
-                android:layout_marginBottom="14dp">
+            <LinearLayout android:id="@+id/cardAppInfo" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/bg_neo_hero" android:elevation="4dp" android:orientation="vertical" android:padding="18dp" android:layout_marginBottom="14dp">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/bg_neo_chip_active"
-                    android:paddingStart="10dp"
-                    android:paddingTop="5dp"
-                    android:paddingEnd="10dp"
-                    android:paddingBottom="5dp"
-                    android:text="SELECTED GAME"
-                    android:textColor="@color/neo_cyan"
-                    android:textSize="9sp"
-                    android:textStyle="bold"
-                    android:letterSpacing="0.1" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/bg_neo_chip_active" android:paddingStart="10dp" android:paddingTop="5dp" android:paddingEnd="10dp" android:paddingBottom="5dp" android:text="SELECTED GAME" android:textColor="@color/neo_cyan" android:textSize="11sp" android:textStyle="bold" android:letterSpacing="0.035" android:includeFontPadding="false"/>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="14dp"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal">
-                    <FrameLayout
-                        android:layout_width="74dp"
-                        android:layout_height="74dp"
-                        android:background="@drawable/bg_neo_icon_plate">
-                        <ImageView
-                            android:id="@+id/ivGameIcon"
-                            android:layout_width="56dp"
-                            android:layout_height="56dp"
-                            android:layout_gravity="center"
-                            android:scaleType="fitCenter" />
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:gravity="center_vertical" android:orientation="horizontal">
+                    <FrameLayout android:layout_width="74dp" android:layout_height="74dp" android:background="@drawable/bg_neo_icon_plate">
+                        <ImageView android:id="@+id/ivGameIcon" android:layout_width="56dp" android:layout_height="56dp" android:layout_gravity="center" android:scaleType="fitCenter"/>
                     </FrameLayout>
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_marginStart="14dp"
-                        android:orientation="vertical">
-                        <TextView
-                            android:id="@+id/tvGameName"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/placeholder_app_name"
-                            android:textColor="@color/white"
-                            android:textSize="19sp"
-                            android:textStyle="bold"
-                            android:maxLines="2"
-                            android:ellipsize="end" />
-                        <TextView
-                            android:id="@+id/tvPackageName"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp"
-                            android:text="@string/placeholder_package"
-                            android:textColor="@color/neo_text_muted"
-                            android:textSize="10sp"
-                            android:maxLines="1"
-                            android:ellipsize="middle" />
-                        <TextView
-                            android:id="@+id/tvBoostStatus"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:background="@drawable/bg_neo_status_red"
-                            android:paddingStart="9dp"
-                            android:paddingTop="4dp"
-                            android:paddingEnd="9dp"
-                            android:paddingBottom="4dp"
-                            android:text="@string/game_boost_ready"
-                            android:textColor="@color/neo_red"
-                            android:textSize="10sp"
-                            android:textStyle="bold" />
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="14dp" android:orientation="vertical">
+                        <TextView android:id="@+id/tvGameName" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/placeholder_app_name" android:textColor="@color/white" android:textSize="19sp" android:textStyle="bold" android:maxLines="2" android:ellipsize="end" android:includeFontPadding="false"/>
+                        <TextView android:id="@+id/tvPackageName" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="@string/placeholder_package" android:textColor="@color/neo_text_muted" android:textSize="11.5sp" android:maxLines="1" android:ellipsize="middle" android:includeFontPadding="false"/>
+                        <TextView android:id="@+id/tvBoostStatus" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:background="@drawable/bg_neo_status_red" android:paddingStart="9dp" android:paddingTop="4dp" android:paddingEnd="9dp" android:paddingBottom="4dp" android:text="@string/game_boost_ready" android:textColor="@color/neo_red" android:textSize="11.5sp" android:textStyle="bold" android:includeFontPadding="false"/>
                     </LinearLayout>
                 </LinearLayout>
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="12dp"
-                    android:background="@drawable/bg_neo_divider" />
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginTop="15dp" android:layout_marginBottom="12dp" android:background="@drawable/bg_neo_divider"/>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="62dp"
-                        android:layout_weight="1"
-                        android:layout_marginEnd="6dp"
-                        android:background="@drawable/bg_neo_card_cyan"
-                        android:gravity="center"
-                        android:orientation="vertical">
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/label_ram" android:textColor="@color/neo_text_muted" android:textSize="9sp" />
-                        <TextView android:id="@+id/tvStatRam" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3dp" android:text="-512 MB" android:textColor="@color/neo_cyan" android:textSize="14sp" android:textStyle="bold" />
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="62dp" android:layout_weight="1" android:layout_marginEnd="6dp" android:background="@drawable/bg_neo_card_cyan" android:gravity="center" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/label_ram" android:textColor="@color/neo_text_muted" android:textSize="11sp" android:includeFontPadding="false"/>
+                        <TextView android:id="@+id/tvStatRam" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3dp" android:text="-512 MB" android:textColor="@color/neo_cyan" android:textSize="14sp" android:textStyle="bold" android:includeFontPadding="false"/>
                     </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="62dp"
-                        android:layout_weight="1"
-                        android:layout_marginHorizontal="3dp"
-                        android:background="@drawable/bg_neo_card_violet"
-                        android:gravity="center"
-                        android:orientation="vertical">
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/label_cpu" android:textColor="@color/neo_text_muted" android:textSize="9sp" />
-                        <TextView android:id="@+id/tvStatCpu" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3dp" android:text="-18%" android:textColor="@color/neo_violet" android:textSize="14sp" android:textStyle="bold" />
+                    <LinearLayout android:layout_width="0dp" android:layout_height="62dp" android:layout_weight="1" android:layout_marginHorizontal="3dp" android:background="@drawable/bg_neo_card_violet" android:gravity="center" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/label_cpu" android:textColor="@color/neo_text_muted" android:textSize="11sp" android:includeFontPadding="false"/>
+                        <TextView android:id="@+id/tvStatCpu" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3dp" android:text="-18%" android:textColor="@color/neo_violet" android:textSize="14sp" android:textStyle="bold" android:includeFontPadding="false"/>
                     </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="62dp"
-                        android:layout_weight="1"
-                        android:layout_marginStart="6dp"
-                        android:background="@drawable/bg_neo_card_gold"
-                        android:gravity="center"
-                        android:orientation="vertical">
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="FPS" android:textColor="@color/neo_text_muted" android:textSize="9sp" />
-                        <TextView android:id="@+id/tvStatFps" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3dp" android:text="60+" android:textColor="@color/neo_gold" android:textSize="14sp" android:textStyle="bold" />
+                    <LinearLayout android:layout_width="0dp" android:layout_height="62dp" android:layout_weight="1" android:layout_marginStart="6dp" android:background="@drawable/bg_neo_card_gold" android:gravity="center" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="FPS" android:textColor="@color/neo_text_muted" android:textSize="11sp" android:includeFontPadding="false"/>
+                        <TextView android:id="@+id/tvStatFps" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3dp" android:text="60+" android:textColor="@color/neo_gold" android:textSize="14sp" android:textStyle="bold" android:includeFontPadding="false"/>
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/layoutBoosting"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="14dp"
-                android:background="@drawable/bg_neo_card_cyan"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:padding="22dp"
-                android:visibility="gone">
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="OPTIMIZING SESSION" android:textColor="@color/neo_cyan" android:textSize="10sp" android:textStyle="bold" android:letterSpacing="0.1" />
-                <com.aujunpeak.app.views.RingLoaderView
-                    android:id="@+id/boostRing"
-                    android:layout_width="132dp"
-                    android:layout_height="132dp"
-                    android:layout_marginTop="10dp" />
-                <ProgressBar
-                    android:id="@+id/boostProgressBar"
-                    style="@android:style/Widget.ProgressBar.Horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="8dp"
-                    android:layout_marginTop="12dp"
-                    android:max="100"
-                    android:progress="0"
-                    android:progressDrawable="@drawable/bg_boost_progress" />
-                <TextView android:id="@+id/tvBoostPercent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="0%" android:textColor="@color/neo_cyan" android:textSize="27sp" android:textStyle="bold" />
-                <TextView android:id="@+id/tvBoostStep" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="@string/label_processing" android:textColor="@color/neo_text_muted" android:textSize="12sp" />
+            <LinearLayout android:id="@+id/layoutBoosting" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="14dp" android:background="@drawable/bg_neo_card_cyan" android:gravity="center" android:orientation="vertical" android:padding="22dp" android:visibility="gone">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="OPTIMIZING SESSION" android:textColor="@color/neo_cyan" android:textSize="11.5sp" android:textStyle="bold" android:letterSpacing="0.035" android:includeFontPadding="false"/>
+                <com.aujunpeak.app.views.RingLoaderView android:id="@+id/boostRing" android:layout_width="132dp" android:layout_height="132dp" android:layout_marginTop="10dp"/>
+                <ProgressBar android:id="@+id/boostProgressBar" style="@android:style/Widget.ProgressBar.Horizontal" android:layout_width="match_parent" android:layout_height="8dp" android:layout_marginTop="12dp" android:max="100" android:progress="0" android:progressDrawable="@drawable/bg_boost_progress"/>
+                <TextView android:id="@+id/tvBoostPercent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="0%" android:textColor="@color/neo_cyan" android:textSize="27sp" android:textStyle="bold" android:includeFontPadding="false"/>
+                <TextView android:id="@+id/tvBoostStep" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="@string/label_processing" android:textColor="@color/neo_text_muted" android:textSize="13sp" android:includeFontPadding="false"/>
             </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/btnBoost"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginBottom="14dp"
-                android:background="@drawable/bg_neo_button_primary"
-                android:clickable="true"
-                android:elevation="8dp"
-                android:focusable="true"
-                android:gravity="center"
-                android:orientation="horizontal">
-                <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_boost_lightning" android:tint="@color/white" />
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="10dp" android:text="@string/game_boost_now_btn" android:textColor="@color/white" android:textSize="17sp" android:textStyle="bold" android:letterSpacing="0.08" />
+            <LinearLayout android:id="@+id/btnBoost" android:layout_width="match_parent" android:layout_height="60dp" android:layout_marginBottom="14dp" android:background="@drawable/bg_neo_button_primary" android:clickable="true" android:elevation="8dp" android:focusable="true" android:gravity="center" android:orientation="horizontal" android:foreground="?attr/selectableItemBackground">
+                <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_boost_lightning" android:tint="@color/white"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="10dp" android:text="@string/game_boost_now_btn" android:textColor="@color/white" android:textSize="17sp" android:textStyle="bold" android:letterSpacing="0.035" android:includeFontPadding="false"/>
             </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/cardSuccess"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_neo_card"
-                android:orientation="vertical"
-                android:padding="18dp"
-                android:visibility="gone">
+            <LinearLayout android:id="@+id/cardSuccess" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/bg_neo_card" android:orientation="vertical" android:padding="18dp" android:visibility="gone">
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
                     <FrameLayout android:layout_width="58dp" android:layout_height="58dp" android:background="@drawable/bg_neo_icon_plate">
-                        <ImageView android:id="@+id/ivSuccessIcon" android:layout_width="42dp" android:layout_height="42dp" android:layout_gravity="center" android:scaleType="fitCenter" />
-                        <ImageView android:id="@+id/ivSuccessBadge" android:layout_width="20dp" android:layout_height="20dp" android:layout_gravity="bottom|end" android:src="@drawable/ic_check_green" />
+                        <ImageView android:id="@+id/ivSuccessIcon" android:layout_width="42dp" android:layout_height="42dp" android:layout_gravity="center" android:scaleType="fitCenter"/>
+                        <ImageView android:id="@+id/ivSuccessBadge" android:layout_width="20dp" android:layout_height="20dp" android:layout_gravity="bottom|end" android:src="@drawable/ic_check_green"/>
                     </FrameLayout>
                     <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="13dp" android:orientation="vertical">
                         <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
-                            <View android:id="@+id/vSuccessDot" android:layout_width="7dp" android:layout_height="7dp" android:background="@drawable/bg_neo_status_green" />
-                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="7dp" android:text="@string/game_boost_success_title" android:textColor="@color/neo_green" android:textSize="10sp" android:textStyle="bold" />
+                            <View android:id="@+id/vSuccessDot" android:layout_width="7dp" android:layout_height="7dp" android:background="@drawable/bg_neo_status_green"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="7dp" android:text="@string/game_boost_success_title" android:textColor="@color/neo_green" android:textSize="11.5sp" android:textStyle="bold" android:includeFontPadding="false"/>
                         </LinearLayout>
-                        <TextView android:id="@+id/tvSuccessAppName" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="@string/placeholder_app_name" android:textColor="@color/white" android:textSize="16sp" android:textStyle="bold" android:maxLines="1" android:ellipsize="end" />
+                        <TextView android:id="@+id/tvSuccessAppName" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="@string/placeholder_app_name" android:textColor="@color/white" android:textSize="16sp" android:textStyle="bold" android:maxLines="1" android:ellipsize="end" android:includeFontPadding="false"/>
                     </LinearLayout>
                 </LinearLayout>
-                <View android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginVertical="14dp" android:background="@drawable/bg_neo_divider" />
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginVertical="14dp" android:background="@drawable/bg_neo_divider"/>
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
                     <LinearLayout android:id="@+id/statResultRam" android:layout_width="0dp" android:layout_height="56dp" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/game_boost_ram_freed" android:textColor="@color/neo_text_muted" android:textSize="9sp" />
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3dp" android:text="@string/placeholder_512mb" android:textColor="@color/neo_green" android:textSize="15sp" android:textStyle="bold" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/game_boost_ram_freed" android:textColor="@color/neo_text_muted" android:textSize="11sp" android:includeFontPadding="false"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3dp" android:text="@string/placeholder_512mb" android:textColor="@color/neo_green" android:textSize="15sp" android:textStyle="bold" android:includeFontPadding="false"/>
                     </LinearLayout>
                     <LinearLayout android:id="@+id/statResultCpu" android:layout_width="0dp" android:layout_height="56dp" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/game_boost_cpu_opt" android:textColor="@color/neo_text_muted" android:textSize="9sp" />
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3dp" android:text="-18%" android:textColor="@color/neo_cyan" android:textSize="15sp" android:textStyle="bold" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/game_boost_cpu_opt" android:textColor="@color/neo_text_muted" android:textSize="11sp" android:includeFontPadding="false"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3dp" android:text="-18%" android:textColor="@color/neo_cyan" android:textSize="15sp" android:textStyle="bold" android:includeFontPadding="false"/>
                     </LinearLayout>
                     <LinearLayout android:id="@+id/statResultFps" android:layout_width="0dp" android:layout_height="56dp" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/game_boost_fps" android:textColor="@color/neo_text_muted" android:textSize="9sp" />
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3dp" android:text="60+" android:textColor="@color/neo_gold" android:textSize="15sp" android:textStyle="bold" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/game_boost_fps" android:textColor="@color/neo_text_muted" android:textSize="11sp" android:includeFontPadding="false"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3dp" android:text="60+" android:textColor="@color/neo_gold" android:textSize="15sp" android:textStyle="bold" android:includeFontPadding="false"/>
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>

@@ -281,7 +281,7 @@ class InfoFragment : Fragment() {
             binding.profileCardParticles.setColors(intArrayOf(
                 if (isVip) Color.parseColor("#FFD700") else Color.parseColor("#69FF47"),
                 Color.parseColor("#00E676"),
-                Color.parseColor("#FF1744")
+                Color.parseColor("#FF5C72")
             ))
             binding.profileCardParticles.setDensity(8)
             binding.profileCardParticles.start()

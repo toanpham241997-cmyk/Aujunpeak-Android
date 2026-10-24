@@ -26,7 +26,7 @@ class RingLoaderView @JvmOverloads constructor(
         color = Color.parseColor("#33FF1744")
     }
     private val dotPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-        color = Color.parseColor("#FF1744")
+        color = Color.parseColor("#FF5C72")
     }
 
     private val oval = RectF()
@@ -80,9 +80,9 @@ class RingLoaderView @JvmOverloads constructor(
             cx, cy,
             intArrayOf(
                 Color.TRANSPARENT,
-                Color.parseColor("#FF1744"),
+                Color.parseColor("#FF5C72"),
                 Color.parseColor("#FF5252"),
-                Color.parseColor("#FF1744")
+                Color.parseColor("#FF5C72")
             ),
             floatArrayOf(0f, 0.5f, 0.75f, 1f)
         )

@@ -1,503 +1,134 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/menuRootLayout"
-    android:layout_width="288dp"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:background="@drawable/bg_floating_menu"
-    android:elevation="30dp">
+<?xml version='1.0' encoding='UTF-8'?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/menuRootLayout" android:layout_width="288dp" android:layout_height="wrap_content" android:orientation="vertical" android:background="@drawable/bg_floating_menu" android:elevation="30dp">
 
     <!-- ── HEADER / DRAG HANDLE ── -->
-    <LinearLayout
-        android:id="@+id/menuDragHandle"
-        android:layout_width="match_parent"
-        android:layout_height="42dp"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:paddingLeft="10dp"
-        android:paddingRight="8dp"
-        android:background="@drawable/bg_menu_drag_handle"
-        android:clickable="true"
-        android:focusable="true">
+    <LinearLayout android:id="@+id/menuDragHandle" android:layout_width="match_parent" android:layout_height="42dp" android:orientation="horizontal" android:gravity="center_vertical" android:paddingLeft="10dp" android:paddingRight="8dp" android:background="@drawable/bg_menu_drag_handle" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackground">
 
-        <ImageView
-            android:layout_width="14dp"
-            android:layout_height="14dp"
-            android:src="@drawable/ic_drag_handle"
-            android:layout_marginRight="6dp"
-            android:alpha="0.5"/>
+        <ImageView android:layout_width="14dp" android:layout_height="14dp" android:src="@drawable/ic_drag_handle" android:layout_marginRight="6dp" android:alpha="0.5"/>
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text=" AUJUNPEAK"
-            android:textColor="#FF5252"
-            android:textSize="11sp"
-            android:textStyle="bold"
-            android:letterSpacing="0.1"/>
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text=" AUJUNPEAK" android:textColor="#FF5252" android:textSize="11sp" android:textStyle="bold" android:letterSpacing="0.035" android:includeFontPadding="false"/>
 
-        <ImageView
-            android:id="@+id/btnMenuClose"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:src="@drawable/ic_close_circle"
-            android:clickable="true"
-            android:focusable="true"
-            android:padding="4dp"/>
+        <ImageView android:id="@+id/btnMenuClose" android:layout_width="32dp" android:layout_height="32dp" android:src="@drawable/ic_close_circle" android:clickable="true" android:focusable="true" android:padding="4dp"/>
     </LinearLayout>
 
-    <View android:layout_width="match_parent" android:layout_height="1dp"
-        android:background="#44FF1744"/>
+    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#44FF1744"/>
 
     <!-- ── BODY: Left Tabs + Right Content ── -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
 
         <!-- LEFT TAB STRIP -->
-        <LinearLayout
-            android:id="@+id/leftTabBar"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="top|center_horizontal"
-            android:background="@drawable/bg_left_tab_container"
-            android:paddingTop="6dp"
-            android:paddingBottom="6dp">
+        <LinearLayout android:id="@+id/leftTabBar" android:layout_width="50dp" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="top|center_horizontal" android:background="@drawable/bg_left_tab_container" android:paddingTop="6dp" android:paddingBottom="6dp">
 
             <!-- HOME Tab -->
-            <LinearLayout
-                android:id="@+id/tabHome"
-                android:layout_width="44dp"
-                android:layout_height="52dp"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:background="@drawable/bg_left_tab_selected"
-                android:clickable="true"
-                android:focusable="true"
-                android:layout_marginBottom="2dp">
-                <ImageView
-                    android:id="@+id/icTabHome"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/ic_menu_home"
-                    android:tint="#BEBEBE"/>
-                <TextView
-                    android:id="@+id/tvTabHome"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/title_home"
-                    android:textColor="#FFFFFF"
-                    android:textSize="7sp"
-                    android:layout_marginTop="2dp"/>
+            <LinearLayout android:id="@+id/tabHome" android:layout_width="44dp" android:layout_height="52dp" android:orientation="vertical" android:gravity="center" android:background="@drawable/bg_left_tab_selected" android:clickable="true" android:focusable="true" android:layout_marginBottom="2dp" android:foreground="?attr/selectableItemBackground">
+                <ImageView android:id="@+id/icTabHome" android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_menu_home" android:tint="#BEBEBE"/>
+                <TextView android:id="@+id/tvTabHome" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/title_home" android:textColor="#FFFFFF" android:textSize="9sp" android:layout_marginTop="2dp" android:includeFontPadding="false"/>
             </LinearLayout>
 
             <!-- ASETYAIM Tab -->
-            <LinearLayout
-                android:id="@+id/tabAim"
-                android:layout_width="44dp"
-                android:layout_height="52dp"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:background="@drawable/bg_left_tab_normal"
-                android:clickable="true"
-                android:focusable="true"
-                android:layout_marginBottom="2dp">
-                <ImageView
-                    android:id="@+id/icTabAim"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/ic_menu_aim"
-                    android:tint="#BEBEBE"
-                    android:alpha="0.5"/>
-                <TextView
-                    android:id="@+id/tvTabAim"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Aim"
-                    android:textColor="#66FFFFFF"
-                    android:textSize="7sp"
-                    android:layout_marginTop="2dp"/>
+            <LinearLayout android:id="@+id/tabAim" android:layout_width="44dp" android:layout_height="52dp" android:orientation="vertical" android:gravity="center" android:background="@drawable/bg_left_tab_normal" android:clickable="true" android:focusable="true" android:layout_marginBottom="2dp" android:foreground="?attr/selectableItemBackground">
+                <ImageView android:id="@+id/icTabAim" android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_menu_aim" android:tint="#BEBEBE" android:alpha="0.5"/>
+                <TextView android:id="@+id/tvTabAim" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Aim" android:textColor="#66FFFFFF" android:textSize="9sp" android:layout_marginTop="2dp" android:includeFontPadding="false"/>
             </LinearLayout>
 
             <!-- INFO Tab -->
-            <LinearLayout
-                android:id="@+id/tabInfo"
-                android:layout_width="44dp"
-                android:layout_height="52dp"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:background="@drawable/bg_left_tab_normal"
-                android:clickable="true"
-                android:focusable="true"
-                android:layout_marginBottom="2dp">
-                <ImageView
-                    android:id="@+id/icTabInfo"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/ic_menu_info"
-                    android:alpha="0.5"
-                    android:tint="#BEBEBE"/>
-                <TextView
-                    android:id="@+id/tvTabInfo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Info"
-                    android:textColor="#66FFFFFF"
-                    android:textSize="7sp"
-                    android:layout_marginTop="2dp"/>
+            <LinearLayout android:id="@+id/tabInfo" android:layout_width="44dp" android:layout_height="52dp" android:orientation="vertical" android:gravity="center" android:background="@drawable/bg_left_tab_normal" android:clickable="true" android:focusable="true" android:layout_marginBottom="2dp" android:foreground="?attr/selectableItemBackground">
+                <ImageView android:id="@+id/icTabInfo" android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_menu_info" android:alpha="0.5" android:tint="#BEBEBE"/>
+                <TextView android:id="@+id/tvTabInfo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Info" android:textColor="#66FFFFFF" android:textSize="9sp" android:layout_marginTop="2dp" android:includeFontPadding="false"/>
             </LinearLayout>
 
             <!-- SETTINGS Tab -->
-            <LinearLayout
-                android:id="@+id/tabSettings"
-                android:layout_width="44dp"
-                android:layout_height="52dp"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:background="@drawable/bg_left_tab_normal"
-                android:clickable="true"
-                android:focusable="true">
-                <ImageView
-                    android:id="@+id/icTabSettings"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/ic_menu_settings"
-                    android:tint="#BEBEBE"
-                    android:alpha="0.5"/>
-                <TextView
-                    android:id="@+id/tvTabSettings"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Set"
-                    android:textColor="#66FFFFFF"
-                    android:textSize="7sp"
-                    android:layout_marginTop="2dp"/>
+            <LinearLayout android:id="@+id/tabSettings" android:layout_width="44dp" android:layout_height="52dp" android:orientation="vertical" android:gravity="center" android:background="@drawable/bg_left_tab_normal" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackground">
+                <ImageView android:id="@+id/icTabSettings" android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_menu_settings" android:tint="#BEBEBE" android:alpha="0.5"/>
+                <TextView android:id="@+id/tvTabSettings" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Set" android:textColor="#66FFFFFF" android:textSize="9sp" android:layout_marginTop="2dp" android:includeFontPadding="false"/>
             </LinearLayout>
 
         </LinearLayout>
 
         <!-- Divider -->
-        <View
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:background="#33FF1744"/>
+        <View android:layout_width="1dp" android:layout_height="match_parent" android:background="#33FF1744"/>
 
         <!-- RIGHT CONTENT PANEL -->
-        <FrameLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/bg_right_content_panel">
+        <FrameLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:background="@drawable/bg_right_content_panel">
 
             <!-- ===== HOME CONTENT ===== -->
-            <ScrollView
-                android:id="@+id/contentHome"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:scrollbars="none"
-                android:visibility="visible">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="10dp">
+            <ScrollView android:id="@+id/contentHome" android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollbars="none" android:visibility="visible">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="10dp">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="CHỨC NĂNG"
-                        android:textColor="#FF5252"
-                        android:textSize="8sp"
-                        android:textStyle="bold"
-                        android:letterSpacing="0.15"
-                        android:layout_marginBottom="8dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="CHỨC NĂNG" android:textColor="#FF5252" android:textSize="10sp" android:textStyle="bold" android:letterSpacing="0.035" android:layout_marginBottom="8dp" android:includeFontPadding="false"/>
 
                     <!-- Switch 1: Game Mode -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
-                        android:layout_marginBottom="4dp"
-                        android:background="@drawable/bg_switch_row"
-                        android:padding="4dp">
-                        <ImageView
-                            android:layout_width="18dp"
-                            android:layout_height="18dp"
-                            android:src="@drawable/ic_smooth_render"
-                            android:layout_marginEnd="6dp"
-                            android:tint="#DD0000"/>
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="SMOOTH GAME"
-                            android:textColor="#DDFFFFFF"
-                            android:textSize="10sp"/>
-                        <com.google.android.material.materialswitch.MaterialSwitch
-                            android:id="@+id/switchHomeGameMode"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:scaleX="0.75"
-                            android:scaleY="0.75"/>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="40dp" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="4dp" android:background="@drawable/bg_switch_row" android:padding="4dp">
+                        <ImageView android:layout_width="18dp" android:layout_height="18dp" android:src="@drawable/ic_smooth_render" android:layout_marginEnd="6dp" android:tint="#DD0000"/>
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="SMOOTH GAME" android:textColor="#DDFFFFFF" android:textSize="10sp" android:includeFontPadding="false"/>
+                        <com.google.android.material.materialswitch.MaterialSwitch android:id="@+id/switchHomeGameMode" android:layout_width="wrap_content" android:layout_height="wrap_content" android:scaleX="0.75" android:scaleY="0.75"/>
                     </LinearLayout>
 
                     <!-- Switch 2: RAM Boost -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
-                        android:layout_marginBottom="4dp"
-                        android:background="@drawable/bg_switch_row"
-                        android:padding="4dp">
-                        <ImageView
-                            android:layout_width="18dp"
-                            android:layout_height="18dp"
-                            android:src="@drawable/ic_smooth_render"
-                            android:layout_marginEnd="6dp"
-                            android:tint="#DD0000"/>
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="OPTIMIZER PRO "
-                            android:textColor="#DDFFFFFF"
-                            android:textSize="10sp"/>
-                        <com.google.android.material.materialswitch.MaterialSwitch
-                            android:id="@+id/switchHomeRam"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:scaleX="0.75"
-                            android:scaleY="0.75"/>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="40dp" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="4dp" android:background="@drawable/bg_switch_row" android:padding="4dp">
+                        <ImageView android:layout_width="18dp" android:layout_height="18dp" android:src="@drawable/ic_smooth_render" android:layout_marginEnd="6dp" android:tint="#DD0000"/>
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="OPTIMIZER PRO " android:textColor="#DDFFFFFF" android:textSize="10sp" android:includeFontPadding="false"/>
+                        <com.google.android.material.materialswitch.MaterialSwitch android:id="@+id/switchHomeRam" android:layout_width="wrap_content" android:layout_height="wrap_content" android:scaleX="0.75" android:scaleY="0.75"/>
                     </LinearLayout>
 
                     <!-- Switch 3: FPS Unlock -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
-                        android:layout_marginBottom="4dp"
-                        android:background="@drawable/bg_switch_row"
-                        android:padding="4dp">
-                        <ImageView
-                            android:layout_width="18dp"
-                            android:layout_height="18dp"
-                            android:src="@drawable/ic_smooth_render"
-                            android:layout_marginEnd="6dp"
-                            android:tint="#DD0000"/>
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="TOUCH PLAYER"
-                            android:textColor="#DDFFFFFF"
-                            android:textSize="10sp"/>
-                        <com.google.android.material.materialswitch.MaterialSwitch
-                            android:id="@+id/switchHomeFps"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:scaleX="0.75"
-                            android:scaleY="0.75"/>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="40dp" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="4dp" android:background="@drawable/bg_switch_row" android:padding="4dp">
+                        <ImageView android:layout_width="18dp" android:layout_height="18dp" android:src="@drawable/ic_smooth_render" android:layout_marginEnd="6dp" android:tint="#DD0000"/>
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="TOUCH PLAYER" android:textColor="#DDFFFFFF" android:textSize="10sp" android:includeFontPadding="false"/>
+                        <com.google.android.material.materialswitch.MaterialSwitch android:id="@+id/switchHomeFps" android:layout_width="wrap_content" android:layout_height="wrap_content" android:scaleX="0.75" android:scaleY="0.75"/>
                     </LinearLayout>
 
                     <!-- Switch 4: Network Boost -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
-                        android:layout_marginBottom="4dp"
-                        android:background="@drawable/bg_switch_row"
-                        android:padding="4dp">
-                        <ImageView
-                            android:layout_width="18dp"
-                            android:layout_height="18dp"
-                            android:src="@drawable/ic_smooth_render"
-                            android:layout_marginEnd="6dp"
-                            android:tint="#DD0000"/>
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="DISPLAY SCREEN"
-                            android:textColor="#DDFFFFFF"
-                            android:textSize="10sp"/>
-                        <com.google.android.material.materialswitch.MaterialSwitch
-                            android:id="@+id/switchHomeNet"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:scaleX="0.75"
-                            android:scaleY="0.75"/>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="40dp" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="4dp" android:background="@drawable/bg_switch_row" android:padding="4dp">
+                        <ImageView android:layout_width="18dp" android:layout_height="18dp" android:src="@drawable/ic_smooth_render" android:layout_marginEnd="6dp" android:tint="#DD0000"/>
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="DISPLAY SCREEN" android:textColor="#DDFFFFFF" android:textSize="10sp" android:includeFontPadding="false"/>
+                        <com.google.android.material.materialswitch.MaterialSwitch android:id="@+id/switchHomeNet" android:layout_width="wrap_content" android:layout_height="wrap_content" android:scaleX="0.75" android:scaleY="0.75"/>
                     </LinearLayout>
 
                     <!-- Switch 5: Smooth Render -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
-                        android:background="@drawable/bg_switch_row"
-                        android:padding="4dp">
-                        <ImageView
-                            android:layout_width="18dp"
-                            android:layout_height="18dp"
-                            android:src="@drawable/ic_smooth_render"
-                            android:layout_marginEnd="6dp"
-                            android:tint="#DD0000"/>
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="FIX PIGS"
-                            android:textColor="#DDFFFFFF"
-                            android:textSize="10sp"/>
-                        <com.google.android.material.materialswitch.MaterialSwitch
-                            android:id="@+id/switchHomeSmooth"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:scaleX="0.75"
-                            android:scaleY="0.75"/>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="40dp" android:orientation="horizontal" android:gravity="center_vertical" android:background="@drawable/bg_switch_row" android:padding="4dp">
+                        <ImageView android:layout_width="18dp" android:layout_height="18dp" android:src="@drawable/ic_smooth_render" android:layout_marginEnd="6dp" android:tint="#DD0000"/>
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="FIX PIGS" android:textColor="#DDFFFFFF" android:textSize="10sp" android:includeFontPadding="false"/>
+                        <com.google.android.material.materialswitch.MaterialSwitch android:id="@+id/switchHomeSmooth" android:layout_width="wrap_content" android:layout_height="wrap_content" android:scaleX="0.75" android:scaleY="0.75"/>
                     </LinearLayout>
 
                 </LinearLayout>
             </ScrollView>
 
             <!-- ===== ASETYAIM CONTENT ===== -->
-            <ScrollView
-                android:id="@+id/contentAim"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:scrollbars="none"
-                android:visibility="gone">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="10dp">
+            <ScrollView android:id="@+id/contentAim" android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollbars="none" android:visibility="gone">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="10dp">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="ASETYAIM"
-                        android:textColor="#FF5252"
-                        android:textSize="8sp"
-                        android:textStyle="bold"
-                        android:letterSpacing="0.15"
-                        android:layout_marginBottom="8dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ASETYAIM" android:textColor="#FF5252" android:textSize="10sp" android:textStyle="bold" android:letterSpacing="0.035" android:layout_marginBottom="8dp" android:includeFontPadding="false"/>
 
                     <!-- Reset Data Button with progress container -->
-                    <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="42dp"
-                        android:layout_marginBottom="10dp">
+                    <FrameLayout android:layout_width="match_parent" android:layout_height="42dp" android:layout_marginBottom="10dp">
 
                         <!-- Background progress -->
-                        <View
-                            android:id="@+id/vResetProgress"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:background="@drawable/bg_reset_button_progress"
-                            android:visibility="gone"/>
+                        <View android:id="@+id/vResetProgress" android:layout_width="0dp" android:layout_height="match_parent" android:background="@drawable/bg_reset_button_progress" android:visibility="gone"/>
 
                         <!-- Button text/content -->
-                        <LinearLayout
-                            android:id="@+id/btnResetData"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal"
-                            android:gravity="center"
-                            android:background="@drawable/bg_reset_button"
-                            android:clickable="true"
-                            android:focusable="true">
-                            <ImageView
-                                android:id="@+id/ivResetIcon"
-                                android:layout_width="16dp"
-                                android:layout_height="16dp"
-                                android:src="@drawable/ic_autoaim_reset"
-                                android:layout_marginEnd="6dp"/>
-                            <TextView
-                                android:id="@+id/tvResetBtnText"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="START DATA RESET"
-                                android:textColor="#FFFFFF"
-                                android:textSize="10sp"
-                                android:textStyle="bold"
-                                android:letterSpacing="0.05"/>
+                        <LinearLayout android:id="@+id/btnResetData" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="horizontal" android:gravity="center" android:background="@drawable/bg_reset_button" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackground">
+                            <ImageView android:id="@+id/ivResetIcon" android:layout_width="16dp" android:layout_height="16dp" android:src="@drawable/ic_autoaim_reset" android:layout_marginEnd="6dp"/>
+                            <TextView android:id="@+id/tvResetBtnText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="START DATA RESET" android:textColor="#FFFFFF" android:textSize="10sp" android:textStyle="bold" android:letterSpacing="0.05" android:includeFontPadding="false"/>
                         </LinearLayout>
                     </FrameLayout>
 
                     <!-- Switches (show after reset done) -->
-                    <LinearLayout
-                        android:id="@+id/aimSwitchesContainer"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:visibility="gone">
+                    <LinearLayout android:id="@+id/aimSwitchesContainer" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:visibility="gone">
 
                         <!-- Switch: Auto Aim -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="40dp"
-                            android:orientation="horizontal"
-                            android:gravity="center_vertical"
-                            android:layout_marginBottom="4dp"
-                            android:background="@drawable/bg_switch_row"
-                            android:padding="4dp">
-                            <ImageView
-                                android:layout_width="18dp"
-                                android:layout_height="18dp"
-                                android:src="@drawable/ic_crosshair_target"
-                                android:tint="#FF0000"
-                                android:layout_marginEnd="6dp"
-                                />
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="AIMLOCK PRO"
-                                android:textColor="#DDFFFFFF"
-                                android:textSize="10sp"/>
-                            <com.google.android.material.materialswitch.MaterialSwitch
-                                android:id="@+id/switchAimAuto"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:scaleX="0.75"
-                                android:scaleY="0.75"/>
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="40dp" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="4dp" android:background="@drawable/bg_switch_row" android:padding="4dp">
+                            <ImageView android:layout_width="18dp" android:layout_height="18dp" android:src="@drawable/ic_crosshair_target" android:tint="#FF0000" android:layout_marginEnd="6dp"/>
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="AIMLOCK PRO" android:textColor="#DDFFFFFF" android:textSize="10sp" android:includeFontPadding="false"/>
+                            <com.google.android.material.materialswitch.MaterialSwitch android:id="@+id/switchAimAuto" android:layout_width="wrap_content" android:layout_height="wrap_content" android:scaleX="0.75" android:scaleY="0.75"/>
                         </LinearLayout>
 
                         <!-- Switch: Sensitivity -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="40dp"
-                            android:orientation="horizontal"
-                            android:gravity="center_vertical"
-                            android:background="@drawable/bg_switch_row"
-                            android:padding="4dp">
-                            <ImageView
-                                android:layout_width="18dp"
-                                android:layout_height="18dp"
-                                android:src="@drawable/ic_sensitivity"
-                                android:layout_marginEnd="6dp"
-                                android:tint="#FF0000"/>
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="FIX RECOILL"
-                                android:textColor="#DDFFFFFF"
-                                android:textSize="10sp"/>
-                            <com.google.android.material.materialswitch.MaterialSwitch
-                                android:id="@+id/switchAimSensitivity"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:scaleX="0.75"
-                                android:scaleY="0.75"/>
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="40dp" android:orientation="horizontal" android:gravity="center_vertical" android:background="@drawable/bg_switch_row" android:padding="4dp">
+                            <ImageView android:layout_width="18dp" android:layout_height="18dp" android:src="@drawable/ic_sensitivity" android:layout_marginEnd="6dp" android:tint="#FF0000"/>
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="FIX RECOILL" android:textColor="#DDFFFFFF" android:textSize="10sp" android:includeFontPadding="false"/>
+                            <com.google.android.material.materialswitch.MaterialSwitch android:id="@+id/switchAimSensitivity" android:layout_width="wrap_content" android:layout_height="wrap_content" android:scaleX="0.75" android:scaleY="0.75"/>
                         </LinearLayout>
                     </LinearLayout>
 
@@ -505,279 +136,109 @@
             </ScrollView>
 
             <!-- ===== INFO CONTENT ===== -->
-            <LinearLayout
-                android:id="@+id/contentInfo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="10dp"
-                android:visibility="gone">
+            <LinearLayout android:id="@+id/contentInfo" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="10dp" android:visibility="gone">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="THÔNG TIN"
-                    android:textColor="#FF5252"
-                    android:textSize="8sp"
-                    android:textStyle="bold"
-                    android:letterSpacing="0.15"
-                    android:layout_marginBottom="8dp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="THÔNG TIN" android:textColor="#FF5252" android:textSize="10sp" android:textStyle="bold" android:letterSpacing="0.035" android:layout_marginBottom="8dp" android:includeFontPadding="false"/>
 
                 <!-- Admin Card -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:background="@drawable/bg_info_card_float"
-                    android:padding="10dp"
-                    android:layout_marginBottom="6dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:background="@drawable/bg_info_card_float" android:padding="10dp" android:layout_marginBottom="6dp">
 
                     <!-- Admin Row -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
-                        android:layout_marginBottom="6dp">
-                        <ImageView
-                            android:layout_width="16dp"
-                            android:layout_height="16dp"
-                            android:src="@drawable/ic_admin_crown"
-                            android:layout_marginEnd="6dp"
-                            android:tint="#004400"/>
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="ADMIN"
-                                android:textColor="#888888"
-                                android:textSize="8sp"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="HÀ VĂN HUẤN"
-                                android:textColor="#FFFFFF"
-                                android:textSize="11sp"
-                                android:textStyle="bold"/>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="6dp">
+                        <ImageView android:layout_width="16dp" android:layout_height="16dp" android:src="@drawable/ic_admin_crown" android:layout_marginEnd="6dp" android:tint="#004400"/>
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ADMIN" android:textColor="#888888" android:textSize="10sp" android:includeFontPadding="false"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="HÀ VĂN HUẤN" android:textColor="#FFFFFF" android:textSize="11sp" android:textStyle="bold" android:includeFontPadding="false"/>
                         </LinearLayout>
                     </LinearLayout>
 
                     <!-- Copyright Row -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
-                        android:layout_marginBottom="6dp">
-                        <ImageView
-                            android:layout_width="14dp"
-                            android:layout_height="14dp"
-                            android:src="@drawable/ic_copyright_info"
-                            android:layout_marginEnd="6dp"/>
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/home_copyright_label"
-                                android:textColor="#888888"
-                                android:textSize="8sp"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="© 2026 Huấn Hà VN"
-                                android:textColor="#AAFFFFFF"
-                                android:textSize="9sp"/>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="6dp">
+                        <ImageView android:layout_width="14dp" android:layout_height="14dp" android:src="@drawable/ic_copyright_info" android:layout_marginEnd="6dp"/>
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/home_copyright_label" android:textColor="#888888" android:textSize="10sp" android:includeFontPadding="false"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="© 2026 Huấn Hà VN" android:textColor="#AAFFFFFF" android:textSize="10sp" android:includeFontPadding="false"/>
                         </LinearLayout>
                     </LinearLayout>
 
                     <!-- Active Status Row -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical">
-                        <View
-                            android:id="@+id/vInfoActiveDot"
-                            android:layout_width="10dp"
-                            android:layout_height="10dp"
-                            android:background="@drawable/bg_active_dot_green"
-                            android:layout_marginEnd="6dp"/>
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Trạng thái"
-                                android:textColor="#888888"
-                                android:textSize="8sp"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Active"
-                                android:textColor="#69FF47"
-                                android:textSize="9sp"
-                                android:textStyle="bold"/>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+                        <View android:id="@+id/vInfoActiveDot" android:layout_width="10dp" android:layout_height="10dp" android:background="@drawable/bg_active_dot_green" android:layout_marginEnd="6dp"/>
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Trạng thái" android:textColor="#888888" android:textSize="10sp" android:includeFontPadding="false"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Active" android:textColor="#69FF47" android:textSize="10sp" android:textStyle="bold" android:includeFontPadding="false"/>
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
 
                 <!-- Version -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Version v1.0.4 "
-                    android:textColor="#55FFFFFF"
-                    android:textSize="8sp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Version v1.0.4 " android:textColor="#55FFFFFF" android:textSize="10sp" android:includeFontPadding="false"/>
 
             </LinearLayout>
 
             <!-- ===== SETTINGS CONTENT ===== -->
-            <ScrollView
-                android:id="@+id/contentSettings"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:scrollbars="none"
-                android:visibility="gone">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="10dp">
+            <ScrollView android:id="@+id/contentSettings" android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollbars="none" android:visibility="gone">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="10dp">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="MÀU MENU"
-                        android:textColor="#FF5252"
-                        android:textSize="8sp"
-                        android:textStyle="bold"
-                        android:letterSpacing="0.15"
-                        android:layout_marginBottom="8dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="MÀU MENU" android:textColor="#FF5252" android:textSize="10sp" android:textStyle="bold" android:letterSpacing="0.035" android:layout_marginBottom="8dp" android:includeFontPadding="false"/>
 
-                    <TextView
-                        android:id="@+id/tvSelectedColorName"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Màu hiện tại: Đỏ"
-                        android:textColor="#AAFFFFFF"
-                        android:textSize="9sp"
-                        android:layout_marginBottom="8dp"/>
+                    <TextView android:id="@+id/tvSelectedColorName" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Màu hiện tại: Đỏ" android:textColor="#AAFFFFFF" android:textSize="10sp" android:layout_marginBottom="8dp" android:includeFontPadding="false"/>
 
                     <!-- Color swatches row 1 -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center"
-                        android:layout_marginBottom="6dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center" android:layout_marginBottom="6dp">
 
-                        <FrameLayout android:id="@+id/swatchRed"
-                            android:layout_width="26dp" android:layout_height="26dp"
-                            android:layout_marginEnd="4dp" android:clickable="true" android:focusable="true">
-                            <View android:layout_width="26dp" android:layout_height="26dp"
-                                android:background="@drawable/bg_color_swatch_float"/>
-                            <View android:id="@+id/ringRed" android:layout_width="26dp" android:layout_height="26dp"
-                                android:background="@drawable/bg_color_swatch_ring" android:visibility="visible"/>
+                        <FrameLayout android:id="@+id/swatchRed" android:layout_width="26dp" android:layout_height="26dp" android:layout_marginEnd="4dp" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackground">
+                            <View android:layout_width="26dp" android:layout_height="26dp" android:background="@drawable/bg_color_swatch_float"/>
+                            <View android:id="@+id/ringRed" android:layout_width="26dp" android:layout_height="26dp" android:background="@drawable/bg_color_swatch_ring" android:visibility="visible"/>
                         </FrameLayout>
 
-                        <FrameLayout android:id="@+id/swatchBlue"
-                            android:layout_width="26dp" android:layout_height="26dp"
-                            android:layout_marginEnd="4dp" android:clickable="true" android:focusable="true">
-                            <View android:layout_width="26dp" android:layout_height="26dp"
-                                android:background="@drawable/bg_color_swatch_float"/>
-                            <View android:id="@+id/ringBlue" android:layout_width="26dp" android:layout_height="26dp"
-                                android:background="@drawable/bg_color_swatch_ring" android:visibility="gone"/>
+                        <FrameLayout android:id="@+id/swatchBlue" android:layout_width="26dp" android:layout_height="26dp" android:layout_marginEnd="4dp" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackground">
+                            <View android:layout_width="26dp" android:layout_height="26dp" android:background="@drawable/bg_color_swatch_float"/>
+                            <View android:id="@+id/ringBlue" android:layout_width="26dp" android:layout_height="26dp" android:background="@drawable/bg_color_swatch_ring" android:visibility="gone"/>
                         </FrameLayout>
 
-                        <FrameLayout android:id="@+id/swatchGreen"
-                            android:layout_width="26dp" android:layout_height="26dp"
-                            android:layout_marginEnd="4dp" android:clickable="true" android:focusable="true">
-                            <View android:layout_width="26dp" android:layout_height="26dp"
-                                android:background="@drawable/bg_color_swatch_float"/>
-                            <View android:id="@+id/ringGreen" android:layout_width="26dp" android:layout_height="26dp"
-                                android:background="@drawable/bg_color_swatch_ring" android:visibility="gone"/>
+                        <FrameLayout android:id="@+id/swatchGreen" android:layout_width="26dp" android:layout_height="26dp" android:layout_marginEnd="4dp" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackground">
+                            <View android:layout_width="26dp" android:layout_height="26dp" android:background="@drawable/bg_color_swatch_float"/>
+                            <View android:id="@+id/ringGreen" android:layout_width="26dp" android:layout_height="26dp" android:background="@drawable/bg_color_swatch_ring" android:visibility="gone"/>
                         </FrameLayout>
 
-                        <FrameLayout android:id="@+id/swatchPurple"
-                            android:layout_width="26dp" android:layout_height="26dp"
-                            android:layout_marginEnd="4dp" android:clickable="true" android:focusable="true">
-                            <View android:layout_width="26dp" android:layout_height="26dp"
-                                android:background="@drawable/bg_color_swatch_float"/>
-                            <View android:id="@+id/ringPurple" android:layout_width="26dp" android:layout_height="26dp"
-                                android:background="@drawable/bg_color_swatch_ring" android:visibility="gone"/>
+                        <FrameLayout android:id="@+id/swatchPurple" android:layout_width="26dp" android:layout_height="26dp" android:layout_marginEnd="4dp" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackground">
+                            <View android:layout_width="26dp" android:layout_height="26dp" android:background="@drawable/bg_color_swatch_float"/>
+                            <View android:id="@+id/ringPurple" android:layout_width="26dp" android:layout_height="26dp" android:background="@drawable/bg_color_swatch_ring" android:visibility="gone"/>
                         </FrameLayout>
 
-                        <FrameLayout android:id="@+id/swatchOrange"
-                            android:layout_width="26dp" android:layout_height="26dp"
-                            android:clickable="true" android:focusable="true">
-                            <View android:layout_width="26dp" android:layout_height="26dp"
-                                android:background="@drawable/bg_color_swatch_float"/>
-                            <View android:id="@+id/ringOrange" android:layout_width="26dp" android:layout_height="26dp"
-                                android:background="@drawable/bg_color_swatch_ring" android:visibility="gone"/>
+                        <FrameLayout android:id="@+id/swatchOrange" android:layout_width="26dp" android:layout_height="26dp" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackground">
+                            <View android:layout_width="26dp" android:layout_height="26dp" android:background="@drawable/bg_color_swatch_float"/>
+                            <View android:id="@+id/ringOrange" android:layout_width="26dp" android:layout_height="26dp" android:background="@drawable/bg_color_swatch_ring" android:visibility="gone"/>
                         </FrameLayout>
                     </LinearLayout>
 
                     <!-- Color swatches row 2 -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center">
 
-                        <FrameLayout android:id="@+id/swatchGold"
-                            android:layout_width="26dp" android:layout_height="26dp"
-                            android:layout_marginEnd="4dp" android:clickable="true" android:focusable="true">
-                            <View android:layout_width="26dp" android:layout_height="26dp"
-                                android:background="@drawable/bg_color_swatch_float"/>
-                            <View android:id="@+id/ringGold" android:layout_width="26dp" android:layout_height="26dp"
-                                android:background="@drawable/bg_color_swatch_ring" android:visibility="gone"/>
+                        <FrameLayout android:id="@+id/swatchGold" android:layout_width="26dp" android:layout_height="26dp" android:layout_marginEnd="4dp" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackground">
+                            <View android:layout_width="26dp" android:layout_height="26dp" android:background="@drawable/bg_color_swatch_float"/>
+                            <View android:id="@+id/ringGold" android:layout_width="26dp" android:layout_height="26dp" android:background="@drawable/bg_color_swatch_ring" android:visibility="gone"/>
                         </FrameLayout>
 
-                        <FrameLayout android:id="@+id/swatchPink"
-                            android:layout_width="26dp" android:layout_height="26dp"
-                            android:layout_marginEnd="4dp" android:clickable="true" android:focusable="true">
-                            <View android:layout_width="26dp" android:layout_height="26dp"
-                                android:background="@drawable/bg_color_swatch_float"/>
-                            <View android:id="@+id/ringPink" android:layout_width="26dp" android:layout_height="26dp"
-                                android:background="@drawable/bg_color_swatch_ring" android:visibility="gone"/>
+                        <FrameLayout android:id="@+id/swatchPink" android:layout_width="26dp" android:layout_height="26dp" android:layout_marginEnd="4dp" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackground">
+                            <View android:layout_width="26dp" android:layout_height="26dp" android:background="@drawable/bg_color_swatch_float"/>
+                            <View android:id="@+id/ringPink" android:layout_width="26dp" android:layout_height="26dp" android:background="@drawable/bg_color_swatch_ring" android:visibility="gone"/>
                         </FrameLayout>
 
-                        <FrameLayout android:id="@+id/swatchCyan"
-                            android:layout_width="26dp" android:layout_height="26dp"
-                            android:layout_marginEnd="4dp" android:clickable="true" android:focusable="true">
-                            <View android:layout_width="26dp" android:layout_height="26dp"
-                                android:background="@drawable/bg_color_swatch_float"/>
-                            <View android:id="@+id/ringCyan" android:layout_width="26dp" android:layout_height="26dp"
-                                android:background="@drawable/bg_color_swatch_ring" android:visibility="gone"/>
+                        <FrameLayout android:id="@+id/swatchCyan" android:layout_width="26dp" android:layout_height="26dp" android:layout_marginEnd="4dp" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackground">
+                            <View android:layout_width="26dp" android:layout_height="26dp" android:background="@drawable/bg_color_swatch_float"/>
+                            <View android:id="@+id/ringCyan" android:layout_width="26dp" android:layout_height="26dp" android:background="@drawable/bg_color_swatch_ring" android:visibility="gone"/>
                         </FrameLayout>
 
-                        <FrameLayout android:id="@+id/swatchWhite"
-                            android:layout_width="26dp" android:layout_height="26dp"
-                            android:layout_marginEnd="4dp" android:clickable="true" android:focusable="true">
-                            <View android:layout_width="26dp" android:layout_height="26dp"
-                                android:background="@drawable/bg_color_swatch_float"/>
-                            <View android:id="@+id/ringWhite" android:layout_width="26dp" android:layout_height="26dp"
-                                android:background="@drawable/bg_color_swatch_ring" android:visibility="gone"/>
+                        <FrameLayout android:id="@+id/swatchWhite" android:layout_width="26dp" android:layout_height="26dp" android:layout_marginEnd="4dp" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackground">
+                            <View android:layout_width="26dp" android:layout_height="26dp" android:background="@drawable/bg_color_swatch_float"/>
+                            <View android:id="@+id/ringWhite" android:layout_width="26dp" android:layout_height="26dp" android:background="@drawable/bg_color_swatch_ring" android:visibility="gone"/>
                         </FrameLayout>
 
-                        <FrameLayout android:id="@+id/swatchMint"
-                            android:layout_width="26dp" android:layout_height="26dp"
-                            android:clickable="true" android:focusable="true">
-                            <View android:layout_width="26dp" android:layout_height="26dp"
-                                android:background="@drawable/bg_color_swatch_float"/>
-                            <View android:id="@+id/ringMint" android:layout_width="26dp" android:layout_height="26dp"
-                                android:background="@drawable/bg_color_swatch_ring" android:visibility="gone"/>
+                        <FrameLayout android:id="@+id/swatchMint" android:layout_width="26dp" android:layout_height="26dp" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackground">
+                            <View android:layout_width="26dp" android:layout_height="26dp" android:background="@drawable/bg_color_swatch_float"/>
+                            <View android:id="@+id/ringMint" android:layout_width="26dp" android:layout_height="26dp" android:background="@drawable/bg_color_swatch_ring" android:visibility="gone"/>
                         </FrameLayout>
                     </LinearLayout>
 

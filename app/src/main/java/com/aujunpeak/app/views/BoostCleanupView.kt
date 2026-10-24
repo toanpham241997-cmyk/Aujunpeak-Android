@@ -96,14 +96,14 @@ class BoostCleanupView @JvmOverloads constructor(
 
     // ─── Colors ───────────────────────────────────────────────────────────────
 
-    private val RED     = Color.parseColor("#FF1744")
+    private val RED     = Color.parseColor("#FF5C72")
     private val ORANGE  = Color.parseColor("#FF6D00")
     private val YELLOW  = Color.parseColor("#FFD600")
     private val GREEN   = Color.parseColor("#00E676")
     private val CYAN    = Color.parseColor("#00E5FF")
     private val PINK    = Color.parseColor("#FF4081")
     private val sparkPalette = intArrayOf(
-        Color.parseColor("#FF1744"),
+        Color.parseColor("#FF5C72"),
         Color.parseColor("#FF6D00"),
         Color.parseColor("#FFD600"),
         Color.parseColor("#FF4081"),

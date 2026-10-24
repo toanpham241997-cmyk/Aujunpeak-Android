@@ -7,7 +7,7 @@ object ThemeManager {
 
     private const val PREFS = "aujunpeak_prefs"
     private const val KEY_COLOR = "theme_color"
-    private const val DEFAULT_COLOR = "#FF1744"
+    private const val DEFAULT_COLOR = "#FF5C72"
 
     fun getSavedColor(context: Context): String =
         getPrefs(context).getString(KEY_COLOR, DEFAULT_COLOR) ?: DEFAULT_COLOR

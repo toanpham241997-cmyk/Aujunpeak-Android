@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    <item><shape android:shape="rectangle"><gradient android:angle="0" android:startColor="#0A0A0A" android:centerColor="#080808" android:endColor="#050505"/><stroke android:width="1dp" android:color="#FF1744"/><corners android:radius="20dp"/></shape></item>
-    <item><shape android:shape="rectangle"><gradient android:type="radial" android:gradientRadius="230dp" android:centerX="0.08" android:centerY="0.08" android:startColor="#24FF1744" android:endColor="#00000000"/><corners android:radius="20dp"/></shape></item>
-    <item><shape android:shape="rectangle"><gradient android:type="radial" android:gradientRadius="220dp" android:centerX="1.0" android:centerY="1.0" android:startColor="#18FF1744" android:endColor="#00000000"/><corners android:radius="20dp"/></shape></item>
-</layer-list>
+     <item><shape android:shape="rectangle"><gradient android:angle="135" android:startColor="#201E30" android:endColor="#161926"/><stroke android:width="1dp" android:color="#423E5C"/><corners android:radius="19dp"/></shape></item>
+     <item><shape android:shape="rectangle"><gradient android:angle="90" android:startColor="#09FFFFFF" android:endColor="#00FFFFFF"/><corners android:radius="19dp"/></shape></item>
+    </layer-list>

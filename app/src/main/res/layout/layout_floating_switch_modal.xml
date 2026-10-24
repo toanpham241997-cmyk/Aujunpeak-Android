@@ -1,77 +1,25 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="260dp"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:background="@drawable/bg_float_modal"
-    android:padding="14dp"
-    android:elevation="40dp">
+<?xml version='1.0' encoding='UTF-8'?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="260dp" android:layout_height="wrap_content" android:orientation="vertical" android:background="@drawable/bg_float_modal" android:padding="14dp" android:elevation="40dp">
 
     <!-- Icon + Title row -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:layout_marginBottom="10dp">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="10dp">
 
-        <FrameLayout
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:layout_marginEnd="12dp">
-            <View
-                android:layout_width="38dp"
-                android:layout_height="38dp"
-                android:background="@drawable/bg_glow_circle"
-                android:alpha="0.6"/>
-            <ImageView
-                android:id="@+id/ivFloatModalIcon"
-                android:layout_width="22dp"
-                android:layout_height="22dp"
-                android:layout_gravity="center"
-                android:src="@drawable/ic_game_mode"/>
+        <FrameLayout android:layout_width="38dp" android:layout_height="38dp" android:layout_marginEnd="12dp">
+            <View android:layout_width="38dp" android:layout_height="38dp" android:background="@drawable/bg_glow_circle" android:alpha="0.6"/>
+            <ImageView android:id="@+id/ivFloatModalIcon" android:layout_width="22dp" android:layout_height="22dp" android:layout_gravity="center" android:src="@drawable/ic_game_mode"/>
         </FrameLayout>
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
-            <TextView
-                android:id="@+id/tvFloatModalTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/home_game_mode"
-                android:textColor="#FFFFFFFF"
-                android:textSize="12sp"
-                android:textStyle="bold"/>
-            <TextView
-                android:id="@+id/tvFloatModalState"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/float_on"
-                android:textColor="#69FF47"
-                android:textSize="11sp"
-                android:layout_marginTop="2dp"/>
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+            <TextView android:id="@+id/tvFloatModalTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/home_game_mode" android:textColor="#FFFFFFFF" android:textSize="12sp" android:textStyle="bold" android:includeFontPadding="false"/>
+            <TextView android:id="@+id/tvFloatModalState" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/float_on" android:textColor="#69FF47" android:textSize="11sp" android:layout_marginTop="2dp" android:includeFontPadding="false"/>
         </LinearLayout>
 
-        <ImageView
-            android:id="@+id/ivFloatModalStatus"
-            android:layout_width="28dp"
-            android:layout_height="28dp"
-            android:src="@drawable/ic_success_check"/>
+        <ImageView android:id="@+id/ivFloatModalStatus" android:layout_width="28dp" android:layout_height="28dp" android:src="@drawable/ic_success_check"/>
     </LinearLayout>
 
     <!-- Progress bar -->
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="3dp"
-        android:background="@drawable/bg_modal_progress">
-        <View
-            android:id="@+id/vFloatModalProgress"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:background="@drawable/bg_modal_progress_fill"/>
+    <FrameLayout android:layout_width="match_parent" android:layout_height="3dp" android:background="@drawable/bg_modal_progress">
+        <View android:id="@+id/vFloatModalProgress" android:layout_width="0dp" android:layout_height="match_parent" android:background="@drawable/bg_modal_progress_fill"/>
     </FrameLayout>
 
 </LinearLayout>

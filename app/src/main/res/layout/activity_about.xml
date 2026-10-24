@@ -1,124 +1,56 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/bg_neo_screen">
+<?xml version='1.0' encoding='UTF-8'?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@drawable/bg_neo_screen">
 
-    <com.aujunpeak.app.views.ParticleView
-        android:id="@+id/aboutParticles"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:alpha="0.16" />
+    <com.aujunpeak.app.views.ParticleView android:id="@+id/aboutParticles" android:layout_width="match_parent" android:layout_height="match_parent" android:alpha="0.025"/>
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scrollbars="none"
-        android:fillViewport="true">
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent" android:scrollbars="none" android:fillViewport="true">
 
-        <LinearLayout
-            android:id="@+id/aboutContainer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingStart="18dp"
-            android:paddingTop="18dp"
-            android:paddingEnd="18dp"
-            android:paddingBottom="28dp">
+        <LinearLayout android:id="@+id/aboutContainer" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:paddingStart="18dp" android:paddingTop="18dp" android:paddingEnd="18dp" android:paddingBottom="28dp">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="54dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-                <FrameLayout
-                    android:id="@+id/btnAboutBack"
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
-                    android:background="@drawable/bg_neo_icon_plate"
-                    android:clickable="true"
-                    android:focusable="true">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="54dp" android:gravity="center_vertical" android:orientation="horizontal">
+                <FrameLayout android:id="@+id/btnAboutBack" android:layout_width="44dp" android:layout_height="44dp" android:background="@drawable/bg_neo_icon_plate" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackground">
                     <ImageView android:layout_width="20dp" android:layout_height="20dp" android:layout_gravity="center" android:src="@drawable/ic_arrow_back"/>
                 </FrameLayout>
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginStart="12dp"
-                    android:orientation="vertical">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="About Aujunpeak" android:textColor="@android:color/white" android:textSize="18sp" android:textStyle="bold"/>
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="App intro, version data and update notes" android:textColor="@color/neo_text_3" android:textSize="10sp"/>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="12dp" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="About Aujunpeak" android:textColor="@android:color/white" android:textSize="18sp" android:textStyle="bold" android:includeFontPadding="false"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="App intro, version data and update notes" android:textColor="@color/neo_text_3" android:textSize="11.5sp" android:includeFontPadding="false"/>
                 </LinearLayout>
             </LinearLayout>
 
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="240dp"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/bg_about_settings_card">
+            <FrameLayout android:layout_width="match_parent" android:layout_height="240dp" android:layout_marginTop="16dp" android:background="@drawable/bg_about_settings_card">
 
-                <com.aujunpeak.app.views.ParticleView
-                    android:id="@+id/aboutHeroParticles"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:alpha="0.18" />
+                <com.aujunpeak.app.views.ParticleView android:id="@+id/aboutHeroParticles" android:layout_width="match_parent" android:layout_height="match_parent" android:alpha="0.025"/>
 
-                <View
-                    android:id="@+id/aboutHeroGlow"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_gravity="top|end"
-                    android:layout_marginTop="-50dp"
-                    android:layout_marginEnd="-30dp"
-                    android:background="@drawable/bg_neo_glow_violet" />
+                <View android:id="@+id/aboutHeroGlow" android:layout_width="150dp" android:layout_height="150dp" android:layout_gravity="top|end" android:layout_marginTop="-50dp" android:layout_marginEnd="-30dp" android:background="@drawable/bg_neo_glow_violet"/>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:padding="18dp">
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:padding="18dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
                         <FrameLayout android:layout_width="64dp" android:layout_height="64dp" android:background="@drawable/bg_neo_icon_plate"><ImageView android:layout_width="30dp" android:layout_height="30dp" android:layout_gravity="center" android:src="@drawable/ic_info_circle"/></FrameLayout>
-                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="14dp" android:orientation="vertical"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Aujunpeak App" android:textColor="@android:color/white" android:textSize="20sp" android:textStyle="bold"/><TextView android:id="@+id/tvAboutVersionBadge" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:background="@drawable/bg_neo_chip_active" android:paddingStart="10dp" android:paddingTop="5dp" android:paddingEnd="10dp" android:paddingBottom="5dp" android:text="v1.0" android:textColor="@color/neo_violet" android:textSize="9sp" android:textStyle="bold"/></LinearLayout>
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="14dp" android:orientation="vertical"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Aujunpeak App" android:textColor="@android:color/white" android:textSize="20sp" android:textStyle="bold" android:includeFontPadding="false"/><TextView android:id="@+id/tvAboutVersionBadge" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:background="@drawable/bg_neo_chip_active" android:paddingStart="10dp" android:paddingTop="5dp" android:paddingEnd="10dp" android:paddingBottom="5dp" android:text="v1.0" android:textColor="@color/neo_violet" android:textSize="11sp" android:textStyle="bold" android:includeFontPadding="false"/></LinearLayout>
                     </LinearLayout>
 
                     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="18dp" android:orientation="horizontal" android:weightSum="2">
-                        <LinearLayout android:layout_width="0dp" android:layout_height="82dp" android:layout_weight="1" android:layout_marginEnd="6dp" android:background="@drawable/bg_neo_chip" android:gravity="center" android:orientation="vertical"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="VERSION" android:textColor="@color/neo_text_3" android:textSize="8sp" android:textStyle="bold"/><TextView android:id="@+id/tvAppVersion" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="1.0" android:textColor="@android:color/white" android:textSize="18sp" android:textStyle="bold"/></LinearLayout>
-                        <LinearLayout android:layout_width="0dp" android:layout_height="82dp" android:layout_weight="1" android:layout_marginStart="6dp" android:background="@drawable/bg_neo_chip" android:gravity="center" android:orientation="vertical"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="BUILD" android:textColor="@color/neo_text_3" android:textSize="8sp" android:textStyle="bold"/><TextView android:id="@+id/tvAppBuild" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="1" android:textColor="@android:color/white" android:textSize="18sp" android:textStyle="bold"/></LinearLayout>
+                        <LinearLayout android:layout_width="0dp" android:layout_height="82dp" android:layout_weight="1" android:layout_marginEnd="6dp" android:background="@drawable/bg_neo_chip" android:gravity="center" android:orientation="vertical"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="VERSION" android:textColor="@color/neo_text_3" android:textSize="10.5sp" android:textStyle="bold" android:includeFontPadding="false"/><TextView android:id="@+id/tvAppVersion" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="1.0" android:textColor="@android:color/white" android:textSize="18sp" android:textStyle="bold" android:includeFontPadding="false"/></LinearLayout>
+                        <LinearLayout android:layout_width="0dp" android:layout_height="82dp" android:layout_weight="1" android:layout_marginStart="6dp" android:background="@drawable/bg_neo_chip" android:gravity="center" android:orientation="vertical"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="BUILD" android:textColor="@color/neo_text_3" android:textSize="10.5sp" android:textStyle="bold" android:includeFontPadding="false"/><TextView android:id="@+id/tvAppBuild" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="1" android:textColor="@android:color/white" android:textSize="18sp" android:textStyle="bold" android:includeFontPadding="false"/></LinearLayout>
                     </LinearLayout>
 
-                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:gravity="center_vertical" android:orientation="horizontal"><TextView android:id="@+id/tvLastUpdate" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Updated today" android:textColor="@color/neo_text_2" android:textSize="10sp"/><TextView android:id="@+id/tvCurrentVersionUpdate" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="v1.0 · Build 1" android:textColor="@color/neo_text" android:textSize="10sp" android:textStyle="bold"/></LinearLayout>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:gravity="center_vertical" android:orientation="horizontal"><TextView android:id="@+id/tvLastUpdate" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Updated today" android:textColor="@color/neo_text_2" android:textSize="11.5sp" android:includeFontPadding="false"/><TextView android:id="@+id/tvCurrentVersionUpdate" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="v1.0 · Build 1" android:textColor="@color/neo_text" android:textSize="11.5sp" android:textStyle="bold" android:includeFontPadding="false"/></LinearLayout>
                 </LinearLayout>
             </FrameLayout>
 
             <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:orientation="horizontal" android:background="@drawable/bg_neo_chip" android:padding="4dp">
-                <TextView android:id="@+id/tabAboutInfo" android:layout_width="0dp" android:layout_height="42dp" android:layout_weight="1" android:background="@drawable/bg_floating_tab_active" android:gravity="center" android:text="INFO" android:textColor="@android:color/white" android:textStyle="bold"/>
-                <TextView android:id="@+id/tabAboutUpdate" android:layout_width="0dp" android:layout_height="42dp" android:layout_weight="1" android:gravity="center" android:text="UPDATE LOG" android:textColor="#80FFFFFF" android:textStyle="bold"/>
+                <TextView android:id="@+id/tabAboutInfo" android:layout_width="0dp" android:layout_height="42dp" android:layout_weight="1" android:background="@drawable/bg_floating_tab_active" android:gravity="center" android:text="INFO" android:textColor="@android:color/white" android:textStyle="bold" android:includeFontPadding="false"/>
+                <TextView android:id="@+id/tabAboutUpdate" android:layout_width="0dp" android:layout_height="42dp" android:layout_weight="1" android:gravity="center" android:text="UPDATE LOG" android:textColor="#80FFFFFF" android:textStyle="bold" android:includeFontPadding="false"/>
             </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/sectionAboutInfo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="14dp"
-                android:orientation="vertical">
-                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/bg_neo_card_cyan" android:orientation="vertical" android:padding="16dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="What is Aujunpeak?" android:textColor="@android:color/white" android:textSize="16sp" android:textStyle="bold"/><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="Aujunpeak is a compact control center experience with a futuristic style, fast access tools and a cleaner mobile interface." android:textColor="@color/neo_text_2" android:textSize="11sp"/></LinearLayout>
-                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:background="@drawable/bg_neo_card_violet" android:orientation="vertical" android:padding="16dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Highlights" android:textColor="@android:color/white" android:textSize="16sp" android:textStyle="bold"/><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="• Modern neon UI\n• Quick tabs for game, function, settings and profile\n• Dynamic visuals, support tools and performance modules" android:textColor="@color/neo_text_2" android:textSize="11sp"/></LinearLayout>
+            <LinearLayout android:id="@+id/sectionAboutInfo" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:orientation="vertical">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/bg_neo_card_cyan" android:orientation="vertical" android:padding="16dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="What is Aujunpeak?" android:textColor="@android:color/white" android:textSize="16sp" android:textStyle="bold" android:includeFontPadding="false"/><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="Aujunpeak is a compact control center experience with a futuristic style, fast access tools and a cleaner mobile interface." android:textColor="@color/neo_text_2" android:textSize="12sp" android:includeFontPadding="false"/></LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:background="@drawable/bg_neo_card_violet" android:orientation="vertical" android:padding="16dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Highlights" android:textColor="@android:color/white" android:textSize="16sp" android:textStyle="bold" android:includeFontPadding="false"/><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="• Modern neon UI\n• Quick tabs for game, function, settings and profile\n• Dynamic visuals, support tools and performance modules" android:textColor="@color/neo_text_2" android:textSize="12sp" android:includeFontPadding="false"/></LinearLayout>
             </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/sectionAboutUpdate"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="14dp"
-                android:orientation="vertical"
-                android:visibility="gone">
-                <FrameLayout android:layout_width="match_parent" android:layout_height="132dp" android:background="@drawable/bg_neo_card_gold"><com.aujunpeak.app.views.ParticleView android:id="@+id/updateBannerParticles" android:layout_width="match_parent" android:layout_height="match_parent" android:alpha="0.18"/><LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="vertical" android:padding="16dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Latest Update" android:textColor="@android:color/white" android:textSize="16sp" android:textStyle="bold"/><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="The latest build refreshes the interface, improves support screens and polishes more in-app effects." android:textColor="@color/neo_text_2" android:textSize="11sp"/></LinearLayout></FrameLayout>
-                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:background="@drawable/bg_neo_card_cyan" android:orientation="vertical" android:padding="16dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Update Notes" android:textColor="@android:color/white" android:textSize="16sp" android:textStyle="bold"/><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="• New hero cards inside support pages\n• Better section organization\n• More polished visual effects and badges" android:textColor="@color/neo_text_2" android:textSize="11sp"/></LinearLayout>
+            <LinearLayout android:id="@+id/sectionAboutUpdate" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:orientation="vertical" android:visibility="gone">
+                <FrameLayout android:layout_width="match_parent" android:layout_height="132dp" android:background="@drawable/bg_neo_card_gold"><com.aujunpeak.app.views.ParticleView android:id="@+id/updateBannerParticles" android:layout_width="match_parent" android:layout_height="match_parent" android:alpha="0.025"/><LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="vertical" android:padding="16dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Latest Update" android:textColor="@android:color/white" android:textSize="16sp" android:textStyle="bold" android:includeFontPadding="false"/><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="The latest build refreshes the interface, improves support screens and polishes more in-app effects." android:textColor="@color/neo_text_2" android:textSize="12sp" android:includeFontPadding="false"/></LinearLayout></FrameLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:background="@drawable/bg_neo_card_cyan" android:orientation="vertical" android:padding="16dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Update Notes" android:textColor="@android:color/white" android:textSize="16sp" android:textStyle="bold" android:includeFontPadding="false"/><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="• New hero cards inside support pages\n• Better section organization\n• More polished visual effects and badges" android:textColor="@color/neo_text_2" android:textSize="12sp" android:includeFontPadding="false"/></LinearLayout>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

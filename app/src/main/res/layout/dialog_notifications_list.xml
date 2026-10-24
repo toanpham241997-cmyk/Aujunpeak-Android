@@ -1,178 +1,52 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="18dp">
+<?xml version='1.0' encoding='UTF-8'?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:padding="18dp">
 
-    <LinearLayout
-        android:id="@+id/notifListCard"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:background="@drawable/bg_notif_list_dialog"
-        android:elevation="24dp"
-        android:orientation="vertical"
-        android:paddingStart="14dp"
-        android:paddingTop="14dp"
-        android:paddingEnd="14dp"
-        android:paddingBottom="14dp">
+    <LinearLayout android:id="@+id/notifListCard" android:layout_width="300dp" android:layout_height="wrap_content" android:layout_gravity="center" android:background="@drawable/bg_notif_list_dialog" android:elevation="24dp" android:orientation="vertical" android:paddingStart="14dp" android:paddingTop="14dp" android:paddingEnd="14dp" android:paddingBottom="14dp">
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="62dp"
-            android:background="@drawable/bg_floating_boost_hero"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp">
+        <FrameLayout android:layout_width="match_parent" android:layout_height="62dp" android:background="@drawable/bg_floating_boost_hero" android:paddingStart="10dp" android:paddingEnd="10dp">
 
-            <com.aujunpeak.app.views.ParticleView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:alpha="0.10" />
+            <com.aujunpeak.app.views.ParticleView android:layout_width="match_parent" android:layout_height="match_parent" android:alpha="0.025"/>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="horizontal">
 
-                <FrameLayout
-                    android:layout_width="38dp"
-                    android:layout_height="38dp"
-                    android:background="@drawable/bg_ff_control_orb">
+                <FrameLayout android:layout_width="38dp" android:layout_height="38dp" android:background="@drawable/bg_ff_control_orb">
 
-                    <ImageView
-                        android:layout_width="18dp"
-                        android:layout_height="18dp"
-                        android:layout_gravity="center"
-                        android:contentDescription="@null"
-                        android:src="@drawable/ic_notifications"
-                        android:tint="#FFFFFF" />
+                    <ImageView android:layout_width="18dp" android:layout_height="18dp" android:layout_gravity="center" android:contentDescription="@null" android:src="@drawable/ic_notifications" android:tint="#FFFFFF"/>
                 </FrameLayout>
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginStart="10dp"
-                    android:orientation="vertical">
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="10dp" android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="THÔNG BÁO"
-                        android:textColor="#FFFFFF"
-                        android:textSize="14sp"
-                        android:textStyle="bold"
-                        android:fontFamily="sans-serif-black"
-                        android:letterSpacing="0.06" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="THÔNG BÁO" android:textColor="#FFFFFF" android:textSize="14sp" android:textStyle="bold" android:fontFamily="sans-serif-black" android:letterSpacing="0.06" android:includeFontPadding="false"/>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
-                        android:text="Cập nhật mới nhất"
-                        android:textColor="#8FA5C9"
-                        android:textSize="9sp" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="Cập nhật mới nhất" android:textColor="#8FA5C9" android:textSize="11sp" android:includeFontPadding="false"/>
                 </LinearLayout>
 
-                <TextView
-                    android:id="@+id/tvNotifListCount"
-                    android:layout_width="wrap_content"
-                    android:layout_height="24dp"
-                    android:background="@drawable/bg_badge_orange"
-                    android:gravity="center"
-                    android:paddingStart="9dp"
-                    android:paddingEnd="9dp"
-                    android:textColor="#FFFFFF"
-                    android:textSize="9sp"
-                    android:textStyle="bold" />
+                <TextView android:id="@+id/tvNotifListCount" android:layout_width="wrap_content" android:layout_height="24dp" android:background="@drawable/bg_badge_orange" android:gravity="center" android:paddingStart="9dp" android:paddingEnd="9dp" android:textColor="#FFFFFF" android:textSize="11sp" android:textStyle="bold" android:includeFontPadding="false"/>
             </LinearLayout>
         </FrameLayout>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/bg_notif_divider"
-            android:alpha="0.75" />
+        <View android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginTop="10dp" android:layout_marginBottom="10dp" android:background="@drawable/bg_notif_divider" android:alpha="0.75"/>
 
-        <ScrollView
-            android:id="@+id/notifScroll"
-            android:layout_width="match_parent"
-            android:layout_height="164dp"
-            android:clipToPadding="false"
-            android:fadeScrollbars="true"
-            android:overScrollMode="ifContentScrolls"
-            android:scrollbarStyle="insideInset"
-            android:visibility="gone">
+        <ScrollView android:id="@+id/notifScroll" android:layout_width="match_parent" android:layout_height="164dp" android:clipToPadding="false" android:fadeScrollbars="true" android:overScrollMode="ifContentScrolls" android:scrollbarStyle="insideInset" android:visibility="gone">
 
-            <LinearLayout
-                android:id="@+id/notifListContainer"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical" />
+            <LinearLayout android:id="@+id/notifListContainer" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical"/>
         </ScrollView>
 
-        <LinearLayout
-            android:id="@+id/layoutNotifEmpty"
-            android:layout_width="match_parent"
-            android:layout_height="104dp"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:visibility="gone">
+        <LinearLayout android:id="@+id/layoutNotifEmpty" android:layout_width="match_parent" android:layout_height="104dp" android:gravity="center" android:orientation="vertical" android:visibility="gone">
 
-            <FrameLayout
-                android:layout_width="46dp"
-                android:layout_height="46dp"
-                android:background="@drawable/bg_ff_control_orb">
+            <FrameLayout android:layout_width="46dp" android:layout_height="46dp" android:background="@drawable/bg_ff_control_orb">
 
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_gravity="center"
-                    android:contentDescription="@null"
-                    android:src="@drawable/ic_notifications"
-                    android:tint="#FFFFFF" />
+                <ImageView android:layout_width="20dp" android:layout_height="20dp" android:layout_gravity="center" android:contentDescription="@null" android:src="@drawable/ic_notifications" android:tint="#FFFFFF"/>
             </FrameLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="Chưa có thông báo"
-                android:textColor="#E4EEFF"
-                android:textSize="12sp"
-                android:textStyle="bold" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="Chưa có thông báo" android:textColor="#E4EEFF" android:textSize="12sp" android:textStyle="bold" android:includeFontPadding="false"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
-                android:text="Thông báo mới sẽ hiện tại đây"
-                android:textColor="#8096B7"
-                android:textSize="8.8sp" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3dp" android:text="Thông báo mới sẽ hiện tại đây" android:textColor="#8096B7" android:textSize="11sp" android:includeFontPadding="false"/>
         </LinearLayout>
 
-        <FrameLayout
-            android:id="@+id/btnNotifListClose"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/bg_btn_shimmer"
-            android:clickable="true"
-            android:focusable="true">
+        <FrameLayout android:id="@+id/btnNotifListClose" android:layout_width="match_parent" android:layout_height="40dp" android:layout_marginTop="10dp" android:background="@drawable/bg_btn_shimmer" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackground">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="@string/label_close"
-                android:textColor="#FFFFFF"
-                android:textSize="11sp"
-                android:textStyle="bold"
-                android:fontFamily="sans-serif-black"
-                android:letterSpacing="0.08" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:text="@string/label_close" android:textColor="#FFFFFF" android:textSize="11sp" android:textStyle="bold" android:fontFamily="sans-serif-black" android:letterSpacing="0.035" android:includeFontPadding="false"/>
         </FrameLayout>
 
     </LinearLayout>

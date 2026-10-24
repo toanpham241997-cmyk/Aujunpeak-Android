@@ -3,26 +3,26 @@
     <!-- Outermost halo (very faint) -->
     <item>
         <shape android:shape="oval">
-            <solid android:color="#16FF1744"/>
+            <solid android:color="#16FF5C72"/>
         </shape>
     </item>
     <!-- Outer glow ring -->
     <item android:top="4dp" android:left="4dp" android:right="4dp" android:bottom="4dp">
         <shape android:shape="oval">
-            <solid android:color="#22FF1744"/>
+            <solid android:color="#22FF5C72"/>
         </shape>
     </item>
     <!-- Mid glow -->
     <item android:top="9dp" android:left="9dp" android:right="9dp" android:bottom="9dp">
         <shape android:shape="oval">
-            <solid android:color="#44FF1744"/>
+            <solid android:color="#44FF5C72"/>
         </shape>
     </item>
     <!-- Inner bright core -->
     <item android:top="15dp" android:left="15dp" android:right="15dp" android:bottom="15dp">
         <shape android:shape="oval">
-            <solid android:color="#55FF1744"/>
-            <stroke android:width="1dp" android:color="#99FF1744"/>
+            <solid android:color="#55FF5C72"/>
+            <stroke android:width="1dp" android:color="#99FF5C72"/>
         </shape>
     </item>
 </layer-list>

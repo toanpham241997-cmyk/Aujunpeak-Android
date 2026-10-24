@@ -62,9 +62,9 @@ class FunctionFragment : Fragment() {
 
     private fun setupOptimizerSuperCard() {
         binding.particlesOptimizerSuper.setColors(intArrayOf(
-            Color.parseColor("#FF1744"),
+            Color.parseColor("#FF5C72"),
             Color.parseColor("#FF4D67"),
-            Color.parseColor("#FF1744")
+            Color.parseColor("#FF5C72")
         ))
         binding.particlesOptimizerSuper.setDensity(8)
         binding.particlesOptimizerSuper.start()
@@ -106,9 +106,9 @@ class FunctionFragment : Fragment() {
         binding.crosshairParticles.start()
 
         binding.particlesPerformance.setColors(intArrayOf(
-            Color.parseColor("#FF1744"),
+            Color.parseColor("#FF5C72"),
             Color.parseColor("#FF4D67"),
-            Color.parseColor("#FF1744")
+            Color.parseColor("#FF5C72")
         ))
         binding.particlesPerformance.setDensity(9)
         binding.particlesPerformance.start()
@@ -171,7 +171,7 @@ class FunctionFragment : Fragment() {
 
     private fun setupFreeFire() {
         binding.particlesFreeFireFunc.setColors(intArrayOf(
-            Color.parseColor("#FF1744"),
+            Color.parseColor("#FF5C72"),
             Color.parseColor("#FF6B6B"),
             Color.parseColor("#FF4D67")
         ))
@@ -257,7 +257,7 @@ class FunctionFragment : Fragment() {
         row.tvSwitchTitle.text = title
         row.tvSwitchSub.text = sub
         row.ivSwitchIcon.setImageResource(icon)
-        row.ivSwitchIcon.setColorFilter(Color.parseColor("#FF1744"))
+        row.ivSwitchIcon.setColorFilter(Color.parseColor("#FF5C72"))
         row.materialSwitch.setOnCheckedChangeListener(null)
         row.materialSwitch.isChecked = checked
         startRingRotation(row.vIconRing)
@@ -534,7 +534,7 @@ class FunctionFragment : Fragment() {
         val pv = binding.applyBtnParticles
         try {
             pv.javaClass.getMethod("setColors", IntArray::class.java).invoke(pv, intArrayOf(
-                Color.parseColor("#FF1744"), Color.parseColor("#FF3046"),
+                Color.parseColor("#FF5C72"), Color.parseColor("#FF6678"),
                 Color.parseColor("#FF6B6B"), Color.parseColor("#B71C1C"),
                 Color.parseColor("#FF4D67")
             ))

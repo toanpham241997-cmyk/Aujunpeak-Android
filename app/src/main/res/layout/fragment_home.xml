@@ -1,768 +1,173 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<?xml version='1.0' encoding='UTF-8'?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent">
 
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="false"
-        android:clipToPadding="false"
-        android:overScrollMode="never"
-        android:scrollbars="none">
+    <androidx.core.widget.NestedScrollView android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="false" android:clipToPadding="false" android:overScrollMode="never" android:scrollbars="none">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingStart="14dp"
-            android:paddingTop="8dp"
-            android:paddingEnd="14dp"
-            android:paddingBottom="18dp">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:paddingStart="16dp" android:paddingTop="14dp" android:paddingEnd="16dp" android:paddingBottom="30dp">
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardFreeFire"
-                android:layout_width="match_parent"
-                android:layout_height="122dp"
-                app:cardBackgroundColor="@android:color/transparent"
-                app:cardCornerRadius="24dp"
-                app:cardElevation="0dp">
+            <androidx.cardview.widget.CardView android:id="@+id/cardFreeFire" android:layout_width="match_parent" android:layout_height="122dp" app:cardBackgroundColor="@android:color/transparent" app:cardCornerRadius="24dp" app:cardElevation="0dp" android:foreground="?attr/selectableItemBackground">
 
-                <FrameLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/bg_ff_control_card">
+                <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent" android:background="@drawable/bg_ff_control_card">
 
-                    <com.aujunpeak.app.views.ParticleView
-                        android:id="@+id/particlesFreeFire"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:alpha="0.12" />
+                    <com.aujunpeak.app.views.ParticleView android:id="@+id/particlesFreeFire" android:layout_width="match_parent" android:layout_height="match_parent" android:alpha="0.025"/>
 
-                    <View
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"
-                        android:layout_gravity="top|end"
-                        android:layout_marginTop="-44dp"
-                        android:layout_marginEnd="-28dp"
-                        android:background="@drawable/bg_neo_glow_cyan"
-                        android:alpha="0.22" />
+                    <View android:layout_width="120dp" android:layout_height="120dp" android:layout_gravity="top|end" android:layout_marginTop="-44dp" android:layout_marginEnd="-28dp" android:background="@drawable/bg_neo_glow_cyan" android:alpha="0.22"/>
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal"
-                        android:paddingStart="16dp"
-                        android:paddingTop="14dp"
-                        android:paddingEnd="14dp"
-                        android:paddingBottom="14dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="horizontal" android:paddingStart="16dp" android:paddingTop="14dp" android:paddingEnd="14dp" android:paddingBottom="14dp">
 
-                        <FrameLayout
-                            android:layout_width="60dp"
-                            android:layout_height="60dp">
+                        <FrameLayout android:layout_width="60dp" android:layout_height="60dp">
 
-                            <View
-                                android:layout_width="54dp"
-                                android:layout_height="54dp"
-                                android:layout_gravity="center"
-                                android:background="@drawable/bg_neo_glow_violet"
-                                android:alpha="0.36" />
+                            <View android:layout_width="54dp" android:layout_height="54dp" android:layout_gravity="center" android:background="@drawable/bg_neo_glow_violet" android:alpha="0.36"/>
 
-                            <androidx.cardview.widget.CardView
-                                android:layout_width="58dp"
-                                android:layout_height="58dp"
-                                android:layout_gravity="center"
-                                app:cardBackgroundColor="#16263E"
-                                app:cardCornerRadius="14dp"
-                                app:cardElevation="0dp">
+                            <androidx.cardview.widget.CardView android:layout_width="58dp" android:layout_height="58dp" android:layout_gravity="center" app:cardBackgroundColor="#16263E" app:cardCornerRadius="22dp" app:cardElevation="0dp">
 
-                                <ImageView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:padding="4dp"
-                                    android:scaleType="centerCrop"
-                                    android:src="@drawable/ff_app_logo" />
+                                <ImageView android:layout_width="match_parent" android:layout_height="match_parent" android:padding="4dp" android:scaleType="centerCrop" android:src="@drawable/ff_app_logo"/>
                             </androidx.cardview.widget.CardView>
                         </FrameLayout>
 
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:layout_marginStart="12dp"
-                            android:orientation="vertical">
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="12dp" android:orientation="vertical">
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="FREE FIRE CONTROL"
-                                android:textColor="@color/neo_text"
-                                android:textSize="16sp"
-                                android:textStyle="bold"
-                                android:letterSpacing="0.02" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="FREE FIRE CONTROL" android:textColor="@color/neo_text" android:textSize="16sp" android:textStyle="bold" android:letterSpacing="0.02" android:includeFontPadding="false"/>
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="4dp"
-                                android:maxLines="2"
-                                android:text="Compact boost and control tools for a cleaner launch experience."
-                                android:textColor="@color/neo_text_2"
-                                android:textSize="9sp" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:maxLines="2" android:text="Compact boost and control tools for a cleaner launch experience." android:textColor="@color/neo_text_2" android:textSize="11sp" android:includeFontPadding="false"/>
 
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="9dp"
-                                android:orientation="horizontal">
+                            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="9dp" android:orientation="horizontal">
 
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="28dp"
-                                    android:background="@drawable/bg_neo_chip_active"
-                                    android:gravity="center"
-                                    android:paddingStart="10dp"
-                                    android:paddingEnd="10dp"
-                                    android:text="BOOST"
-                                    android:textColor="@android:color/white"
-                                    android:textSize="8sp"
-                                    android:textStyle="bold" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="28dp" android:background="@drawable/bg_neo_chip_active" android:gravity="center" android:paddingStart="10dp" android:paddingEnd="10dp" android:text="BOOST" android:textColor="@android:color/white" android:textSize="10.5sp" android:textStyle="bold" android:includeFontPadding="false"/>
 
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="28dp"
-                                    android:layout_marginStart="7dp"
-                                    android:background="@drawable/bg_neo_chip"
-                                    android:gravity="center"
-                                    android:paddingStart="10dp"
-                                    android:paddingEnd="10dp"
-                                    android:text="CONTROL"
-                                    android:textColor="@color/neo_text"
-                                    android:textSize="8sp"
-                                    android:textStyle="bold" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="28dp" android:layout_marginStart="7dp" android:background="@drawable/bg_neo_chip" android:gravity="center" android:paddingStart="10dp" android:paddingEnd="10dp" android:text="CONTROL" android:textColor="@color/neo_text" android:textSize="10.5sp" android:textStyle="bold" android:includeFontPadding="false"/>
                             </LinearLayout>
                         </LinearLayout>
 
-                        <FrameLayout
-                            android:layout_width="44dp"
-                            android:layout_height="44dp"
-                            android:background="@drawable/bg_ff_control_orb">
+                        <FrameLayout android:layout_width="44dp" android:layout_height="44dp" android:background="@drawable/bg_ff_control_orb">
 
-                            <ImageView
-                                android:layout_width="20dp"
-                                android:layout_height="20dp"
-                                android:layout_gravity="center"
-                                android:src="@drawable/ic_boost_core_bolt"
-                                android:tint="@android:color/white" />
+                            <ImageView android:layout_width="20dp" android:layout_height="20dp" android:layout_gravity="center" android:src="@drawable/ic_boost_core_bolt" android:tint="@android:color/white"/>
                         </FrameLayout>
 
-                        <View
-                            android:id="@+id/vFreeFireStatus"
-                            android:layout_width="1dp"
-                            android:layout_height="1dp"
-                            android:visibility="gone" />
+                        <View android:id="@+id/vFreeFireStatus" android:layout_width="1dp" android:layout_height="1dp" android:visibility="gone"/>
                     </LinearLayout>
                 </FrameLayout>
             </androidx.cardview.widget.CardView>
 
-<androidx.cardview.widget.CardView
-                android:id="@+id/cardHighlightsSlider"
-                android:layout_width="match_parent"
-                android:layout_height="116dp"
-                android:layout_marginTop="10dp"
-                app:cardBackgroundColor="@android:color/transparent"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="0dp">
+<androidx.cardview.widget.CardView android:id="@+id/cardHighlightsSlider" android:layout_width="match_parent" android:layout_height="116dp" android:layout_marginTop="12dp" app:cardBackgroundColor="@android:color/transparent" app:cardCornerRadius="22dp" app:cardElevation="0dp" android:foreground="?attr/selectableItemBackground">
 
-                <FrameLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/bg_home_slider_frame"
-                    android:padding="2dp">
+                <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent" android:background="@drawable/bg_home_slider_frame" android:padding="2dp">
 
-                    <ViewFlipper
-                        android:id="@+id/highlightsFlipper"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:autoStart="true"
-                        android:flipInterval="2800"
-                        android:inAnimation="@anim/slide_in_right_soft"
-                        android:outAnimation="@anim/slide_out_left_soft">
+                    <ViewFlipper android:id="@+id/highlightsFlipper" android:layout_width="match_parent" android:layout_height="match_parent" android:autoStart="true" android:flipInterval="2800" android:inAnimation="@anim/slide_in_right_soft" android:outAnimation="@anim/slide_out_left_soft">
 
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/home_slide_1" />
+                        <ImageView android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="centerCrop" android:src="@drawable/home_slide_1"/>
 
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/home_slide_2" />
+                        <ImageView android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="centerCrop" android:src="@drawable/home_slide_2"/>
 
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/home_slide_3" />
+                        <ImageView android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="centerCrop" android:src="@drawable/home_slide_3"/>
 
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/home_slide_4" />
+                        <ImageView android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="centerCrop" android:src="@drawable/home_slide_4"/>
                     </ViewFlipper>
 
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/bg_home_slider_dim" />
+                    <View android:layout_width="match_parent" android:layout_height="match_parent" android:background="@drawable/bg_home_slider_dim"/>
 
-                    <com.aujunpeak.app.views.ParticleView
-                        android:id="@+id/particlesHighlights"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:alpha="0.18" />
+                    <com.aujunpeak.app.views.ParticleView android:id="@+id/particlesHighlights" android:layout_width="match_parent" android:layout_height="match_parent" android:alpha="0.025"/>
                 </FrameLayout>
             </androidx.cardview.widget.CardView>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="184dp"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="184dp" android:layout_marginTop="10dp" android:orientation="horizontal">
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cardRam"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:layout_marginEnd="5dp"
-                    app:cardBackgroundColor="@android:color/transparent"
-                    app:cardCornerRadius="22dp"
-                    app:cardElevation="0dp">
+                <androidx.cardview.widget.CardView android:id="@+id/cardRam" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginEnd="5dp" app:cardBackgroundColor="@android:color/transparent" app:cardCornerRadius="22dp" app:cardElevation="0dp" android:foreground="?attr/selectableItemBackground">
 
-                    <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/bg_neo_card_cyan">
+                    <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent" android:background="@drawable/bg_neo_card_cyan">
 
-                        <com.aujunpeak.app.views.ParticleView
-                            android:id="@+id/particlesRam"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:alpha="0.16" />
+                        <com.aujunpeak.app.views.ParticleView android:id="@+id/particlesRam" android:layout_width="match_parent" android:layout_height="match_parent" android:alpha="0.025"/>
 
-                        <com.aujunpeak.app.views.WaterWaveView
-                            android:id="@+id/ramWave"
-                            android:layout_width="1dp"
-                            android:layout_height="1dp"
-                            android:visibility="invisible" />
+                        <com.aujunpeak.app.views.WaterWaveView android:id="@+id/ramWave" android:layout_width="1dp" android:layout_height="1dp" android:visibility="invisible"/>
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:gravity="center_horizontal"
-                            android:orientation="vertical"
-                            android:padding="12dp">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_horizontal" android:orientation="vertical" android:padding="12dp">
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="MEMORY"
-                                android:textColor="@color/neo_cyan"
-                                android:textSize="10sp"
-                                android:textStyle="bold"
-                                android:letterSpacing="0.12" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="MEMORY" android:textColor="@color/neo_cyan" android:textSize="11.5sp" android:textStyle="bold" android:letterSpacing="0.035" android:includeFontPadding="false"/>
 
-                            <FrameLayout
-                                android:layout_width="118dp"
-                                android:layout_height="118dp"
-                                android:layout_marginTop="8dp">
+                            <FrameLayout android:layout_width="118dp" android:layout_height="118dp" android:layout_marginTop="8dp">
 
-                                <com.aujunpeak.app.views.CircularGaugeView
-                                    android:id="@+id/ramGauge"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent" />
+                                <com.aujunpeak.app.views.CircularGaugeView android:id="@+id/ramGauge" android:layout_width="match_parent" android:layout_height="match_parent"/>
 
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:gravity="center"
-                                    android:orientation="vertical">
+                                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:orientation="vertical">
 
-                                    <TextView
-                                        android:id="@+id/tvRamPercent"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="--%"
-                                        android:textColor="@color/neo_text"
-                                        android:textSize="23sp"
-                                        android:textStyle="bold" />
+                                    <TextView android:id="@+id/tvRamPercent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="--%" android:textColor="@color/neo_text" android:textSize="23sp" android:textStyle="bold" android:includeFontPadding="false"/>
 
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="RAM"
-                                        android:textColor="@color/neo_text_3"
-                                        android:textSize="9sp"
-                                        android:textStyle="bold" />
+                                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="RAM" android:textColor="@color/neo_text_3" android:textSize="11sp" android:textStyle="bold" android:includeFontPadding="false"/>
                                 </LinearLayout>
                             </FrameLayout>
 
-                            <TextView
-                                android:id="@+id/tvRamInfo"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="8dp"
-                                android:text="RAM"
-                                android:textColor="@color/neo_text_2"
-                                android:textSize="10sp"
-                                android:textStyle="bold" />
+                            <TextView android:id="@+id/tvRamInfo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="RAM" android:textColor="@color/neo_text_2" android:textSize="11.5sp" android:textStyle="bold" android:includeFontPadding="false"/>
 
-                            <com.aujunpeak.app.views.MiniChartView
-                                android:id="@+id/ramChart"
-                                android:layout_width="1dp"
-                                android:layout_height="1dp"
-                                android:visibility="invisible" />
+                            <com.aujunpeak.app.views.MiniChartView android:id="@+id/ramChart" android:layout_width="1dp" android:layout_height="1dp" android:visibility="invisible"/>
                         </LinearLayout>
                     </FrameLayout>
                 </androidx.cardview.widget.CardView>
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cardCpu"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:layout_marginStart="5dp"
-                    app:cardBackgroundColor="@android:color/transparent"
-                    app:cardCornerRadius="22dp"
-                    app:cardElevation="0dp">
+                <androidx.cardview.widget.CardView android:id="@+id/cardCpu" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginStart="5dp" app:cardBackgroundColor="@android:color/transparent" app:cardCornerRadius="22dp" app:cardElevation="0dp" android:foreground="?attr/selectableItemBackground">
 
-                    <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/bg_neo_card_violet">
+                    <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent" android:background="@drawable/bg_neo_card_violet">
 
-                        <com.aujunpeak.app.views.ParticleView
-                            android:id="@+id/particlesCpu"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:alpha="0.16" />
+                        <com.aujunpeak.app.views.ParticleView android:id="@+id/particlesCpu" android:layout_width="match_parent" android:layout_height="match_parent" android:alpha="0.025"/>
 
-                        <com.aujunpeak.app.views.WaterWaveView
-                            android:id="@+id/cpuWave"
-                            android:layout_width="1dp"
-                            android:layout_height="1dp"
-                            android:visibility="invisible" />
+                        <com.aujunpeak.app.views.WaterWaveView android:id="@+id/cpuWave" android:layout_width="1dp" android:layout_height="1dp" android:visibility="invisible"/>
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:gravity="center_horizontal"
-                            android:orientation="vertical"
-                            android:padding="12dp">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_horizontal" android:orientation="vertical" android:padding="12dp">
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="PROCESSOR"
-                                android:textColor="@color/neo_violet"
-                                android:textSize="10sp"
-                                android:textStyle="bold"
-                                android:letterSpacing="0.12" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="PROCESSOR" android:textColor="@color/neo_violet" android:textSize="11.5sp" android:textStyle="bold" android:letterSpacing="0.035" android:includeFontPadding="false"/>
 
-                            <FrameLayout
-                                android:layout_width="118dp"
-                                android:layout_height="118dp"
-                                android:layout_marginTop="8dp">
+                            <FrameLayout android:layout_width="118dp" android:layout_height="118dp" android:layout_marginTop="8dp">
 
-                                <com.aujunpeak.app.views.CircularGaugeView
-                                    android:id="@+id/cpuGauge"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent" />
+                                <com.aujunpeak.app.views.CircularGaugeView android:id="@+id/cpuGauge" android:layout_width="match_parent" android:layout_height="match_parent"/>
 
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:gravity="center"
-                                    android:orientation="vertical">
+                                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:orientation="vertical">
 
-                                    <TextView
-                                        android:id="@+id/tvCpuPercent"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="--%"
-                                        android:textColor="@color/neo_text"
-                                        android:textSize="23sp"
-                                        android:textStyle="bold" />
+                                    <TextView android:id="@+id/tvCpuPercent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="--%" android:textColor="@color/neo_text" android:textSize="23sp" android:textStyle="bold" android:includeFontPadding="false"/>
 
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="CPU"
-                                        android:textColor="@color/neo_text_3"
-                                        android:textSize="9sp"
-                                        android:textStyle="bold" />
+                                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="CPU" android:textColor="@color/neo_text_3" android:textSize="11sp" android:textStyle="bold" android:includeFontPadding="false"/>
                                 </LinearLayout>
                             </FrameLayout>
 
-                            <TextView
-                                android:id="@+id/tvCpuInfo"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="8dp"
-                                android:text="CPU"
-                                android:textColor="@color/neo_text_2"
-                                android:textSize="10sp"
-                                android:textStyle="bold" />
+                            <TextView android:id="@+id/tvCpuInfo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="CPU" android:textColor="@color/neo_text_2" android:textSize="11.5sp" android:textStyle="bold" android:includeFontPadding="false"/>
 
-                            <com.aujunpeak.app.views.MiniChartView
-                                android:id="@+id/cpuChart"
-                                android:layout_width="1dp"
-                                android:layout_height="1dp"
-                                android:visibility="invisible" />
+                            <com.aujunpeak.app.views.MiniChartView android:id="@+id/cpuChart" android:layout_width="1dp" android:layout_height="1dp" android:visibility="invisible"/>
                         </LinearLayout>
                     </FrameLayout>
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardSwitches"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                app:cardBackgroundColor="@android:color/transparent"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="0dp">
-                <FrameLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/bg_neo_card">
-                    <com.aujunpeak.app.views.ParticleView
-                        android:id="@+id/particlesSwitches"
-                        android:layout_width="1dp"
-                        android:layout_height="1dp"
-                        android:alpha="0" />
-                    <LinearLayout
-                        android:id="@+id/dynamicHomeSwitchHost"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="12dp"><LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal"
-                            android:paddingStart="4dp"
-                            android:paddingEnd="4dp"
-                            android:paddingBottom="10dp"><TextView
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="QUICK PERFORMANCE"
-                                android:textColor="@color/neo_text"
-                                android:textSize="13sp"
-                                android:textStyle="bold" /><TextView
-                                android:id="@+id/tvQuickModulesCount"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="3 MODULES"
-                                android:textColor="@color/neo_cyan"
-                                android:textSize="9sp"
-                                android:textStyle="bold"
-                                android:background="@drawable/bg_neo_chip_active" /></LinearLayout><include
-                            android:id="@+id/rowGameMode"
-                            layout="@layout/item_switch_row" /><Space
-                            android:layout_width="1dp"
-                            android:layout_height="7dp" /><include
-                            android:id="@+id/rowRamBoost"
-                            layout="@layout/item_switch_row" /><Space
-                            android:layout_width="1dp"
-                            android:layout_height="7dp" /><include
-                            android:id="@+id/rowAutoBoost"
-                            layout="@layout/item_switch_row" /></LinearLayout>
+            <androidx.cardview.widget.CardView android:id="@+id/cardSwitches" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" app:cardBackgroundColor="@android:color/transparent" app:cardCornerRadius="22dp" app:cardElevation="0dp" android:foreground="?attr/selectableItemBackground">
+                <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/bg_neo_card">
+                    <com.aujunpeak.app.views.ParticleView android:id="@+id/particlesSwitches" android:layout_width="1dp" android:layout_height="1dp" android:alpha="0"/>
+                    <LinearLayout android:id="@+id/dynamicHomeSwitchHost" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="12dp"><LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal" android:paddingStart="4dp" android:paddingEnd="4dp" android:paddingBottom="10dp"><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="QUICK PERFORMANCE" android:textColor="@color/neo_text" android:textSize="14sp" android:textStyle="bold" android:includeFontPadding="false"/><TextView android:id="@+id/tvQuickModulesCount" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="3 MODULES" android:textColor="@color/neo_cyan" android:textSize="11sp" android:textStyle="bold" android:background="@drawable/bg_neo_chip_active" android:includeFontPadding="false"/></LinearLayout><include android:id="@+id/rowGameMode" layout="@layout/item_switch_row"/><Space android:layout_width="1dp" android:layout_height="7dp"/><include android:id="@+id/rowRamBoost" layout="@layout/item_switch_row"/><Space android:layout_width="1dp" android:layout_height="7dp"/><include android:id="@+id/rowAutoBoost" layout="@layout/item_switch_row"/></LinearLayout>
                 </FrameLayout>
             </androidx.cardview.widget.CardView>
 
-            <LinearLayout
-                android:id="@+id/boostStartContainer"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:orientation="vertical">
-                <FrameLayout
-                    android:id="@+id/btnBoostStart"
-                    android:layout_width="match_parent"
-                    android:layout_height="62dp"
-                    android:background="@drawable/bg_neo_button_primary"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:foreground="?attr/selectableItemBackgroundBorderless">
-                    <com.aujunpeak.app.views.BoostParticleView
-                        android:id="@+id/boostBtnParticles"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:alpha="0.25" />
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal"><ImageView
-                            android:id="@+id/ivBoostStartIcon"
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
-                            android:src="@drawable/ic_speed_neo"
-                            android:tint="#07101B" /><TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:text="@string/home_boost_start"
-                            android:textColor="#07101B"
-                            android:textSize="15sp"
-                            android:textStyle="bold"
-                            android:letterSpacing="0.10" /></LinearLayout>
+            <LinearLayout android:id="@+id/boostStartContainer" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:orientation="vertical">
+                <FrameLayout android:id="@+id/btnBoostStart" android:layout_width="match_parent" android:layout_height="62dp" android:background="@drawable/bg_neo_button_primary" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackgroundBorderless">
+                    <com.aujunpeak.app.views.BoostParticleView android:id="@+id/boostBtnParticles" android:layout_width="match_parent" android:layout_height="match_parent" android:alpha="0.25"/>
+                    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:gravity="center_vertical" android:orientation="horizontal"><ImageView android:id="@+id/ivBoostStartIcon" android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_speed_neo" android:tint="#07101B"/><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="10dp" android:text="@string/home_boost_start" android:textColor="#07101B" android:textSize="15sp" android:textStyle="bold" android:letterSpacing="0.035" android:includeFontPadding="false"/></LinearLayout>
                 </FrameLayout>
             </LinearLayout>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
-    <FrameLayout
-        android:id="@+id/switchFeedbackModal"
-        android:layout_width="match_parent"
-        android:layout_height="86dp"
-        android:layout_gravity="top"
-        android:layout_margin="14dp"
-        android:background="@drawable/bg_neo_modal"
-        android:elevation="20dp"
-        android:visibility="gone">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:paddingStart="13dp"
-            android:paddingEnd="13dp"><FrameLayout
-                android:layout_width="46dp"
-                android:layout_height="46dp"
-                android:background="@drawable/bg_neo_icon_plate"><ImageView
-                    android:id="@+id/ivSwitchModalIcon"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_gravity="center" /></FrameLayout><LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginStart="12dp"
-                android:orientation="vertical"><TextView
-                    android:id="@+id/tvSwitchModalTitle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/neo_text"
-                    android:textSize="13sp"
-                    android:textStyle="bold" /><TextView
-                    android:id="@+id/tvSwitchModalState"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="3dp"
-                    android:textColor="@color/neo_cyan"
-                    android:textSize="10sp"
-                    android:textStyle="bold" /><TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
-                    android:text="Realtime module update"
-                    android:textColor="@color/neo_text_3"
-                    android:textSize="9sp" /></LinearLayout><ImageView
-                android:id="@+id/ivSwitchModalStatus"
-                android:layout_width="24dp"
-                android:layout_height="24dp" /></LinearLayout><View
-            android:id="@+id/vModalProgressFill"
-            android:layout_width="0dp"
-            android:layout_height="4dp"
-            android:layout_gravity="bottom|start"
-            android:background="@drawable/bg_neo_divider" />
+    <FrameLayout android:id="@+id/switchFeedbackModal" android:layout_width="match_parent" android:layout_height="86dp" android:layout_gravity="top" android:layout_margin="14dp" android:background="@drawable/bg_neo_modal" android:elevation="20dp" android:visibility="gone">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="horizontal" android:paddingStart="13dp" android:paddingEnd="13dp"><FrameLayout android:layout_width="46dp" android:layout_height="46dp" android:background="@drawable/bg_neo_icon_plate"><ImageView android:id="@+id/ivSwitchModalIcon" android:layout_width="24dp" android:layout_height="24dp" android:layout_gravity="center"/></FrameLayout><LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="12dp" android:orientation="vertical"><TextView android:id="@+id/tvSwitchModalTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/neo_text" android:textSize="14sp" android:textStyle="bold" android:includeFontPadding="false"/><TextView android:id="@+id/tvSwitchModalState" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3dp" android:textColor="@color/neo_cyan" android:textSize="11.5sp" android:textStyle="bold" android:includeFontPadding="false"/><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="Realtime module update" android:textColor="@color/neo_text_3" android:textSize="11sp" android:includeFontPadding="false"/></LinearLayout><ImageView android:id="@+id/ivSwitchModalStatus" android:layout_width="24dp" android:layout_height="24dp"/></LinearLayout><View android:id="@+id/vModalProgressFill" android:layout_width="0dp" android:layout_height="4dp" android:layout_gravity="bottom|start" android:background="@drawable/bg_neo_divider"/>
     </FrameLayout>
 
-    <FrameLayout
-        android:id="@+id/boostOverlay"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#D9060914"
-        android:visibility="gone">
-        <com.aujunpeak.app.views.BoostParticleView
-            android:id="@+id/boostParticleView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:alpha="0.35" />
-        <LinearLayout
-            android:id="@+id/boostCard"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="22dp"
-            android:background="@drawable/bg_neo_hero"
-            android:gravity="center_horizontal"
-            android:orientation="vertical"
-            android:padding="22dp">
-            <FrameLayout
-                android:layout_width="124dp"
-                android:layout_height="124dp"><View
-                    android:id="@+id/boostCoreGlow"
-                    android:layout_width="124dp"
-                    android:layout_height="124dp"
-                    android:background="@drawable/bg_neo_glow_cyan" /><com.aujunpeak.app.views.RingLoaderView
-                    android:id="@+id/boostRingLoader"
-                    android:layout_width="112dp"
-                    android:layout_height="112dp"
-                    android:layout_gravity="center" /><View
-                    android:id="@+id/boostOrbitRing"
-                    android:layout_width="92dp"
-                    android:layout_height="92dp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/bg_orbital_ring" /><ImageView
-                    android:id="@+id/ivBoostCoreIcon"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/ic_speed_neo" /></FrameLayout>
-            <com.aujunpeak.app.views.GlowTextView
-                android:id="@+id/tvBoostStatus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:text="@string/home_boosting"
-                android:textColor="@color/neo_text"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-            <TextView
-                android:id="@+id/tvBoostSubtitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="@string/home_optimizing"
-                android:textColor="@color/neo_text_2"
-                android:textSize="11sp" />
-            <LinearLayout
-                android:id="@+id/llBoostSteps"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="18dp"
-                android:orientation="vertical">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="42dp"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"><View
-                        android:id="@+id/chipStep1"
-                        android:layout_width="8dp"
-                        android:layout_height="8dp"
-                        android:background="@drawable/bg_active_dot_green" /><TextView
-                        android:id="@+id/tvStep1"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_marginStart="10dp"
-                        android:text="@string/home_step_ram"
-                        android:textColor="@color/neo_text_2"
-                        android:textSize="11sp" /><View
-                        android:id="@+id/spinnerStep1"
-                        android:layout_width="18dp"
-                        android:layout_height="18dp"
-                        android:background="@drawable/bg_orbital_ring" /><ImageView
-                        android:id="@+id/checkStep1"
-                        android:layout_width="18dp"
-                        android:layout_height="18dp"
-                        android:src="@drawable/ic_check_green"
-                        android:visibility="gone" /></LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="42dp"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"><View
-                        android:id="@+id/chipStep2"
-                        android:layout_width="8dp"
-                        android:layout_height="8dp"
-                        android:background="@drawable/bg_active_dot_green" /><TextView
-                        android:id="@+id/tvStep2"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_marginStart="10dp"
-                        android:text="@string/home_step_cpu"
-                        android:textColor="@color/neo_text_2"
-                        android:textSize="11sp" /><View
-                        android:id="@+id/spinnerStep2"
-                        android:layout_width="18dp"
-                        android:layout_height="18dp"
-                        android:background="@drawable/bg_orbital_ring" /><ImageView
-                        android:id="@+id/checkStep2"
-                        android:layout_width="18dp"
-                        android:layout_height="18dp"
-                        android:src="@drawable/ic_check_green"
-                        android:visibility="gone" /></LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="42dp"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"><View
-                        android:id="@+id/chipStep3"
-                        android:layout_width="8dp"
-                        android:layout_height="8dp"
-                        android:background="@drawable/bg_active_dot_green" /><TextView
-                        android:id="@+id/tvStep3"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_marginStart="10dp"
-                        android:text="@string/home_step_ff"
-                        android:textColor="@color/neo_text_2"
-                        android:textSize="11sp" /><View
-                        android:id="@+id/spinnerStep3"
-                        android:layout_width="18dp"
-                        android:layout_height="18dp"
-                        android:background="@drawable/bg_orbital_ring" /><ImageView
-                        android:id="@+id/checkStep3"
-                        android:layout_width="18dp"
-                        android:layout_height="18dp"
-                        android:src="@drawable/ic_check_green"
-                        android:visibility="gone" /></LinearLayout>
+    <FrameLayout android:id="@+id/boostOverlay" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#D9060914" android:visibility="gone">
+        <com.aujunpeak.app.views.BoostParticleView android:id="@+id/boostParticleView" android:layout_width="match_parent" android:layout_height="match_parent" android:alpha="0.35"/>
+        <LinearLayout android:id="@+id/boostCard" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_gravity="center" android:layout_margin="22dp" android:background="@drawable/bg_neo_hero" android:gravity="center_horizontal" android:orientation="vertical" android:padding="22dp">
+            <FrameLayout android:layout_width="124dp" android:layout_height="124dp"><View android:id="@+id/boostCoreGlow" android:layout_width="124dp" android:layout_height="124dp" android:background="@drawable/bg_neo_glow_cyan"/><com.aujunpeak.app.views.RingLoaderView android:id="@+id/boostRingLoader" android:layout_width="112dp" android:layout_height="112dp" android:layout_gravity="center"/><View android:id="@+id/boostOrbitRing" android:layout_width="92dp" android:layout_height="92dp" android:layout_gravity="center" android:background="@drawable/bg_orbital_ring"/><ImageView android:id="@+id/ivBoostCoreIcon" android:layout_width="48dp" android:layout_height="48dp" android:layout_gravity="center" android:src="@drawable/ic_speed_neo"/></FrameLayout>
+            <com.aujunpeak.app.views.GlowTextView android:id="@+id/tvBoostStatus" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="@string/home_boosting" android:textColor="@color/neo_text" android:textSize="18sp" android:textStyle="bold"/>
+            <TextView android:id="@+id/tvBoostSubtitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="@string/home_optimizing" android:textColor="@color/neo_text_2" android:textSize="12sp" android:includeFontPadding="false"/>
+            <LinearLayout android:id="@+id/llBoostSteps" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="18dp" android:orientation="vertical">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="42dp" android:gravity="center_vertical" android:orientation="horizontal"><View android:id="@+id/chipStep1" android:layout_width="8dp" android:layout_height="8dp" android:background="@drawable/bg_active_dot_green"/><TextView android:id="@+id/tvStep1" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="10dp" android:text="@string/home_step_ram" android:textColor="@color/neo_text_2" android:textSize="12sp" android:includeFontPadding="false"/><View android:id="@+id/spinnerStep1" android:layout_width="18dp" android:layout_height="18dp" android:background="@drawable/bg_orbital_ring"/><ImageView android:id="@+id/checkStep1" android:layout_width="18dp" android:layout_height="18dp" android:src="@drawable/ic_check_green" android:visibility="gone"/></LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="42dp" android:gravity="center_vertical" android:orientation="horizontal"><View android:id="@+id/chipStep2" android:layout_width="8dp" android:layout_height="8dp" android:background="@drawable/bg_active_dot_green"/><TextView android:id="@+id/tvStep2" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="10dp" android:text="@string/home_step_cpu" android:textColor="@color/neo_text_2" android:textSize="12sp" android:includeFontPadding="false"/><View android:id="@+id/spinnerStep2" android:layout_width="18dp" android:layout_height="18dp" android:background="@drawable/bg_orbital_ring"/><ImageView android:id="@+id/checkStep2" android:layout_width="18dp" android:layout_height="18dp" android:src="@drawable/ic_check_green" android:visibility="gone"/></LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="42dp" android:gravity="center_vertical" android:orientation="horizontal"><View android:id="@+id/chipStep3" android:layout_width="8dp" android:layout_height="8dp" android:background="@drawable/bg_active_dot_green"/><TextView android:id="@+id/tvStep3" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="10dp" android:text="@string/home_step_ff" android:textColor="@color/neo_text_2" android:textSize="12sp" android:includeFontPadding="false"/><View android:id="@+id/spinnerStep3" android:layout_width="18dp" android:layout_height="18dp" android:background="@drawable/bg_orbital_ring"/><ImageView android:id="@+id/checkStep3" android:layout_width="18dp" android:layout_height="18dp" android:src="@drawable/ic_check_green" android:visibility="gone"/></LinearLayout>
             </LinearLayout>
-            <LinearLayout
-                android:id="@+id/llSuccess"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:visibility="gone"><ImageView
-                    android:id="@+id/ivSuccessCheck"
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
-                    android:src="@drawable/ic_check_green" /><TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="7dp"
-                    android:text="@string/home_success"
-                    android:textColor="@color/neo_green"
-                    android:textSize="14sp"
-                    android:textStyle="bold" /></LinearLayout>
-            <TextView
-                android:id="@+id/btnCloseBoost"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/bg_neo_button_secondary"
-                android:clickable="true"
-                android:gravity="center"
-                android:text="@string/label_close"
-                android:textColor="@color/neo_text"
-                android:textStyle="bold"
-                android:visibility="gone" />
+            <LinearLayout android:id="@+id/llSuccess" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:gravity="center" android:orientation="vertical" android:visibility="gone"><ImageView android:id="@+id/ivSuccessCheck" android:layout_width="44dp" android:layout_height="44dp" android:src="@drawable/ic_check_green"/><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="7dp" android:text="@string/home_success" android:textColor="@color/neo_green" android:textSize="14sp" android:textStyle="bold" android:includeFontPadding="false"/></LinearLayout>
+            <TextView android:id="@+id/btnCloseBoost" android:layout_width="match_parent" android:layout_height="48dp" android:layout_marginTop="16dp" android:background="@drawable/bg_neo_button_secondary" android:clickable="true" android:gravity="center" android:text="@string/label_close" android:textColor="@color/neo_text" android:textStyle="bold" android:visibility="gone" android:includeFontPadding="false"/>
         </LinearLayout>
     </FrameLayout>
 </FrameLayout>

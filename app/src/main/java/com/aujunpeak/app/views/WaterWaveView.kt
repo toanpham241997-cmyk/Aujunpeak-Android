@@ -37,7 +37,7 @@ class WaterWaveView @JvmOverloads constructor(
     private data class Bubble(var x: Float, var y: Float, var r: Float, var speed: Float, var alpha: Int)
     private val bubbles = mutableListOf<Bubble>()
 
-    private var primaryColor = Color.parseColor("#FF1744")
+    private var primaryColor = Color.parseColor("#FF5C72")
     private var secondaryColor = Color.parseColor("#FF5252")
 
     private val animRunnable = object : Runnable {

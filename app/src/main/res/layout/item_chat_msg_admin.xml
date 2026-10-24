@@ -1,75 +1,22 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <!-- Tin nhắn từ admin hoặc bot — căn trái -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:gravity="start"
-    android:layout_marginBottom="6dp"
-    android:layout_marginEnd="48dp">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="start" android:layout_marginBottom="6dp" android:layout_marginEnd="48dp">
 
     <!-- Avatar nhỏ bên trái -->
-    <ImageView
-        android:id="@+id/ivMsgAdminAvatar"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
-        android:src="@drawable/ic_robot_avatar"
-        android:background="@drawable/bg_chat_msg_avatar"
-        android:padding="1dp"
-        android:scaleType="centerCrop"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="2dp"
-        android:contentDescription="@null"/>
+    <ImageView android:id="@+id/ivMsgAdminAvatar" android:layout_width="28dp" android:layout_height="28dp" android:src="@drawable/ic_robot_avatar" android:background="@drawable/bg_chat_msg_avatar" android:padding="1dp" android:scaleType="centerCrop" android:layout_marginEnd="8dp" android:layout_marginTop="2dp" android:contentDescription="@null"/>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical">
 
         <!-- Tên người gửi -->
-        <TextView
-            android:id="@+id/tvMsgAdminName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#FF9800"
-            android:textSize="10sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="2dp"/>
+        <TextView android:id="@+id/tvMsgAdminName" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#FF9800" android:textSize="11.5sp" android:textStyle="bold" android:layout_marginBottom="2dp" android:includeFontPadding="false"/>
 
         <!-- Text bubble -->
-        <TextView
-            android:id="@+id/tvMsgAdminText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bg_chat_bubble_admin"
-            android:paddingStart="12dp"
-            android:paddingEnd="12dp"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"
-            android:textColor="#EEEEEE"
-            android:textSize="14sp"
-            android:maxWidth="240dp"
-            android:visibility="visible"/>
+        <TextView android:id="@+id/tvMsgAdminText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/bg_chat_bubble_admin" android:paddingStart="12dp" android:paddingEnd="12dp" android:paddingTop="8dp" android:paddingBottom="8dp" android:textColor="#EEEEEE" android:textSize="14sp" android:maxWidth="240dp" android:visibility="visible" android:includeFontPadding="false"/>
 
         <!-- Image bubble -->
-        <ImageView
-            android:id="@+id/ivMsgAdminImage"
-            android:layout_width="180dp"
-            android:layout_height="140dp"
-            android:scaleType="centerCrop"
-            android:background="@drawable/bg_chat_bubble_admin"
-            android:padding="3dp"
-            android:visibility="gone"
-            android:contentDescription="@null"/>
+        <ImageView android:id="@+id/ivMsgAdminImage" android:layout_width="180dp" android:layout_height="140dp" android:scaleType="centerCrop" android:background="@drawable/bg_chat_bubble_admin" android:padding="3dp" android:visibility="gone" android:contentDescription="@null"/>
 
         <!-- Time -->
-        <TextView
-            android:id="@+id/tvMsgAdminTime"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#555555"
-            android:textSize="10sp"
-            android:layout_marginTop="2dp"
-            android:layout_marginStart="2dp"/>
+        <TextView android:id="@+id/tvMsgAdminTime" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#555555" android:textSize="11.5sp" android:layout_marginTop="2dp" android:layout_marginStart="2dp" android:includeFontPadding="false"/>
     </LinearLayout>
 </LinearLayout>

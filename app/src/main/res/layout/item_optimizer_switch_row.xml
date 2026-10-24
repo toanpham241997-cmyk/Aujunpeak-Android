@@ -1,17 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="54dp"
-    android:layout_marginBottom="6dp"
-    android:background="@drawable/bg_neo_card_cyan"
-    android:gravity="center_vertical"
-    android:orientation="horizontal"
-    android:paddingStart="9dp"
-    android:paddingEnd="7dp">
+<?xml version='1.0' encoding='UTF-8'?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="54dp" android:layout_marginBottom="6dp" android:background="@drawable/bg_neo_card_cyan" android:gravity="center_vertical" android:orientation="horizontal" android:paddingStart="9dp" android:paddingEnd="7dp">
     <FrameLayout android:layout_width="36dp" android:layout_height="36dp" android:background="@drawable/bg_neo_icon_plate">
-        <View android:id="@+id/vOptRowRing" android:layout_width="36dp" android:layout_height="36dp" android:background="@drawable/bg_orbital_ring" android:alpha="0.45" />
-        <ImageView android:id="@+id/ivOptRowIcon" android:layout_width="17dp" android:layout_height="17dp" android:layout_gravity="center" android:src="@drawable/ic_perf_cpu" android:tint="@color/neo_cyan" />
+        <View android:id="@+id/vOptRowRing" android:layout_width="36dp" android:layout_height="36dp" android:background="@drawable/bg_orbital_ring" android:alpha="0.45"/>
+        <ImageView android:id="@+id/ivOptRowIcon" android:layout_width="17dp" android:layout_height="17dp" android:layout_gravity="center" android:src="@drawable/ic_perf_cpu" android:tint="@color/neo_cyan"/>
     </FrameLayout>
-    <TextView android:id="@+id/tvOptRowTitle" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="9dp" android:text="Chuc nang" android:textColor="@color/white" android:textSize="12sp" />
-    <com.google.android.material.materialswitch.MaterialSwitch android:id="@+id/switchOptRow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:thumbTint="@color/switch_thumb_color" android:trackTint="@color/switch_track_color" />
+    <TextView android:id="@+id/tvOptRowTitle" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="9dp" android:text="Chuc nang" android:textColor="@color/white" android:textSize="13sp" android:includeFontPadding="false"/>
+    <com.google.android.material.materialswitch.MaterialSwitch android:id="@+id/switchOptRow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:thumbTint="@color/switch_thumb_color" android:trackTint="@color/switch_track_color"/>
 </LinearLayout>

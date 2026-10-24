@@ -1,397 +1,136 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <!--
   activity_force_update.xml  —  v3 redesign
   Dark premium · glassmorphism · orange accent · scrollable
   FIX: BoostParticleView clickable=false + NestedScrollView (no fillViewport)
 -->
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#04080F">
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#04080F">
 
     <!-- ══ Animated GIF background ══ -->
-    <ImageView
-        android:id="@+id/fuBgGif"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:contentDescription="@null"/>
+    <ImageView android:id="@+id/fuBgGif" android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="centerCrop" android:contentDescription="@null"/>
 
     <!-- Dark gradient overlay (top darker, bottom lighter for content legibility) -->
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/bg_gif_overlay"/>
+    <View android:layout_width="match_parent" android:layout_height="match_parent" android:background="@drawable/bg_gif_overlay"/>
 
     <!-- Ambient radial glow top-center orange -->
-    <View
-        android:layout_width="400dp"
-        android:layout_height="400dp"
-        android:layout_gravity="top|center_horizontal"
-        android:layout_marginTop="-120dp"
-        android:background="@drawable/bg_glow_circle"
-        android:alpha="0.22"
-        android:clickable="false"
-        android:focusable="false"/>
+    <View android:layout_width="400dp" android:layout_height="400dp" android:layout_gravity="top|center_horizontal" android:layout_marginTop="-120dp" android:background="@drawable/bg_glow_circle" android:alpha="0.22" android:clickable="false" android:focusable="false"/>
 
     <!-- Bottom glow accent -->
-    <View
-        android:layout_width="300dp"
-        android:layout_height="200dp"
-        android:layout_gravity="bottom|center_horizontal"
-        android:layout_marginBottom="-60dp"
-        android:background="@drawable/bg_glow_circle"
-        android:alpha="0.10"
-        android:clickable="false"
-        android:focusable="false"/>
+    <View android:layout_width="300dp" android:layout_height="200dp" android:layout_gravity="bottom|center_horizontal" android:layout_marginBottom="-60dp" android:background="@drawable/bg_glow_circle" android:alpha="0.10" android:clickable="false" android:focusable="false"/>
 
     <!-- ══ Particle layer — NON-INTERACTIVE (touch passthrough) ══ -->
-    <com.aujunpeak.app.views.BoostParticleView
-        android:id="@+id/fuParticles"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:clickable="false"
-        android:focusable="false"
-        android:importantForAccessibility="no"/>
+    <com.aujunpeak.app.views.BoostParticleView android:id="@+id/fuParticles" android:layout_width="match_parent" android:layout_height="match_parent" android:clickable="false" android:focusable="false" android:importantForAccessibility="no"/>
 
     <!-- ══ SCROLLABLE MAIN CONTENT ══
          NestedScrollView: no fillViewport → real wrap_content height → scrollable -->
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scrollbars="none"
-        android:overScrollMode="never"
-        android:paddingTop="56dp"
-        android:paddingBottom="32dp"
-        android:clipToPadding="false">
+    <androidx.core.widget.NestedScrollView android:layout_width="match_parent" android:layout_height="match_parent" android:scrollbars="none" android:overScrollMode="never" android:paddingTop="56dp" android:paddingBottom="32dp" android:clipToPadding="false">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center_horizontal"
-            android:paddingHorizontal="18dp">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center_horizontal" android:paddingHorizontal="18dp">
 
             <!-- ══════════════════════════════════════════
                  SECTION 1 · HERO ICON + TITLE
                  ══════════════════════════════════════════ -->
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:layout_marginBottom="24dp">
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center" android:layout_marginBottom="24dp">
 
                 <!-- Stacked glow rings + icon -->
-                <FrameLayout
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
-                    android:layout_marginBottom="20dp">
+                <FrameLayout android:layout_width="120dp" android:layout_height="120dp" android:layout_marginBottom="20dp">
 
                     <!-- Outermost sonar ring -->
-                    <View
-                        android:id="@+id/fuVGlowOuter"
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"
-                        android:layout_gravity="center"
-                        android:background="@drawable/bg_glow_circle"
-                        android:alpha="0"/>
+                    <View android:id="@+id/fuVGlowOuter" android:layout_width="120dp" android:layout_height="120dp" android:layout_gravity="center" android:background="@drawable/bg_glow_circle" android:alpha="0"/>
 
                     <!-- Middle sonar ring -->
-                    <View
-                        android:id="@+id/fuVGlowInner"
-                        android:layout_width="96dp"
-                        android:layout_height="96dp"
-                        android:layout_gravity="center"
-                        android:background="@drawable/bg_glow_circle"
-                        android:alpha="0"/>
+                    <View android:id="@+id/fuVGlowInner" android:layout_width="96dp" android:layout_height="96dp" android:layout_gravity="center" android:background="@drawable/bg_glow_circle" android:alpha="0"/>
 
                     <!-- Rotating dashed ring -->
-                    <View
-                        android:id="@+id/fuVRotatingRing"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:layout_gravity="center"
-                        android:background="@drawable/ring_dashed_boost"
-                        android:alpha="0.55"/>
+                    <View android:id="@+id/fuVRotatingRing" android:layout_width="100dp" android:layout_height="100dp" android:layout_gravity="center" android:background="@drawable/ring_dashed_boost" android:alpha="0.55"/>
 
                     <!-- Icon background circle -->
-                    <FrameLayout
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:layout_gravity="center"
-                        android:background="@drawable/fu_icon_circle">
+                    <FrameLayout android:layout_width="80dp" android:layout_height="80dp" android:layout_gravity="center" android:background="@drawable/fu_icon_circle">
 
-                        <ImageView
-                            android:id="@+id/fuIvWarningIcon"
-                            android:layout_width="38dp"
-                            android:layout_height="38dp"
-                            android:layout_gravity="center"
-                            android:src="@drawable/fu_ic_download"
-                            android:tint="#FF6D00"/>
+                        <ImageView android:id="@+id/fuIvWarningIcon" android:layout_width="38dp" android:layout_height="38dp" android:layout_gravity="center" android:src="@drawable/fu_ic_download" android:tint="#FF6D00"/>
                     </FrameLayout>
 
                     <!-- Status dot -->
-                    <View
-                        android:id="@+id/fuVStatusDot"
-                        android:layout_width="13dp"
-                        android:layout_height="13dp"
-                        android:layout_gravity="top|right"
-                        android:layout_margin="12dp"
-                        android:background="@drawable/fu_dot_pulse"/>
+                    <View android:id="@+id/fuVStatusDot" android:layout_width="13dp" android:layout_height="13dp" android:layout_gravity="top|right" android:layout_margin="12dp" android:background="@drawable/fu_dot_pulse"/>
                 </FrameLayout>
 
                 <!-- Label pill above title -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="⚡  CẬP NHẬT BẮT BUỘC"
-                    android:textSize="10sp"
-                    android:textStyle="bold"
-                    android:textColor="#FF6D00"
-                    android:letterSpacing="0.12"
-                    android:paddingHorizontal="12dp"
-                    android:paddingVertical="5dp"
-                    android:background="@drawable/fu_label_pill"
-                    android:layout_marginBottom="12dp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="⚡  CẬP NHẬT BẮT BUỘC" android:textSize="11.5sp" android:textStyle="bold" android:textColor="#FF6D00" android:letterSpacing="0.035" android:paddingHorizontal="12dp" android:paddingVertical="5dp" android:background="@drawable/fu_label_pill" android:layout_marginBottom="12dp" android:includeFontPadding="false"/>
 
                 <!-- Main title -->
-                <TextView
-                    android:id="@+id/fuTvTitle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Có phiên bản mới!"
-                    android:textSize="28sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/white"
-                    android:fontFamily="sans-serif-black"
-                    android:letterSpacing="0.02"
-                    android:gravity="center"
-                    android:layout_marginBottom="8dp"/>
+                <TextView android:id="@+id/fuTvTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Có phiên bản mới!" android:textSize="28sp" android:textStyle="bold" android:textColor="@color/white" android:fontFamily="sans-serif-black" android:letterSpacing="0.02" android:gravity="center" android:layout_marginBottom="8dp" android:includeFontPadding="false"/>
 
                 <!-- Subtitle -->
-                <TextView
-                    android:id="@+id/fuTvSubtitle"
-                    android:layout_width="220dp"
-                    android:layout_height="wrap_content"
-                    android:text="Vui lòng cập nhật để tiếp tục\nsử dụng đầy đủ tính năng"
-                    android:textSize="13sp"
-                    android:textColor="#88FFFFFF"
-                    android:gravity="center"
-                    android:lineSpacingExtra="3dp"/>
+                <TextView android:id="@+id/fuTvSubtitle" android:layout_width="220dp" android:layout_height="wrap_content" android:text="Vui lòng cập nhật để tiếp tục\nsử dụng đầy đủ tính năng" android:textSize="14sp" android:textColor="#88FFFFFF" android:gravity="center" android:lineSpacingExtra="3dp" android:includeFontPadding="false"/>
             </LinearLayout>
 
             <!-- ══════════════════════════════════════════
                  SECTION 2 · VERSION COMPARISON CARD
                  ══════════════════════════════════════════ -->
-            <FrameLayout
-                android:id="@+id/fuCardMain"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="14dp">
+            <FrameLayout android:id="@+id/fuCardMain" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="14dp">
 
                 <!-- Glass card background -->
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/fu_card_main"/>
+                <View android:layout_width="match_parent" android:layout_height="match_parent" android:background="@drawable/fu_card_main"/>
 
                 <!-- Shimmer sweep overlay -->
-                <View
-                    android:id="@+id/fuVShimmer"
-                    android:layout_width="80dp"
-                    android:layout_height="match_parent"
-                    android:minHeight="10dp"
-                    android:background="@drawable/bg_btn_shimmer"
-                    android:alpha="0.18"
-                    android:clickable="false"/>
+                <View android:id="@+id/fuVShimmer" android:layout_width="80dp" android:layout_height="match_parent" android:minHeight="10dp" android:background="@drawable/bg_btn_shimmer" android:alpha="0.18" android:clickable="false"/>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="20dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
 
                     <!-- Section label -->
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="THÔNG TIN PHIÊN BẢN"
-                        android:textSize="9sp"
-                        android:textStyle="bold"
-                        android:textColor="#55FF6D00"
-                        android:letterSpacing="0.15"
-                        android:layout_marginBottom="14dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="THÔNG TIN PHIÊN BẢN" android:textSize="11sp" android:textStyle="bold" android:textColor="#55FF6D00" android:letterSpacing="0.035" android:layout_marginBottom="14dp" android:includeFontPadding="false"/>
 
                     <!-- Version comparison row -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
-                        android:layout_marginBottom="16dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="16dp">
 
                         <!-- Current version box -->
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="vertical"
-                            android:gravity="center"
-                            android:background="@drawable/fu_version_current_bg"
-                            android:paddingVertical="12dp"
-                            android:paddingHorizontal="8dp">
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:gravity="center" android:background="@drawable/fu_version_current_bg" android:paddingVertical="12dp" android:paddingHorizontal="8dp">
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="HIỆN TẠI"
-                                android:textSize="8.5sp"
-                                android:textStyle="bold"
-                                android:textColor="#55FFFFFF"
-                                android:letterSpacing="0.12"
-                                android:layout_marginBottom="4dp"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="HIỆN TẠI" android:textSize="10.5sp" android:textStyle="bold" android:textColor="#55FFFFFF" android:letterSpacing="0.035" android:layout_marginBottom="4dp" android:includeFontPadding="false"/>
 
-                            <TextView
-                                android:id="@+id/fuTvCurrentVersion"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="v10"
-                                android:textSize="22sp"
-                                android:textStyle="bold"
-                                android:textColor="#CCFFFFFF"
-                                android:fontFamily="sans-serif-black"/>
+                            <TextView android:id="@+id/fuTvCurrentVersion" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="v10" android:textSize="22sp" android:textStyle="bold" android:textColor="#CCFFFFFF" android:fontFamily="sans-serif-black" android:includeFontPadding="false"/>
 
                             <!-- Outdated badge -->
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Lỗi thời"
-                                android:textSize="9sp"
-                                android:textColor="#FF6D00"
-                                android:layout_marginTop="3dp"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Lỗi thời" android:textSize="11sp" android:textColor="#FF6D00" android:layout_marginTop="3dp" android:includeFontPadding="false"/>
                         </LinearLayout>
 
                         <!-- Arrow group -->
-                        <LinearLayout
-                            android:layout_width="48dp"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:gravity="center">
+                        <LinearLayout android:layout_width="48dp" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center">
 
-                            <ImageView
-                                android:layout_width="22dp"
-                                android:layout_height="22dp"
-                                android:src="@drawable/ic_play_triangle"
-                                android:tint="#FF6D00"
-                                android:rotation="0"
-                                android:alpha="0.9"/>
+                            <ImageView android:layout_width="22dp" android:layout_height="22dp" android:src="@drawable/ic_play_triangle" android:tint="#FF6D00" android:rotation="0" android:alpha="0.9"/>
                         </LinearLayout>
 
                         <!-- New version box -->
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="vertical"
-                            android:gravity="center"
-                            android:background="@drawable/fu_version_badge"
-                            android:paddingVertical="12dp"
-                            android:paddingHorizontal="8dp">
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:gravity="center" android:background="@drawable/fu_version_badge" android:paddingVertical="12dp" android:paddingHorizontal="8dp">
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="MỚI NHẤT"
-                                android:textSize="8.5sp"
-                                android:textStyle="bold"
-                                android:textColor="#DDFFCC80"
-                                android:letterSpacing="0.12"
-                                android:layout_marginBottom="4dp"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="MỚI NHẤT" android:textSize="10.5sp" android:textStyle="bold" android:textColor="#DDFFCC80" android:letterSpacing="0.035" android:layout_marginBottom="4dp" android:includeFontPadding="false"/>
 
-                            <TextView
-                                android:id="@+id/fuTvNewVersionBadge"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="v12"
-                                android:textSize="22sp"
-                                android:textStyle="bold"
-                                android:textColor="@color/white"
-                                android:fontFamily="sans-serif-black"/>
+                            <TextView android:id="@+id/fuTvNewVersionBadge" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="v12" android:textSize="22sp" android:textStyle="bold" android:textColor="@color/white" android:fontFamily="sans-serif-black" android:includeFontPadding="false"/>
 
                             <!-- Stable badge -->
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="✓ Ổn định"
-                                android:textSize="9sp"
-                                android:textColor="#FFD580"
-                                android:layout_marginTop="3dp"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="✓ Ổn định" android:textSize="11sp" android:textColor="#FFD580" android:layout_marginTop="3dp" android:includeFontPadding="false"/>
                         </LinearLayout>
                     </LinearLayout>
 
                     <!-- Divider -->
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="@drawable/fu_divider"
-                        android:layout_marginBottom="14dp"/>
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@drawable/fu_divider" android:layout_marginBottom="14dp"/>
 
                     <!-- Warning row -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
-                        android:background="@drawable/fu_card_warning"
-                        android:paddingVertical="12dp"
-                        android:paddingHorizontal="14dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:background="@drawable/fu_card_warning" android:paddingVertical="12dp" android:paddingHorizontal="14dp">
 
                         <!-- Left accent bar -->
-                        <View
-                            android:layout_width="3dp"
-                            android:layout_height="match_parent"
-                            android:minHeight="40dp"
-                            android:background="#FF6D00"
-                            android:layout_marginEnd="12dp"/>
+                        <View android:layout_width="3dp" android:layout_height="match_parent" android:minHeight="40dp" android:background="#FF6D00" android:layout_marginEnd="12dp"/>
 
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
 
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal"
-                                android:gravity="center_vertical"
-                                android:layout_marginBottom="5dp">
+                            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="5dp">
 
-                                <ImageView
-                                    android:layout_width="14dp"
-                                    android:layout_height="14dp"
-                                    android:src="@drawable/fu_ic_warning"
-                                    android:layout_marginEnd="6dp"/>
+                                <ImageView android:layout_width="14dp" android:layout_height="14dp" android:src="@drawable/fu_ic_warning" android:layout_marginEnd="6dp"/>
 
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Phiên bản hết hỗ trợ"
-                                    android:textColor="#FFAB40"
-                                    android:textSize="12.5sp"
-                                    android:textStyle="bold"
-                                    android:fontFamily="sans-serif-black"/>
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Phiên bản hết hỗ trợ" android:textColor="#FFAB40" android:textSize="13sp" android:textStyle="bold" android:fontFamily="sans-serif-black" android:includeFontPadding="false"/>
                             </LinearLayout>
 
-                            <TextView
-                                android:id="@+id/fuTvWarningMsg"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="Phiên bản này không còn được hỗ trợ. Tải bản mới ngay để tiếp tục sử dụng đầy đủ tính năng."
-                                android:textColor="#88FFFFFF"
-                                android:textSize="12sp"
-                                android:lineSpacingExtra="3dp"/>
+                            <TextView android:id="@+id/fuTvWarningMsg" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Phiên bản này không còn được hỗ trợ. Tải bản mới ngay để tiếp tục sử dụng đầy đủ tính năng." android:textColor="#88FFFFFF" android:textSize="13sp" android:lineSpacingExtra="3dp" android:includeFontPadding="false"/>
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
@@ -400,65 +139,22 @@
             <!-- ══════════════════════════════════════════
                  SECTION 3 · DOWNLOAD URL CARD
                  ══════════════════════════════════════════ -->
-            <FrameLayout
-                android:id="@+id/fuCardUrl"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="24dp"
-                android:visibility="gone">
+            <FrameLayout android:id="@+id/fuCardUrl" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="24dp" android:visibility="gone">
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/fu_card_url"/>
+                <View android:layout_width="match_parent" android:layout_height="match_parent" android:background="@drawable/fu_card_url"/>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
-                    android:paddingVertical="14dp"
-                    android:paddingHorizontal="16dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:paddingVertical="14dp" android:paddingHorizontal="16dp">
 
                     <!-- Cyan icon bubble -->
-                    <FrameLayout
-                        android:layout_width="36dp"
-                        android:layout_height="36dp"
-                        android:background="@drawable/bg_glow_circle_cyan"
-                        android:layout_marginEnd="12dp">
-                        <ImageView
-                            android:layout_width="18dp"
-                            android:layout_height="18dp"
-                            android:layout_gravity="center"
-                            android:src="@drawable/fu_ic_link"
-                            android:tint="#00CFFF"/>
+                    <FrameLayout android:layout_width="36dp" android:layout_height="36dp" android:background="@drawable/bg_glow_circle_cyan" android:layout_marginEnd="12dp">
+                        <ImageView android:layout_width="18dp" android:layout_height="18dp" android:layout_gravity="center" android:src="@drawable/fu_ic_link" android:tint="#00CFFF"/>
                     </FrameLayout>
 
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="LINK TẢI APK"
-                            android:textColor="#00CFFF"
-                            android:textSize="9sp"
-                            android:textStyle="bold"
-                            android:letterSpacing="0.12"
-                            android:layout_marginBottom="4dp"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="LINK TẢI APK" android:textColor="#00CFFF" android:textSize="11sp" android:textStyle="bold" android:letterSpacing="0.035" android:layout_marginBottom="4dp" android:includeFontPadding="false"/>
 
-                        <TextView
-                            android:id="@+id/fuTvDownloadUrl"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:textColor="#88FFFFFF"
-                            android:textSize="11.5sp"
-                            android:fontFamily="monospace"
-                            android:ellipsize="middle"
-                            android:singleLine="true"/>
+                        <TextView android:id="@+id/fuTvDownloadUrl" android:layout_width="match_parent" android:layout_height="wrap_content" android:textColor="#88FFFFFF" android:textSize="12sp" android:fontFamily="monospace" android:ellipsize="middle" android:singleLine="true" android:includeFontPadding="false"/>
                     </LinearLayout>
                 </LinearLayout>
             </FrameLayout>
@@ -468,98 +164,33 @@
                  ══════════════════════════════════════════ -->
 
             <!-- Primary CTA: Cập nhật ngay -->
-            <FrameLayout
-                android:layout_width="260dp"
-                android:layout_height="56dp"
-                android:layout_marginBottom="12dp">
+            <FrameLayout android:layout_width="260dp" android:layout_height="56dp" android:layout_marginBottom="12dp">
 
                 <!-- Glow shadow behind button -->
-                <View
-                    android:layout_width="260dp"
-                    android:layout_height="56dp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/bg_glow_circle"
-                    android:alpha="0.35"
-                    android:translationY="8dp"
-                    android:clickable="false"/>
+                <View android:layout_width="260dp" android:layout_height="56dp" android:layout_gravity="center" android:background="@drawable/bg_glow_circle" android:alpha="0.35" android:translationY="8dp" android:clickable="false"/>
 
-                <FrameLayout
-                    android:id="@+id/fuBtnUpdate"
-                    android:layout_width="260dp"
-                    android:layout_height="56dp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/fu_btn_update"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:elevation="8dp">
+                <FrameLayout android:id="@+id/fuBtnUpdate" android:layout_width="260dp" android:layout_height="56dp" android:layout_gravity="center" android:background="@drawable/fu_btn_update" android:clickable="true" android:focusable="true" android:elevation="8dp" android:foreground="?attr/selectableItemBackground">
 
                     <!-- Button shimmer -->
-                    <View
-                        android:id="@+id/fuVShimmerBtn"
-                        android:layout_width="60dp"
-                        android:layout_height="56dp"
-                        android:background="@drawable/bg_btn_shimmer"
-                        android:alpha="0.7"
-                        android:translationX="-160dp"
-                        android:clickable="false"/>
+                    <View android:id="@+id/fuVShimmerBtn" android:layout_width="60dp" android:layout_height="56dp" android:background="@drawable/bg_btn_shimmer" android:alpha="0.7" android:translationX="-160dp" android:clickable="false"/>
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical">
+                    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:orientation="horizontal" android:gravity="center_vertical">
 
-                        <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:src="@drawable/fu_ic_download"
-                            android:tint="#FFFFFF"
-                            android:layout_marginEnd="10dp"/>
+                        <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/fu_ic_download" android:tint="#FFFFFF" android:layout_marginEnd="10dp"/>
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Cập nhật ngay"
-                            android:textColor="@color/white"
-                            android:textSize="16sp"
-                            android:textStyle="bold"
-                            android:fontFamily="sans-serif-black"
-                            android:letterSpacing="0.03"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Cập nhật ngay" android:textColor="@color/white" android:textSize="16sp" android:textStyle="bold" android:fontFamily="sans-serif-black" android:letterSpacing="0.03" android:includeFontPadding="false"/>
                     </LinearLayout>
                 </FrameLayout>
             </FrameLayout>
 
             <!-- Secondary: Sao chép link -->
-            <FrameLayout
-                android:id="@+id/fuBtnCopyLink"
-                android:layout_width="200dp"
-                android:layout_height="46dp"
-                android:background="@drawable/fu_btn_copy"
-                android:clickable="true"
-                android:focusable="true"
-                android:layout_marginBottom="28dp">
+            <FrameLayout android:id="@+id/fuBtnCopyLink" android:layout_width="200dp" android:layout_height="46dp" android:background="@drawable/fu_btn_copy" android:clickable="true" android:focusable="true" android:layout_marginBottom="28dp" android:foreground="?attr/selectableItemBackground">
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical">
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:orientation="horizontal" android:gravity="center_vertical">
 
-                    <ImageView
-                        android:layout_width="16dp"
-                        android:layout_height="16dp"
-                        android:src="@drawable/fu_ic_copy"
-                        android:layout_marginEnd="8dp"/>
+                    <ImageView android:layout_width="16dp" android:layout_height="16dp" android:src="@drawable/fu_ic_copy" android:layout_marginEnd="8dp"/>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Sao chép link"
-                        android:textColor="#CCFFFFFF"
-                        android:textSize="13.5sp"
-                        android:textStyle="bold"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Sao chép link" android:textColor="#CCFFFFFF" android:textSize="14sp" android:textStyle="bold" android:includeFontPadding="false"/>
                 </LinearLayout>
             </FrameLayout>
 
@@ -568,43 +199,18 @@
                  ══════════════════════════════════════════ -->
 
             <!-- Thin divider line -->
-            <View
-                android:layout_width="60dp"
-                android:layout_height="1dp"
-                android:background="#22FFFFFF"
-                android:layout_marginBottom="16dp"/>
+            <View android:layout_width="60dp" android:layout_height="1dp" android:background="#22FFFFFF" android:layout_marginBottom="16dp"/>
 
             <!-- Footer icon + text -->
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:layout_marginBottom="8dp">
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="8dp">
 
-                <ImageView
-                    android:layout_width="12dp"
-                    android:layout_height="12dp"
-                    android:src="@drawable/fu_ic_warning"
-                    android:alpha="0.4"
-                    android:layout_marginEnd="5dp"/>
+                <ImageView android:layout_width="12dp" android:layout_height="12dp" android:src="@drawable/fu_ic_warning" android:alpha="0.4" android:layout_marginEnd="5dp"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Bắt buộc cập nhật để đảm bảo trải nghiệm tốt nhất"
-                    android:textColor="#33FFFFFF"
-                    android:textSize="10sp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Bắt buộc cập nhật để đảm bảo trải nghiệm tốt nhất" android:textColor="#33FFFFFF" android:textSize="11.5sp" android:includeFontPadding="false"/>
             </LinearLayout>
 
             <!-- App signature -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="AujunPeak © 2024"
-                android:textColor="#1AFFFFFF"
-                android:textSize="9sp"
-                android:letterSpacing="0.1"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="AujunPeak © 2024" android:textColor="#1AFFFFFF" android:textSize="11sp" android:letterSpacing="0.035" android:includeFontPadding="false"/>
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
