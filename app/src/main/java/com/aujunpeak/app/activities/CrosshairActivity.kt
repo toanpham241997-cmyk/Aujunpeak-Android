@@ -14,7 +14,6 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.SeekBar
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
@@ -23,6 +22,7 @@ import com.aujunpeak.app.R
 import com.aujunpeak.app.views.BoostParticleView
 import com.bumptech.glide.Glide
 import com.aujunpeak.app.views.CrosshairOverlayView
+import com.aujunpeak.app.utils.UiModal
 
 class CrosshairActivity : AppCompatActivity() {
     override fun attachBaseContext(newBase: Context) {
@@ -85,9 +85,9 @@ class CrosshairActivity : AppCompatActivity() {
             isOverlayOn = true
             updateToggleUI()
             startCrosshairService()
-            Toast.makeText(this, "Đã cấp quyền! Tâm súng đang hiển thị.", Toast.LENGTH_SHORT).show()
+            UiModal.show(this, "Đã cấp quyền! Tâm súng đang hiển thị.", title = "Thành công", type = UiModal.Type.SUCCESS, autoDismissMillis = 1500L)
         } else {
-            Toast.makeText(this, "Chưa cấp quyền, tâm súng không thể hiển thị.", Toast.LENGTH_SHORT).show()
+            UiModal.show(this, "Chưa cấp quyền, tâm súng không thể hiển thị.", title = "Thiếu quyền", type = UiModal.Type.WARNING)
         }
     }
 
@@ -219,7 +219,7 @@ class CrosshairActivity : AppCompatActivity() {
             tvToggleHint.animate().alpha(1f).setDuration(400).setStartDelay(300).start()
         }
 
-        Toast.makeText(this, "Đã áp dụng: ${selectedType.name}", Toast.LENGTH_SHORT).show()
+        UiModal.show(this, "Đã áp dụng: ${selectedType.name}", title = "Crosshair đã cập nhật", type = UiModal.Type.SUCCESS, autoDismissMillis = 1500L)
         updateOverlayIfRunning()
     }
 
@@ -276,7 +276,7 @@ class CrosshairActivity : AppCompatActivity() {
 
     private fun toggleOverlay() {
         if (!Settings.canDrawOverlays(this)) {
-            Toast.makeText(this, "Cần cấp quyền hiển thị trên ứng dụng khác", Toast.LENGTH_LONG).show()
+            UiModal.show(this, "Cần cấp quyền hiển thị trên ứng dụng khác", title = "Cần cấp quyền", type = UiModal.Type.WARNING)
             val intent = Intent(
                 Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
                 Uri.parse("package:$packageName")

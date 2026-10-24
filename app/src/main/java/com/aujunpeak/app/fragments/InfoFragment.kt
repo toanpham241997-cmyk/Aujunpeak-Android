@@ -22,7 +22,6 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.view.doOnLayout
 import androidx.fragment.app.Fragment
@@ -46,6 +45,7 @@ import com.bumptech.glide.request.target.Target
 import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.*
+import com.aujunpeak.app.utils.UiModal
 
 class InfoFragment : Fragment() {
 
@@ -281,7 +281,7 @@ class InfoFragment : Fragment() {
             binding.profileCardParticles.setColors(intArrayOf(
                 if (isVip) Color.parseColor("#FFD700") else Color.parseColor("#69FF47"),
                 Color.parseColor("#00E676"),
-                Color.parseColor("#FF5C72")
+                Color.parseColor("#7E9CFF")
             ))
             binding.profileCardParticles.setDensity(8)
             binding.profileCardParticles.start()
@@ -572,7 +572,7 @@ class InfoFragment : Fragment() {
     }
 
     private fun showToast(msg: String) {
-        Toast.makeText(requireContext(), msg, Toast.LENGTH_SHORT).show()
+        UiModal.show(requireContext(), msg, title = "Thông báo", type = UiModal.Type.SUCCESS, autoDismissMillis = 1500L)
     }
 
     private fun openZaloRenew() {

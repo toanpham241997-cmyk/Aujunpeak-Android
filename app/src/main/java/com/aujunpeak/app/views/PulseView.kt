@@ -54,7 +54,7 @@ class PulseView @JvmOverloads constructor(
         val cx = width / 2f
         val cy = height / 2f
 
-        paint.color = Color.parseColor("#FF5C72")
+        paint.color = Color.parseColor("#7E9CFF")
         paint.alpha = pulseAlpha.toInt().coerceIn(0, 255)
         paint.style = Paint.Style.STROKE
         paint.strokeWidth = 2f

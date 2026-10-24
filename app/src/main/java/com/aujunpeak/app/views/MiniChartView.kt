@@ -20,7 +20,7 @@ class MiniChartView @JvmOverloads constructor(
         strokeWidth = 3f
         strokeCap = Paint.Cap.ROUND
         strokeJoin = Paint.Join.ROUND
-        color = Color.parseColor("#FF5C72")
+        color = Color.parseColor("#7E9CFF")
     }
     private val fillPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         style = Paint.Style.FILL
@@ -36,7 +36,7 @@ class MiniChartView @JvmOverloads constructor(
     }
 
     private var data: List<Float> = emptyList()
-    private var lineColor: Int = Color.parseColor("#FF5C72")
+    private var lineColor: Int = Color.parseColor("#7E9CFF")
 
     fun setLineColor(color: Int) {
         lineColor = color

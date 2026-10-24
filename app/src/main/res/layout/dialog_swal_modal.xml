@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="24dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:background="@drawable/bg_swal_modal"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="22dp"
+        android:paddingBottom="18dp">
+
+        <FrameLayout
+            android:id="@+id/modalIconWrap"
+            android:layout_width="74dp"
+            android:layout_height="74dp"
+            android:background="@drawable/bg_swal_icon_plate">
+
+            <TextView
+                android:id="@+id/modalIconText"
+                android:layout_width="54dp"
+                android:layout_height="54dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="i"
+                android:textStyle="bold"
+                android:textSize="24sp"
+                android:textColor="@android:color/white"
+                android:background="@drawable/bg_swal_icon_info"/>
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/modalTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Aujunpeak"
+            android:textColor="@color/neo_text"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:includeFontPadding="false"/>
+
+        <TextView
+            android:id="@+id/modalMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="Nội dung"
+            android:textColor="@color/neo_text_2"
+            android:textSize="13sp"
+            android:lineSpacingExtra="2dp"/>
+
+        <LinearLayout
+            android:id="@+id/modalActionRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/modalBtnCancel"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Hủy"
+                android:textColor="@color/neo_text"
+                android:textStyle="bold"
+                android:textSize="13sp"
+                android:includeFontPadding="false"
+                android:background="@drawable/bg_swal_button_secondary"
+                android:visibility="gone"/>
+
+            <Space
+                android:id="@+id/modalActionSpace"
+                android:layout_width="10dp"
+                android:layout_height="1dp"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/modalBtnOk"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Đã hiểu"
+                android:textColor="#07101B"
+                android:textStyle="bold"
+                android:textSize="13sp"
+                android:includeFontPadding="false"
+                android:background="@drawable/bg_swal_button_primary"/>
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

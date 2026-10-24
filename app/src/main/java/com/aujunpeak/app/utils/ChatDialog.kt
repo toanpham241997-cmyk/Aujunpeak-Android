@@ -28,7 +28,6 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.ScrollView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.lifecycleScope
 import com.aujunpeak.app.R
@@ -43,6 +42,7 @@ import java.io.ByteArrayOutputStream
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
+import com.aujunpeak.app.utils.UiModal
 
 /**
  * Modal chat dialog — hiển thị chat với bot/admin tương tự NotificationsListDialog.
@@ -369,11 +369,7 @@ object ChatDialog {
                     loadInitialMessages(sessionResult.session)
                     startPolling(sessionResult.session)
                 } else {
-                    Toast.makeText(
-                        context,
-                        "Không thể kết nối chat: ${sessionResult.error}",
-                        Toast.LENGTH_SHORT
-                    ).show()
+                    UiModal.show(context, "Không thể kết nối chat: ${sessionResult.error}", title = "Chat lỗi", type = UiModal.Type.ERROR)
                 }
             }
         }
@@ -385,11 +381,11 @@ object ChatDialog {
         fun sendMessage(text: String? = null, imageBase64: String? = null) {
             val session = currentSession ?: return
             if (!isGoogleLoggedIn) {
-                Toast.makeText(context, "Vui lòng đăng nhập Google để chat", Toast.LENGTH_SHORT).show()
+                UiModal.show(context, "Vui lòng đăng nhập Google để chat", title = "Chưa đăng nhập", type = UiModal.Type.WARNING, autoDismissMillis = 1600L)
                 return
             }
             if (session.status == "closed") {
-                Toast.makeText(context, context.getString(R.string.chat_status_closed), Toast.LENGTH_SHORT).show()
+                UiModal.show(context, context.getString(R.string.chat_status_closed), title = "Phiên chat đã đóng", type = UiModal.Type.WARNING, autoDismissMillis = 1600L)
                 return
             }
 
@@ -445,11 +441,7 @@ object ChatDialog {
                 } else {
                     withContext(Dispatchers.Main) {
                         showTyping(false)
-                        Toast.makeText(
-                            context,
-                            "Gửi thất bại, thử lại",
-                            Toast.LENGTH_SHORT
-                        ).show()
+                        UiModal.show(context, "Gửi thất bại, thử lại", title = "Không gửi được tin nhắn", type = UiModal.Type.ERROR, autoDismissMillis = 1600L)
                         // Khôi phục lại text nếu gửi lỗi
                         if (content.isNotEmpty()) etInput.setText(content)
                     }

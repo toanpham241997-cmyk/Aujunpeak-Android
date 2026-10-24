@@ -18,7 +18,6 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.ProgressBar
 import android.widget.TextView
-import android.widget.Toast
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import com.aujunpeak.app.utils.LocaleHelper
@@ -35,6 +34,7 @@ import com.google.android.material.materialswitch.MaterialSwitch
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import com.aujunpeak.app.utils.UiModal
 
 /**
  * OPTIMIZER SUPER — 9 groups x 5 real device-optimization switches.
@@ -165,7 +165,7 @@ class OptimizerSuperActivity : AppCompatActivity() {
                 return
             }
         }
-        Toast.makeText(this, "Free Fire chua duoc cai dat tren thiet bi nay", Toast.LENGTH_LONG).show()
+        UiModal.show(this, "Free Fire chưa được cài đặt trên thiết bị này", title = "Không tìm thấy game", type = UiModal.Type.WARNING)
     }
 
     private fun buildGroups() {
@@ -226,7 +226,7 @@ class OptimizerSuperActivity : AppCompatActivity() {
     private fun onApplyClicked() {
         val selectedCount = allSwitches.count { it.isChecked }
         if (selectedCount == 0) {
-            Toast.makeText(this, "Chon it nhat 1 chuc nang truoc khi Apply", Toast.LENGTH_SHORT).show()
+            UiModal.show(this, "Chọn ít nhất 1 chức năng trước khi Apply", title = "Thiếu lựa chọn", type = UiModal.Type.WARNING, autoDismissMillis = 1700L)
             return
         }
 
@@ -241,11 +241,7 @@ class OptimizerSuperActivity : AppCompatActivity() {
         // Real optional permission: broader storage access for junk-file scanning.
         // We never pretend to have it — we ask the system, then check the real result.
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R && !Environment.isExternalStorageManager()) {
-            Toast.makeText(
-                this,
-                "Cap quyen 'Truy cap toan bo tep' de Optimizer quet duoc file rac trong bo nho may",
-                Toast.LENGTH_LONG
-            ).show()
+            UiModal.show(this, "Cấp quyền 'Truy cập toàn bộ tệp' để Optimizer có thể quét file rác trong bộ nhớ máy", title = "Cần quyền truy cập", type = UiModal.Type.WARNING)
             try {
                 val intent = Intent(
                     Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION,

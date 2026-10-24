@@ -19,13 +19,13 @@ import android.view.animation.OvershootInterpolator
 import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
 import com.aujunpeak.app.R
 import com.aujunpeak.app.views.BoostParticleView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.aujunpeak.app.utils.UiModal
 
 /**
  * ForceUpdateActivity — màn hình bắt buộc cập nhật (không thể back).
@@ -290,24 +290,24 @@ class ForceUpdateActivity : AppCompatActivity() {
 
     private fun openUrl() {
         if (downloadUrl.isEmpty()) {
-            Toast.makeText(this, "Chưa có link tải. Liên hệ hỗ trợ.", Toast.LENGTH_SHORT).show()
+            UiModal.show(this, "Chưa có link tải. Liên hệ hỗ trợ.", title = "Thiếu liên kết", type = UiModal.Type.WARNING)
             return
         }
         try {
             startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(downloadUrl)))
         } catch (_: Exception) {
-            Toast.makeText(this, "Không thể mở trình duyệt.", Toast.LENGTH_SHORT).show()
+            UiModal.show(this, "Không thể mở trình duyệt.", title = "Lỗi mở liên kết", type = UiModal.Type.ERROR)
         }
     }
 
     private fun copyLink() {
         if (downloadUrl.isEmpty()) {
-            Toast.makeText(this, "Chưa có link để sao chép.", Toast.LENGTH_SHORT).show()
+            UiModal.show(this, "Chưa có link để sao chép.", title = "Thiếu dữ liệu", type = UiModal.Type.WARNING)
             return
         }
         val cm = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
         cm.setPrimaryClip(ClipData.newPlainText("APK Link", downloadUrl))
-        Toast.makeText(this, "✅ Đã sao chép link tải!", Toast.LENGTH_SHORT).show()
+        UiModal.show(this, "Đã sao chép link tải!", title = "Sao chép thành công", type = UiModal.Type.SUCCESS, autoDismissMillis = 1500L)
     }
 
     private fun animateClick(v: View, action: () -> Unit) {
@@ -322,7 +322,7 @@ class ForceUpdateActivity : AppCompatActivity() {
     // ── Block back ──────────────────────────────────────────────────────────
     @Deprecated("Use OnBackPressedDispatcher")
     override fun onBackPressed() {
-        Toast.makeText(this, "Bạn bắt buộc phải cập nhật để tiếp tục.", Toast.LENGTH_SHORT).show()
+        UiModal.show(this, "Bạn bắt buộc phải cập nhật để tiếp tục.", title = "Bắt buộc cập nhật", type = UiModal.Type.WARNING)
     }
 
     override fun onDestroy() {

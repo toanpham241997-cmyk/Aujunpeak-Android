@@ -11,7 +11,6 @@ import android.os.Handler
 import android.os.Looper
 import android.os.SystemClock
 import android.provider.Settings
-import android.app.AlertDialog
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -19,7 +18,6 @@ import android.view.animation.DecelerateInterpolator
 import android.view.animation.LinearInterpolator
 import android.view.animation.OvershootInterpolator
 import android.widget.FrameLayout
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.aujunpeak.app.R
 import com.aujunpeak.app.activities.CrosshairActivity
@@ -28,6 +26,7 @@ import com.aujunpeak.app.activities.OptimizerSuperActivity
 import com.aujunpeak.app.databinding.FragmentFunctionBinding
 import com.aujunpeak.app.databinding.ItemSwitchIconRowBinding
 import com.aujunpeak.app.utils.GameModuleInstaller
+import com.aujunpeak.app.utils.UiModal
 
 class FunctionFragment : Fragment() {
 
@@ -62,9 +61,9 @@ class FunctionFragment : Fragment() {
 
     private fun setupOptimizerSuperCard() {
         binding.particlesOptimizerSuper.setColors(intArrayOf(
-            Color.parseColor("#FF5C72"),
+            Color.parseColor("#7E9CFF"),
             Color.parseColor("#FF4D67"),
-            Color.parseColor("#FF5C72")
+            Color.parseColor("#7E9CFF")
         ))
         binding.particlesOptimizerSuper.setDensity(8)
         binding.particlesOptimizerSuper.start()
@@ -106,9 +105,9 @@ class FunctionFragment : Fragment() {
         binding.crosshairParticles.start()
 
         binding.particlesPerformance.setColors(intArrayOf(
-            Color.parseColor("#FF5C72"),
+            Color.parseColor("#7E9CFF"),
             Color.parseColor("#FF4D67"),
-            Color.parseColor("#FF5C72")
+            Color.parseColor("#7E9CFF")
         ))
         binding.particlesPerformance.setDensity(9)
         binding.particlesPerformance.start()
@@ -171,7 +170,7 @@ class FunctionFragment : Fragment() {
 
     private fun setupFreeFire() {
         binding.particlesFreeFireFunc.setColors(intArrayOf(
-            Color.parseColor("#FF5C72"),
+            Color.parseColor("#7E9CFF"),
             Color.parseColor("#FF6B6B"),
             Color.parseColor("#FF4D67")
         ))
@@ -257,7 +256,7 @@ class FunctionFragment : Fragment() {
         row.tvSwitchTitle.text = title
         row.tvSwitchSub.text = sub
         row.ivSwitchIcon.setImageResource(icon)
-        row.ivSwitchIcon.setColorFilter(Color.parseColor("#FF5C72"))
+        row.ivSwitchIcon.setColorFilter(Color.parseColor("#7E9CFF"))
         row.materialSwitch.setOnCheckedChangeListener(null)
         row.materialSwitch.isChecked = checked
         startRingRotation(row.vIconRing)
@@ -276,7 +275,7 @@ class FunctionFragment : Fragment() {
                             if (on) installGameModule(module, row, title, icon)
                         }
                         iconBounce(row.ivSwitchIcon)
-                        Toast.makeText(requireContext(), result.message, Toast.LENGTH_SHORT).show()
+                        UiModal.show(requireContext(), result.message, title = "Đã cập nhật", type = UiModal.Type.INFO, autoDismissMillis = 1500L)
                         showSwitchModal(title, icon, false)
                     }
                 }
@@ -296,16 +295,19 @@ class FunctionFragment : Fragment() {
             row.materialSwitch.setOnCheckedChangeListener { _, on ->
                 if (on) installGameModule(module, row, title, icon)
             }
-            AlertDialog.Builder(requireContext())
-                .setTitle("Storage access required")
-                .setMessage("Grant storage access before installing $title.")
-                .setNegativeButton("CANCEL", null)
-                .setPositiveButton("OPEN SETTINGS") { _, _ ->
+            UiModal.showConfirm(
+                context = requireContext(),
+                title = "Cần quyền truy cập",
+                message = "Hãy cấp quyền bộ nhớ trước khi cài đặt $title.",
+                type = UiModal.Type.WARNING,
+                positiveText = "Mở cài đặt",
+                negativeText = "Hủy",
+                onPositive = {
                     runCatching {
                         startActivity(GameModuleInstaller.buildStorageAccessIntent(requireContext()))
                     }
                 }
-                .show()
+            )
             return
         }
 
@@ -333,7 +335,7 @@ class FunctionFragment : Fragment() {
                         if (on) installGameModule(module, row, title, icon)
                     }
                 }
-                Toast.makeText(requireContext(), result.message, Toast.LENGTH_LONG).show()
+                UiModal.show(requireContext(), result.message, title = if (result.ok) "Thành công" else "Không thể áp dụng", type = if (result.ok) UiModal.Type.SUCCESS else UiModal.Type.ERROR, autoDismissMillis = 1800L)
             }
         }
     }
@@ -395,9 +397,7 @@ class FunctionFragment : Fragment() {
 
         // Check overlay permission
         if (!Settings.canDrawOverlays(ctx)) {
-            Toast.makeText(ctx,
-                "Cap quyen hien thi tren man hinh de dung floating menu",
-                Toast.LENGTH_LONG).show()
+            UiModal.show(ctx, "Cấp quyền hiển thị trên màn hình để dùng floating menu", title = "Cần cấp quyền", type = UiModal.Type.WARNING)
             try {
                 val intent = Intent(
                     Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
@@ -429,8 +429,7 @@ class FunctionFragment : Fragment() {
                 return
             }
         }
-        Toast.makeText(requireContext(),
-            "Free Fire chua duoc cai dat tren thiet bi nay", Toast.LENGTH_LONG).show()
+        UiModal.show(requireContext(), "Free Fire chưa được cài đặt trên thiết bị này", title = "Không tìm thấy game", type = UiModal.Type.WARNING)
     }
 
     // ──────────────────────────────────────────
@@ -534,7 +533,7 @@ class FunctionFragment : Fragment() {
         val pv = binding.applyBtnParticles
         try {
             pv.javaClass.getMethod("setColors", IntArray::class.java).invoke(pv, intArrayOf(
-                Color.parseColor("#FF5C72"), Color.parseColor("#FF6678"),
+                Color.parseColor("#7E9CFF"), Color.parseColor("#89A1FF"),
                 Color.parseColor("#FF6B6B"), Color.parseColor("#B71C1C"),
                 Color.parseColor("#FF4D67")
             ))

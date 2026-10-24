@@ -10,7 +10,6 @@ import android.os.Looper
 import android.view.View
 import android.view.animation.OvershootInterpolator
 import android.widget.ImageView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.aujunpeak.app.databinding.ActivityFeedbackBinding
@@ -23,6 +22,7 @@ import org.json.JSONObject
 import java.io.OutputStreamWriter
 import java.net.HttpURLConnection
 import java.net.URL
+import com.aujunpeak.app.utils.UiModal
 
 class FeedbackActivity : AppCompatActivity() {
 
@@ -341,7 +341,7 @@ class FeedbackActivity : AppCompatActivity() {
     }
 
     private fun showToast(msg: String) {
-        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+        UiModal.show(this, msg, title = "Thông báo", type = UiModal.Type.INFO, autoDismissMillis = 1600L)
     }
 
     override fun onDestroy() {

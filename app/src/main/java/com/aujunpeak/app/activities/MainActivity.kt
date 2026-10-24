@@ -30,6 +30,7 @@ import com.aujunpeak.app.R
 import com.aujunpeak.app.utils.AppStats
 import com.aujunpeak.app.utils.HeartbeatScheduler
 import com.aujunpeak.app.utils.KeyManager
+import com.aujunpeak.app.utils.UiModal
 import com.aujunpeak.app.utils.KeyRevokedDialog
 import com.aujunpeak.app.utils.LocaleHelper
 import com.aujunpeak.app.utils.NotificationStore
@@ -38,7 +39,6 @@ import com.aujunpeak.app.utils.ThemeManager
 import com.aujunpeak.app.views.RainView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
-import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.launch
 import com.aujunpeak.app.utils.ChatDialog
 import com.aujunpeak.app.utils.ChatUnreadStore
@@ -263,7 +263,7 @@ class MainActivity : AppCompatActivity() {
             val wasHidden = headerChatBadge.visibility != View.VISIBLE
             headerChatBadge.text = if (unreadCount > 9) "9+" else unreadCount.toString()
             headerChatBadge.visibility = View.VISIBLE
-            ivHeaderChat.setColorFilter(android.graphics.Color.parseColor("#FF5C72"))
+            ivHeaderChat.setColorFilter(android.graphics.Color.parseColor("#7E9CFF"))
             startChatIconPulse()
             if (wasHidden) {
                 headerChatBadge.scaleX = 0f
@@ -334,7 +334,7 @@ class MainActivity : AppCompatActivity() {
                 try {
                     pickImageLauncher.launch(intent)
                 } catch (e: Exception) {
-                    android.widget.Toast.makeText(this, "Không thể mở thư viện ảnh", android.widget.Toast.LENGTH_SHORT).show()
+                    UiModal.show(this, "Không thể mở thư viện ảnh", title = "Lỗi", type = UiModal.Type.ERROR, autoDismissMillis = 1500L)
                 }
             }
         )
@@ -749,7 +749,7 @@ class MainActivity : AppCompatActivity() {
         navEntries.forEach { entry ->
             val selected    = entry.destId == destId
             val targetColor = if (selected)
-                Color.parseColor("#FF7487")
+                Color.parseColor("#8FA8FF")
             else
                 Color.parseColor("#98A5B5")
             entry.icon.setColorFilter(targetColor)
@@ -766,21 +766,19 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showVipRequiredSnackbar() {
-        val rootView = findViewById<View>(android.R.id.content)
-        Snackbar.make(rootView, "👑  Tính năng chỉ dành cho key VIP", Snackbar.LENGTH_LONG)
-            .setBackgroundTint(Color.parseColor("#1B2533"))
-            .setTextColor(Color.parseColor("#FFD700"))
-            .setActionTextColor(Color.parseColor("#FF7487"))
-            .setAction("Hồ sơ") { navigateToTab(R.id.navigation_info) }
-            .show()
+        UiModal.showConfirm(
+            context = this,
+            title = "Chỉ dành cho VIP",
+            message = "Tính năng này chỉ dành cho key VIP. Bạn có muốn mở trang hồ sơ để xem trạng thái tài khoản không?",
+            type = UiModal.Type.WARNING,
+            positiveText = "Mở hồ sơ",
+            negativeText = "Đóng",
+            onPositive = { navigateToTab(R.id.navigation_info) }
+        )
     }
 
     private fun showSnackbar(msg: String) {
-        val rootView = findViewById<View>(android.R.id.content)
-        Snackbar.make(rootView, msg, Snackbar.LENGTH_SHORT)
-            .setBackgroundTint(Color.parseColor("#1B2533"))
-            .setTextColor(Color.WHITE)
-            .show()
+        UiModal.show(this, msg, title = "Thông báo", type = UiModal.Type.INFO, autoDismissMillis = 1600L)
     }
 
     // ═══════════════════════════════════════════════════════════════
@@ -840,10 +838,7 @@ class MainActivity : AppCompatActivity() {
         navigateToTab(R.id.navigation_info)
         refreshNavLockState()
         val rootView = findViewById<View>(android.R.id.content)
-        Snackbar.make(rootView, "Đã đăng xuất", Snackbar.LENGTH_SHORT)
-            .setBackgroundTint(Color.parseColor("#1B2533"))
-            .setTextColor(Color.WHITE)
-            .show()
+        UiModal.show(this, "Đã đăng xuất", title = "Tài khoản", type = UiModal.Type.SUCCESS, autoDismissMillis = 1500L)
     }
 
     fun onLogin() {

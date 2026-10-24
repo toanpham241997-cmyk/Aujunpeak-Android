@@ -14,7 +14,6 @@ import android.provider.Settings
 import android.view.View
 import android.widget.CompoundButton
 import android.widget.TextView
-import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.aujunpeak.app.activities.AboutActivity
 import com.aujunpeak.app.activities.CrosshairActivity
@@ -31,6 +30,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import com.aujunpeak.app.utils.UiModal
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.ByteArrayOutputStream
@@ -61,7 +61,7 @@ object DynamicActionEngine {
                 val next = action.opt("action")
                 mainHandler.postDelayed({ execute(activity, root, next) }, ms)
             }
-            "TOAST" -> Toast.makeText(activity, action.optString("message"), Toast.LENGTH_SHORT).show()
+            "TOAST" -> UiModal.show(activity, action.optString("message"), title = action.optString("title", "Thông báo"), type = UiModal.Type.INFO, autoDismissMillis = 1500L)
             "DIALOG" -> AlertDialog.Builder(activity)
                 .setTitle(action.optString("title", "Aujunpeak"))
                 .setMessage(action.optString("message"))
@@ -138,7 +138,7 @@ object DynamicActionEngine {
             }
             if (result.isSuccess) {
                 if (action.optBoolean("toastResponse", false)) {
-                    Toast.makeText(activity, result.getOrNull().orEmpty().take(180), Toast.LENGTH_SHORT).show()
+                    UiModal.show(activity, result.getOrNull().orEmpty().take(180), title = "Phản hồi", type = UiModal.Type.INFO, autoDismissMillis = 1700L)
                 }
                 execute(activity, root, action.opt("onSuccess"))
             } else {
@@ -237,7 +237,7 @@ object DynamicActionEngine {
     private fun copy(activity: Activity, text: String, label: String) {
         val cm = activity.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
         cm.setPrimaryClip(ClipData.newPlainText(label, text))
-        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.S_V2) Toast.makeText(activity, "Đã sao chép", Toast.LENGTH_SHORT).show()
+        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.S_V2) UiModal.show(activity, "Đã sao chép", title = "Clipboard", type = UiModal.Type.SUCCESS, autoDismissMillis = 1200L)
     }
 
     private fun find(root: View, name: String): View? = DynamicViewLookup.find(root, name)

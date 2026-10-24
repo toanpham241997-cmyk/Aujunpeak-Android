@@ -1,2 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle"><solid android:color="#FA141C28"/><stroke android:width="0.8dp" android:color="#354253"/><corners android:topLeftRadius="24dp" android:topRightRadius="24dp"/></shape>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:top="4dp"><shape android:shape="rectangle"><solid android:color="#060C17"/><corners android:topLeftRadius="28dp" android:topRightRadius="28dp"/></shape></item>
+    <item><shape android:shape="rectangle"><gradient android:angle="315" android:startColor="#1B2740" android:centerColor="#131C2F" android:endColor="#0F1727"/><stroke android:width="1dp" android:color="#34455E"/><corners android:topLeftRadius="28dp" android:topRightRadius="28dp"/></shape></item>
+</layer-list>

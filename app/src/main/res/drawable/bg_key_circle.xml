@@ -3,15 +3,15 @@
     <!-- Outer glow ring -->
     <item>
         <shape android:shape="oval">
-            <solid android:color="#33FF5C72"/>
-            <stroke android:width="2dp" android:color="#66FF5C72"/>
+            <solid android:color="#337E9CFF"/>
+            <stroke android:width="2dp" android:color="#667E9CFF"/>
         </shape>
     </item>
     <!-- Inner dark fill -->
     <item android:top="4dp" android:left="4dp" android:right="4dp" android:bottom="4dp">
         <shape android:shape="oval">
             <solid android:color="#1C1C1C"/>
-            <stroke android:width="1.5dp" android:color="#FF5C72"/>
+            <stroke android:width="1.5dp" android:color="#7E9CFF"/>
         </shape>
     </item>
 </layer-list>
